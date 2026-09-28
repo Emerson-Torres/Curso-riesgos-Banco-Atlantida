@@ -1,0 +1,215 @@
+<style>
+@keyframes pulse{0%,100%{opacity:.06}50%{opacity:.16}}
+@keyframes glow{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes flowL{0%{opacity:0;transform:translateX(0)}40%{opacity:1}100%{opacity:0;transform:translateX(120px)}}
+@keyframes flowR{0%{opacity:0;transform:translateX(0)}40%{opacity:1}100%{opacity:0;transform:translateX(-120px)}}
+.pr{animation:pulse 4s ease-in-out infinite}
+.gc{animation:glow 2.5s ease-in-out infinite}
+.fl1{animation:flowL 2.8s ease-in-out infinite}
+.fl2{animation:flowL 2.8s ease-in-out .6s infinite}
+.fl3{animation:flowL 2.8s ease-in-out 1.2s infinite}
+.fl4{animation:flowL 2.8s ease-in-out 1.8s infinite}
+.fr1{animation:flowR 2.8s ease-in-out infinite}
+.fr2{animation:flowR 2.8s ease-in-out .6s infinite}
+.fr3{animation:flowR 2.8s ease-in-out 1.2s infinite}
+.fr4{animation:flowR 2.8s ease-in-out 1.8s infinite}
+</style>
+<svg width="100%" viewBox="0 0 1280 560" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:10px">
+<defs>
+  <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#1b1819"/>
+    <stop offset="45%" stop-color="#2c2627"/>
+    <stop offset="100%" stop-color="#141213"/>
+  </linearGradient>
+  <linearGradient id="hexG" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#a90a1b"/>
+    <stop offset="100%" stop-color="#1b1819"/>
+  </linearGradient>
+  <linearGradient id="goldBar" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#dc0c22" stop-opacity="0"/>
+    <stop offset="30%" stop-color="#dc0c22" stop-opacity=".9"/>
+    <stop offset="70%" stop-color="#ff6f7d" stop-opacity=".9"/>
+    <stop offset="100%" stop-color="#dc0c22" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="glowC" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#a90a1b" stop-opacity=".45"/>
+    <stop offset="100%" stop-color="#a90a1b" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#dc0c22" stop-opacity=".18"/>
+    <stop offset="100%" stop-color="#dc0c22" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="clip"><rect width="1280" height="560" rx="10"/></clipPath>
+  <marker id="arrGold" viewBox="0 0 10 14" refX="10" refY="7" markerWidth="9" markerHeight="12.6" orient="auto">
+    <path d="M0,0 L10,7 L0,14 Z" fill="#ff6f7d"/>
+  </marker>
+  <marker id="arrTeal" viewBox="0 0 10 14" refX="10" refY="7" markerWidth="9" markerHeight="12.6" orient="auto">
+    <path d="M0,0 L10,7 L0,14 Z" fill="#4ecba0"/>
+  </marker>
+</defs>
+
+<g clip-path="url(#clip)">
+<rect width="1280" height="560" fill="url(#bg)"/>
+<ellipse cx="640" cy="280" rx="480" ry="320" fill="url(#glowC)"/>
+<ellipse cx="640" cy="280" rx="240" ry="190" fill="url(#glowG)"/>
+<rect x="0" y="0" width="1280" height="4" fill="url(#goldBar)"/>
+<rect x="0" y="556" width="1280" height="4" fill="url(#goldBar)"/>
+
+<circle cx="640" cy="280" r="220" fill="none" stroke="rgba(220,12,34,.04)" stroke-width="1.5"/>
+<circle cx="640" cy="280" r="190" fill="none" stroke="rgba(220,12,34,.07)" stroke-width="1.5"/>
+<circle cx="640" cy="280" r="160" fill="none" stroke="rgba(220,12,34,.1)" stroke-width="1.5"/>
+
+<text x="172" y="38" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.3)" text-anchor="middle" letter-spacing="2.5">DOCUMENTOS DE RIESGOS</text>
+<line x1="66" y1="44" x2="278" y2="44" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+
+<rect x="66" y="54" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(220,12,34,.45)" stroke-width="1.5"/>
+<rect x="66" y="54" width="4" height="70" rx="2" fill="#a90a1b"/>
+<text x="82" y="74" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#ffadb7" letter-spacing="1">INFORME AL COMITÉ</text>
+<rect x="82" y="80" width="175" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="82" y="87" width="160" height="3" rx="1" fill="rgba(255,255,255,.09)"/>
+<rect x="82" y="94" width="168" height="3" rx="1" fill="rgba(255,255,255,.09)"/>
+<rect x="82" y="101" width="145" height="3" rx="1" fill="rgba(255,255,255,.07)"/>
+<rect x="82" y="108" width="155" height="3" rx="1" fill="rgba(255,255,255,.07)"/>
+
+<rect x="66" y="138" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(15,122,90,.4)" stroke-width="1.5"/>
+<rect x="66" y="138" width="4" height="70" rx="2" fill="#0f7a5a"/>
+<text x="82" y="158" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">CARTERA / EXCEL</text>
+<rect x="82" y="164" width="178" height="3" rx="1" fill="rgba(15,122,90,.45)"/>
+<rect x="82" y="171" width="55" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="141" y="171" width="55" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="200" y="171" width="55" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="82" y="178" width="55" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="141" y="178" width="55" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="200" y="178" width="55" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="185" width="55" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="141" y="185" width="55" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="200" y="185" width="55" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+
+<rect x="66" y="222" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(220,12,34,.35)" stroke-width="1.5"/>
+<rect x="66" y="222" width="4" height="70" rx="2" fill="#dc0c22"/>
+<text x="82" y="242" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#ff6f7d" letter-spacing="1">POLÍTICA DE CRÉDITO</text>
+<rect x="82" y="248" width="172" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="82" y="255" width="160" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="262" width="168" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="269" width="150" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="276" width="162" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="283" width="145" height="3" rx="1" fill="rgba(255,255,255,.05)"/>
+
+<rect x="66" y="306" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(184,41,60,.35)" stroke-width="1.5"/>
+<rect x="66" y="306" width="4" height="70" rx="2" fill="#b8293c"/>
+<text x="82" y="326" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#f08090" letter-spacing="1">ALERTAS DE FRAUDE</text>
+<rect x="82" y="332" width="168" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="82" y="339" width="155" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="346" width="162" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="353" width="145" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="360" width="155" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="367" width="140" height="3" rx="1" fill="rgba(255,255,255,.05)"/>
+
+<text x="172" y="408" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,.3)" text-anchor="middle">Documentos densos</text>
+<text x="172" y="422" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,.2)" text-anchor="middle">sin procesar</text>
+
+<line x1="278" y1="89" x2="513.9" y2="224.5" stroke="rgba(220,12,34,.4)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+<line x1="278" y1="173" x2="513.4" y2="251.8" stroke="rgba(220,12,34,.45)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+<line x1="278" y1="257" x2="513.0" y2="279.3" stroke="rgba(220,12,34,.4)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+<line x1="278" y1="341" x2="513.1" y2="307.0" stroke="rgba(220,12,34,.35)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+
+<polygon points="640,110 760,178 760,342 640,410 520,342 520,178" fill="url(#hexG)" stroke="rgba(220,12,34,.55)" stroke-width="2.5"/>
+<polygon points="640,128 748,194 748,332 640,398 532,332 532,194" fill="none" stroke="rgba(220,12,34,.18)" stroke-width="1.5"/>
+<polygon points="640,152 720,198 720,330 640,376 560,330 560,198" fill="rgba(6,16,31,.7)" stroke="rgba(220,12,34,.12)" stroke-width="1"/>
+
+<line x1="560" y1="280" x2="720" y2="280" stroke="rgba(220,12,34,.1)" stroke-width="1"/>
+<line x1="588" y1="202" x2="692" y2="358" stroke="rgba(220,12,34,.07)" stroke-width="1"/>
+<line x1="692" y1="202" x2="588" y2="358" stroke="rgba(220,12,34,.07)" stroke-width="1"/>
+
+<circle cx="640" cy="110" r="6" fill="#dc0c22" opacity=".9"/>
+<circle cx="760" cy="178" r="6" fill="#dc0c22" opacity=".7"/>
+<circle cx="760" cy="342" r="6" fill="#dc0c22" opacity=".7"/>
+<circle cx="640" cy="410" r="6" fill="#dc0c22" opacity=".9"/>
+<circle cx="520" cy="342" r="6" fill="#dc0c22" opacity=".7"/>
+<circle cx="520" cy="178" r="6" fill="#dc0c22" opacity=".7"/>
+
+<text x="640" y="242" font-family="DM Serif Display,Georgia,serif" font-size="54" font-weight="400" fill="white" text-anchor="middle" letter-spacing="-1">Claude</text>
+<rect x="584" y="254" width="112" height="28" rx="14" fill="rgba(220,12,34,.18)" stroke="rgba(220,12,34,.55)" stroke-width="1.5"/>
+<text x="640" y="273" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#ff8a96" text-anchor="middle" letter-spacing="4">AI</text>
+<text x="640" y="306" font-family="DM Sans,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,.45)" text-anchor="middle" letter-spacing="2">INTELIGENCIA ARTIFICIAL</text>
+<text x="640" y="322" font-family="DM Sans,sans-serif" font-size="9.5" fill="rgba(255,255,255,.28)" text-anchor="middle">aplicada al trabajo</text>
+<text x="640" y="340" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,173,183,.7)" text-anchor="middle">Banco Atlántida · 2026</text>
+
+<line x1="760" y1="228" x2="993.9" y2="100.4" stroke="rgba(15,122,90,.55)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+<line x1="760" y1="254" x2="993.4" y2="177.2" stroke="rgba(15,122,90,.6)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+<line x1="760" y1="280" x2="993.0" y2="257.7" stroke="rgba(15,122,90,.55)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+<line x1="760" y1="306" x2="993.1" y2="340.0" stroke="rgba(15,122,90,.5)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+
+<text x="1108" y="38" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" fill="rgba(78,203,160,.6)" text-anchor="middle" letter-spacing="2.5">RESULTADOS EN SEGUNDOS</text>
+<line x1="1000" y1="44" x2="1214" y2="44" stroke="rgba(15,122,90,.3)" stroke-width="1"/>
+
+<rect x="1000" y="54" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="54" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="75" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,75 1192,78 1199,70" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="74" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">RESUMEN PARA JUNTA</text>
+<rect x="1016" y="80" width="158" height="3" rx="1" fill="rgba(78,203,160,.28)"/>
+<rect x="1016" y="87" width="165" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="1016" y="94" width="145" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="101" width="158" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="108" width="132" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="1016" y="115" width="148" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+
+<rect x="1000" y="138" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="138" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="159" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,159 1192,162 1199,154" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="158" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">PLAN DE ACCIÓN</text>
+<rect x="1016" y="164" width="9" height="9" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1016" y="177" width="9" height="9" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1016" y="190" width="9" height="9" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1029" y="167" width="130" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="1029" y="180" width="118" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="1029" y="193" width="135" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+
+<rect x="1000" y="222" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="222" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="243" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,243 1192,246 1199,238" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="242" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">RESPUESTA A AUDITORÍA</text>
+<rect x="1016" y="248" width="158" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="1016" y="255" width="162" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="1016" y="262" width="142" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="269" width="152" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="276" width="135" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="1016" y="283" width="148" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+
+<rect x="1000" y="306" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="306" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="327" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,327 1192,330 1199,322" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="326" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">ANÁLISIS DE MORA</text>
+<rect x="1016" y="370" width="160" height="1" fill="rgba(255,255,255,.2)"/>
+<rect x="1020" y="348" width="15" height="22" rx="2" fill="rgba(78,203,160,.45)"/>
+<rect x="1039" y="354" width="15" height="16" rx="2" fill="rgba(78,203,160,.4)"/>
+<rect x="1058" y="344" width="15" height="26" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1077" y="338" width="15" height="32" rx="2" fill="rgba(78,203,160,.65)"/>
+<rect x="1096" y="350" width="15" height="20" rx="2" fill="rgba(78,203,160,.5)"/>
+<rect x="1115" y="344" width="15" height="26" rx="2" fill="rgba(78,203,160,.58)"/>
+<rect x="1134" y="336" width="15" height="34" rx="2" fill="rgba(78,203,160,.7)"/>
+
+<text x="1108" y="408" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="rgba(78,203,160,.65)" text-anchor="middle">Resultados claros</text>
+<text x="1108" y="422" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(78,203,160,.4)" text-anchor="middle">listos en segundos</text>
+
+<text x="640" y="470" font-family="DM Serif Display,Georgia,serif" font-size="20" fill="white" text-anchor="middle">De documentos densos a decisiones claras,</text>
+<text x="640" y="494" font-family="DM Serif Display,Georgia,serif" font-size="20" fill="#ff6f7d" text-anchor="middle" font-style="italic">en segundos, con Claude AI</text>
+
+<circle class="pr" cx="640" cy="280" r="220" fill="none" stroke="rgba(220,12,34,.07)" stroke-width="2"/>
+<circle class="gc" cx="640" cy="110" r="6" fill="#dc0c22"/>
+<circle class="gc" cx="640" cy="410" r="6" fill="#dc0c22"/>
+<circle class="fl1" cx="300" cy="224" r="4" fill="#dc0c22" opacity="0"/>
+<circle class="fl2" cx="302" cy="250" r="3.5" fill="#ff6f7d" opacity="0"/>
+<circle class="fl3" cx="298" cy="276" r="3" fill="#dc0c22" opacity="0"/>
+<circle class="fl4" cx="301" cy="302" r="3.5" fill="#dc0c22" opacity="0"/>
+<circle class="fr1" cx="980" cy="224" r="4" fill="#4ecba0" opacity="0"/>
+<circle class="fr2" cx="978" cy="250" r="3.5" fill="#4ecba0" opacity="0"/>
+<circle class="fr3" cx="982" cy="276" r="3" fill="#4ecba0" opacity="0"/>
+<circle class="fr4" cx="979" cy="302" r="3.5" fill="#4ecba0" opacity="0"/>
+
+</g>
+</svg>

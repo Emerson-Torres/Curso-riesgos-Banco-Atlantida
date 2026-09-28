@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude IA como Herramienta de Trabajo · Riesgos · Banco Atlántida · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg-deep:    #1b1819;
+  --bg-mid:     #2c2627;
+  --blue:       #a90a1b;
+  --blue-light: #ffadb7;
+  --gold:       #dc0c22;
+  --gold-light: #ff6f7d;
+  --teal:       #4ecba0;
+  --teal-dark:  #0f7a5a;
+  --red-light:  #f08090;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--bg-deep); color: #fff; min-height: 100vh; overflow-x: hidden; }
+
+.gold-bar-top, .gold-bar-bottom {
+  position: fixed; left: 0; right: 0; height: 3px; z-index: 100;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 25%, var(--gold-light) 50%, var(--gold) 75%, transparent 100%);
+}
+.gold-bar-top { top: 0; } .gold-bar-bottom { bottom: 0; }
+
+.bg-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(220,12,34,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(220,12,34,0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.bg-glow-blue {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 900px; height: 700px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(220,12,34,0.35) 0%, transparent 70%);
+  animation: glowPulse 5s ease-in-out infinite;
+}
+.bg-glow-gold {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 500px; height: 400px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(220,12,34,0.12) 0%, transparent 70%);
+  animation: glowPulse 3.5s ease-in-out infinite reverse;
+}
+@keyframes glowPulse { 0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.05)} }
+
+.page { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 60px 40px 80px; display: flex; flex-direction: column; align-items: center; }
+
+/* ── PROVIDER CREDENTIAL ── */
+.provider-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  animation: fadeUp 0.5s ease both;
+}
+.provider-logo { flex-shrink: 0; height: 42px; width: auto; display: block; }
+.provider-text { padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.18); }
+.provider-text { text-align: left; }
+.provider-name {
+  font-family: var(--serif); font-size: 17px; color: rgba(255,255,255,0.86); line-height: 1.25;
+}
+.provider-sub {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.14em; color: rgba(255,173,183,0.7); margin-top: 4px;
+}
+
+/* ── HERO ── */
+.hero {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 64px;
+  animation: fadeUp 0.7s ease both; animation-delay: 0.1s; opacity: 0;
+}
+.hero-left { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.year-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(220,12,34,0.4); border-radius: 4px; padding: 5px 14px;
+  font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--gold-light);
+  letter-spacing: 0.15em; text-transform: uppercase; background: rgba(220,12,34,0.06);
+}
+.year-dot { width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:blink 2s ease-in-out infinite; }
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-tagline { font-family:var(--serif); font-size:38px; line-height:1.1; color:rgba(255,255,255,0.92); }
+.hero-tagline em { font-style:italic; color:var(--gold-light); }
+.hero-sub-left { font-size:13px; color:rgba(255,255,255,0.38); line-height:1.6; max-width:260px; }
+
+/* Hexagon */
+.hex-wrap { display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0; }
+.hex-svg { width:260px; filter:drop-shadow(0 0 40px rgba(220,12,34,0.15)); animation:hexFloat 6s ease-in-out infinite; }
+@keyframes hexFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hex-ring { position:absolute;border-radius:50%;border:1px solid rgba(220,12,34,0.07);animation:ringPulse 4s ease-in-out infinite; }
+.hex-ring:nth-child(1){width:300px;height:300px;animation-delay:0s}
+.hex-ring:nth-child(2){width:340px;height:340px;animation-delay:0.8s}
+.hex-ring:nth-child(3){width:380px;height:380px;animation-delay:1.6s}
+@keyframes ringPulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
+
+.hero-right { display:flex;flex-direction:column;gap:16px;align-items:flex-end;text-align:right; }
+.hero-title-right { font-family:var(--serif);font-size:15px;color:rgba(255,255,255,0.35);letter-spacing:0.08em;text-transform:uppercase; }
+.hero-course-name { font-family:var(--serif);font-size:36px;line-height:1.1;color:rgba(255,255,255,0.92);text-align:right; }
+.hero-course-name span { color:var(--teal); }
+.inst-line { display:flex;align-items:center;gap:12px;justify-content:flex-end; }
+.inst-avatar { width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue) 0%,var(--teal-dark) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:600;color:#fff;flex-shrink:0;border:1.5px solid rgba(78,203,160,0.4); }
+.inst-info { text-align:right; }
+.inst-name { font-size:14px;font-weight:600;color:rgba(255,255,255,0.85); }
+.inst-title-sm { font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px; }
+
+/* Divider */
+.gold-divider {
+  width:100%;height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(220,12,34,0.4) 30%,rgba(220,12,34,0.6) 50%,rgba(220,12,34,0.4) 70%,transparent 100%);
+  margin-bottom:52px;position:relative;
+  animation: fadeUp 0.6s ease both; animation-delay: 0.3s; opacity: 0;
+}
+.gold-divider::after { content:'';position:absolute;top:50%;left:50%;width:9px;height:9px;transform:translate(-50%,-50%) rotate(45deg);background:var(--bg-deep);border:1.5px solid var(--gold);opacity:0.75; }
+
+.section-label {
+  display:flex;align-items:center;gap:16px;width:100%;margin-bottom:32px;
+  animation: fadeUp 0.6s ease both; animation-delay: 0.4s; opacity: 0;
+}
+.section-label::before,.section-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.08);}
+.section-label span{font-family:var(--mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.30);}
+
+/* ── MODULES ── */
+.modules-wrap { width:100%;margin-bottom:64px; animation: fadeUp 0.7s ease both; animation-delay: 0.5s; opacity: 0; }
+.modules-row1 { display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px; }
+.modules-row2 { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
+
+.mod-card {
+  background:rgba(44,38,39,0.6);border:1px solid rgba(220,12,34,0.25);border-radius:12px;padding:28px 26px;
+  position:relative;overflow:hidden;cursor:default;
+  transition:transform 0.25s ease,border-color 0.25s ease,background 0.25s ease;
+}
+.mod-card::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:12px 0 0 12px; }
+.mod-card::after  { content:'';position:absolute;top:0;left:0;right:0;height:1px;opacity:0;transition:opacity 0.25s; }
+.mod-card:hover   { transform:translateY(-3px);background:rgba(44,38,39,0.85); }
+
+.m1::before{background:var(--blue-light)} .m1::after{background:linear-gradient(90deg,var(--blue-light),transparent)} .m1:hover{border-color:rgba(255,173,183,0.45)} .m1:hover::after{opacity:1}
+.m2::before{background:var(--gold)}       .m2::after{background:linear-gradient(90deg,var(--gold),transparent)}       .m2:hover{border-color:rgba(220,12,34,0.45)}  .m2:hover::after{opacity:1}
+.m3::before{background:var(--teal)}       .m3::after{background:linear-gradient(90deg,var(--teal),transparent)}       .m3:hover{border-color:rgba(78,203,160,0.45)} .m3:hover::after{opacity:1}
+.m4::before{background:var(--gold-light)} .m4::after{background:linear-gradient(90deg,var(--gold-light),transparent)} .m4:hover{border-color:rgba(255,111,125,0.45)}  .m4:hover::after{opacity:1}
+.m5::before{background:var(--red-light)}  .m5::after{background:linear-gradient(90deg,var(--red-light),transparent)}  .m5:hover{border-color:rgba(240,128,144,0.35)} .m5:hover::after{opacity:1}
+
+.mod-num {
+  font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:16px;display:flex;align-items:center;gap:8px;
+}
+.mod-num::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.08);}
+.m1 .mod-num{color:var(--blue-light)} .m2 .mod-num{color:#ff4d5c} .m3 .mod-num{color:var(--teal)} .m4 .mod-num{color:var(--gold-light)} .m5 .mod-num{color:var(--red-light)}
+
+/* Custom SVG icon wrapper */
+.mod-icon-wrap {
+  width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.m1 .mod-icon-wrap{background:rgba(255,173,183,0.1);border:1px solid rgba(255,173,183,0.2);}
+.m2 .mod-icon-wrap{background:rgba(220,12,34,0.1);border:1px solid rgba(220,12,34,0.2);}
+.m3 .mod-icon-wrap{background:rgba(78,203,160,0.1);border:1px solid rgba(78,203,160,0.2);}
+.m4 .mod-icon-wrap{background:rgba(255,111,125,0.1);border:1px solid rgba(255,111,125,0.2);}
+.m5 .mod-icon-wrap{background:rgba(240,128,144,0.1);border:1px solid rgba(240,128,144,0.2);}
+
+.mod-title { font-family:var(--serif);font-size:17px;color:rgba(255,255,255,0.88);line-height:1.3;margin-bottom:10px; }
+.mod-desc  { font-size:12px;color:rgba(255,255,255,0.38);line-height:1.6; }
+.mod-corner { position:absolute;bottom:16px;right:20px;font-family:var(--mono);font-size:48px;font-weight:700;opacity:0.04;line-height:1;pointer-events:none;user-select:none; }
+
+/* ── NAVEGACIÓN DEL CURSO ── */
+a.mod-card { display:block;text-decoration:none;color:inherit;cursor:pointer; }
+a.mod-card:focus-visible, .hero-cta:focus-visible { outline:2px solid var(--gold-light);outline-offset:3px; }
+.mod-status {
+  display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+  font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+}
+.mod-status.go { color:var(--blue-light); }
+.mod-status.go svg { transition:transform 0.25s ease; }
+a.mod-card:hover .mod-status.go svg { transform:translateX(4px); }
+.mod-status.soon { color:rgba(255,255,255,0.28); }
+.mod-card.is-soon { opacity:0.72; }
+.mod-card.is-soon:hover { transform:none; }
+
+.hero-cta {
+  display:inline-flex;align-items:center;gap:10px;margin-top:6px;
+  padding:11px 20px;border-radius:8px;
+  background:var(--gold);color:#fff;text-decoration:none;
+  font-size:13px;font-weight:600;letter-spacing:0.02em;
+  box-shadow:0 8px 24px rgba(220,12,34,0.35);
+  transition:transform 0.2s ease,background 0.2s ease;
+}
+.hero-cta:hover { background:var(--blue);transform:translateY(-2px); }
+
+/* ── BANNER DEL FLUJO ── */
+.flow-banner { width:100%;margin-bottom:64px; animation: fadeUp 0.7s ease both; animation-delay: 0.6s; opacity: 0; }
+.flow-banner svg { box-shadow:0 20px 60px rgba(0,0,0,0.35); }
+
+/* ── INSTRUCTOR ── */
+.instructor-section { width:100%; animation: fadeUp 0.7s ease both; animation-delay: 0.65s; opacity: 0; }
+.instructor-card {
+  background:rgba(44,38,39,0.7);border:1px solid rgba(220,12,34,0.25);border-radius:16px;padding:36px 40px;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;position:relative;overflow:hidden;
+}
+.instructor-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(220,12,34,0.5),transparent);}
+.instructor-avatar {
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--teal-dark) 100%);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:22px;font-weight:600;color:#fff;
+  border:2px solid rgba(78,203,160,0.35);box-shadow:0 0 30px rgba(220,12,34,0.4);flex-shrink:0;position:relative;
+}
+.instructor-avatar::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(220,12,34,0.15);}
+.instructor-presented{font-family:var(--mono);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,173,183,0.7);margin-bottom:8px;}
+.instructor-name{font-family:var(--serif);font-size:30px;color:rgba(255,255,255,0.92);margin-bottom:6px;letter-spacing:-0.02em;}
+.instructor-role{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.5;}
+.instructor-role strong{color:rgba(78,203,160,0.7);font-weight:500;}
+.instructor-tags{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+.tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:0.08em;padding:5px 14px;border-radius:4px;border:1px solid;white-space:nowrap;text-transform:uppercase;}
+.tag-gold{color:var(--gold-light);border-color:rgba(220,12,34,0.35);background:rgba(220,12,34,0.08);}
+.tag-teal{color:var(--teal);border-color:rgba(78,203,160,0.35);background:rgba(78,203,160,0.08);}
+.tag-blue{color:var(--blue-light);border-color:rgba(255,173,183,0.35);background:rgba(255,173,183,0.08);}
+
+/* ── FOOTER ── */
+.footer { margin-top:56px;text-align:center; animation: fadeUp 0.6s ease both; animation-delay: 0.8s; opacity: 0; }
+.footer-quote{font-family:var(--serif);font-size:20px;color:rgba(255,255,255,0.75);margin-bottom:6px;}
+.footer-quote em{color:var(--gold-light);font-style:italic;}
+.footer-sub{font-size:12px;color:rgba(255,255,255,0.25);font-family:var(--mono);letter-spacing:0.08em;}
+
+.particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;}
+  .hero-left,.hero-right{align-items:center;text-align:center;}
+  .hero-sub-left{max-width:100%;}
+  .inst-line{justify-content:center;}
+  .hero-course-name{text-align:center;}
+  .modules-row1{grid-template-columns:1fr;}
+  .modules-row2{grid-template-columns:1fr;}
+  .instructor-card{grid-template-columns:1fr;text-align:center;}
+  .instructor-tags{align-items:center;flex-direction:row;flex-wrap:wrap;justify-content:center;}
+  .provider-bar{flex-direction:column;text-align:center;}
+  .provider-text{text-align:center;}
+}
+</style>
+</head>
+<body>
+<div class="gold-bar-top"></div>
+<div class="gold-bar-bottom"></div>
+<div class="bg-layer">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-blue"></div>
+  <div class="bg-glow-gold"></div>
+</div>
+<canvas class="particles" id="particleCanvas"></canvas>
+
+<div class="page">
+
+  <!-- ── PROVIDER CREDENTIAL ── -->
+  <div class="provider-bar">
+    <img class="provider-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAABACAYAAAD1Xam+AAAVQElEQVR42u1d7Vkjy7F+Ww//GZwAgwO4K5wAw0kAOQJYJwDrAAzcAC7gAO6yCXghgYtI4B6RgCUlYLQJbPmHeqxWq6q6emYEnCP188wDy85Hd3V9vFVdXe2IaADgK4AC6UYAnP8J4XcX3XsP4AuAGTaz7QPoAzjwvxcASv8zpvnMXyN/DQFMsW3btqbmiGjsGZIT3pQSkIQ+/tsXAHcbSmNK0DRF62cA37wi3bZt67TteKtEsWJQGNMJ/5YY3RnRxe9ZATgBQUH5t/NX5a99ANdblt22LlsvYLTYYoFRDJRgZI6hoVi4jUBZAj1cQqnGz1wBuNyy7LZ1rQBIEGDHWHcNDZCgBEh5fpOUAEcXp9CSa1feXdu2bevMBXAJZowZGBmuAW0RgOhWvXj//jVylT55yC+1060rsG1dKgAIlicVBOSsWEqRbJXAoj0ognwO4BZ8wPWwwXdr1DBD96sxhb/W8e6635MP3MfflQJIQX7tnpQy2DY7be4ADAAcMYrjvwQGP8F8ubEIfu4L6GPkr2+YLzVahWgQIJRCcEdePbr5BuAJ9mXM0qObKuh/2OeZVwQjAI9egUrtCMCZfxfXx5F/1yM2fXWFiH7SvP0Mfqfgb9K/U/8Xvu+KiLChFzF0+klEl4nn7olv/2Turah5+05E+0o/Kn/PazSnPw08MCaigYFGN8w749/jv3HvKYnoiekXMe8K+1huKn/uKH49KX69M0B/LQh47q1J21ZbhdoyvPxGIJ4FGe0KyIGzqJME2tDiMgNvcQ8F2j0pCIaUOI/z1vcfAI59vINrX7215mjjBAQzERDEExY5LUjEscLn/h/AL56HNj4G4AzMS4YgnxMm4sj7t5aYgsTMTmHIFz+R9wrTvSfctwh/6YWSe8+DoAilb2p5Gy743gXmqwwx7LeOS+IJ5997zLzjzCD8nMHhFMANFjktztjX+m97AL5jnq25Ua3HCJYlcu8SwhhbnfCeA8UackthZBSeelL73pccAhh7tFF+AGtP0QXFlw8tGQVjm3m/lVMArwblqynoc6E/JChgKzpE4NfHzZLXMPUCPwtoMWPePxC+TQYDUivBwSYqgBjOpYRMYgJiGEALKqbyBKTEIqcwJDGW7dYrgpsgKPZeiiC2ij8jIf+Xt/ClAFuvFLh/DeAzgD97OP9Hb9lccB16ZMQp/EIQUsmKXnhl7vx3DgXlVLc+8+9S+M7YI4Y9/40D//sfPFSP08pPBIMBAH/3tDgA8CffbynB7XyTg4C5zRpoiYOAZw2CilwQjTIDkuQDPqfvHAS00DD++ysRnXfYp1ehHwMmqMb16acQOCyCd8f3x0HPc2Xs+5nj+VWg21fh/ismUP3T932jgoA9g/9qgbYQgjVtAmMuoy/afS5CBPceDRQfOEAYo54B2m2mqpfsKn9NBHhcGNBL/e8fgisyFJADF3zj5uoZ+Tsg+wIilRDJvTCu4p1R4rvFAKBAKBihOgywPyWwZHQJuP6SIkDxty4A/PpOk00Ziqv++zBDaRV+fF89lH7119jHFp4COO6Mc8b50TPh3h+Me8HNaSm4c5NMepYK/aR3TZQYxkYFAqVlQEoE6CxR71RuOyUivZr/ycUIUu+K31F6wTpG+0wzK020FQFpi3X97wsvuMfKd859YG1Pob11lycS/bSiGel7BfjVity5KBT6virPTZgYhNtEBECC8LoGbgEZhZcURdDEPeAYlBQBCJXA0xu4A1xA8zqitfNBqs8BBI6DmpUSqLr0Ac89QYkTE/C17tqkTGXHfd9lPJvTdpVv5LoSG7dprSdobAvkt7gD2t84oXCZk5FSGKk+klcC39/Yx5fayPunhwJMrd2XuFVYrOGncjMmDVCdxg9thCsXieTQkxqMy2HD0td7HVlTShCfEhPkEkJMwqQ55f8d+CVJru8V1rvX3hrnCINpt1hNrqkV1j4D/Tm6zTzSOMZ8Cc15H/c5U8nmCAYHxckgqJTpXiARi0BDZEebpgAo4bM2sWSWiL5lsrU0U8f8TgKSkZRHGDC8gr4O3oXVt7hYYTDNGqiqBPp+8eMaCoKSs/kr5dNLyk6KG0wFF2GvQwWwa1AOMf9MN00BSMLCCYlWAEQTbFJ8Yg0xNI1FaJZHK3Ry8wbw3wqlC0UIpUBY/N6nDKXUhQsjKQpKCG7Y9/2GCoDLtDxQaFsISHS2iTEALvJs3RMgTTxlME3uNmKJuVzC8lBCIVXQi3G0dQFyCqQcJdwvKa7y3tuwUzGfukmxiCoTus+CeEl8HQnPVIoxmWyiAiBFWCy+O0GO7FuCL5RwFygBS63C4AwW6nKNQmEJcpYeiQyUcYyM8ZSyYyVGHT4zEmhUYJ7DsJ/h24+E+y4YGhQC0iP/no1CADuQd45p69IatLW4ALm+peRitClAIn2/RgHDjq1/bAmvsJrbX2CxrCWNh2PSqReY+P4Hfz0H7/sUxTpSu+xy4b+0pyTmgTouUTD3n3gFOGToU/kxfQ7+/ozljTz1+wrME6Dq9xQMwnBRn7BpCsCypdMCxV0D/5KQTkSKd5lpgUGrn6ttZXVY7Cbs2vfnxl9m+OgEPiX4EfOVgHhcu1jdcmtFd1DoY3FFLC7PHYC/KUamUlBS2O79e/aEOa4MSslheZv6RrkAkjBqW345oW1TDpwMlp2UYBoZYTEMMYoBuksOspZLtyRBSQeE3GKR9ZaKvWgrMM4Y1MsZu4Ycb7G6GqDRQwoUzjBf7iSGXywrQ/DPTzdVAUhClnOSjTNA+JRLkFpNcIKfb0UEGgJAZDn7a3IBJIXpEs/eRbA3Dqj9laEhZSidIWwVcaxLt9LPWHD/jOXNSZRQmFK+/h0W2ZUpRBgrtL9jtRjKRikA15CJAVvg0MIonP+YW35cQhUpIeAYY9ARjV8U9JRaFvzhLf4x+AzAGAYfeJRgVcpTb4WP/TUzIpkcxJO6f+S/fQ9+12FMn5lXVoVgxQ/8/0tnW8RK7xcDbX+3zRGRlpdviQdYJvk60LBnmEd5Lb6lpbxTytekDAUXR9oPO6R1ieVDQfcFRfTqBX+E5jXqCo9g+liu6vMDi8NHJ0hHvOv3cDSUYiR9QTgnSAcZy6DfMU2mQb9zaPApig3U9B1iw5b8UgqgrRBpyuEKixr4oQKQlMBbrGWTEusgzyR72LZt26AYQG7QKNc/BKN1tSKjlPHeVL+0PAUOeu5iw7aGbtvmtZ1Ma6tZTYDPeY/fP/Ro4AR5kfZSEN5Un2JfMudUo0NsYGR42zZLAaRgvrROr/nmqaj/FfKjrqV3H/4m9C9nA5NLIIIwkWTb2sU9LgUUeP0bHU94psXMG7Qvv2UFkLP27xKKgoSfXfjzE680ZgD+B/kJSzAohnicb6EACswTj2qE8wz92Cup3YLf/XaNdLDr3Mc7YiX6iHaHZVxiOQmJAmT1Xk2ik+WYtHA8dRJXH4s8hLbtDKslzhzmm7qe16UAJGGV4LJlG3BOFZgmE3iC+UYPLZ04lVQkJQOF79ldMzP2MS9GUgbfPMd86TC1LBe3k+g9IWOnFMAF+IzEaQsFcOqvmPZf8L4n8Jxg+cxEBIo31SpBNvod9e004Gtq0L/s1jMigJwgYLz23raSDNcekF5D14J8cZzCun+hazgZC394uMl3/LbbFTMH1/g46bZNjFMhuJ3FGvu3Vj7sJT7MRc8tGV5xALBrAj0Kk5iTDfgeQh/DyVKJTVRYzeFfF2N3PX7uNKY7fJxsu6ZzP8ZqBSOAL5HetlkO6ulEAcwUInCVd5zCtFL0vd9xv2cNmTpV/kwa6zr8/oEREr6lEHdhdeqxTbB8cOtHEf6U8dLaN8alnGE9mYRvUp9wB4stmRKhuijSWHmLMFmDAogVUJPDON+6iMYA/DbYGG1V3l+dZtK/TeIWWrpuM+ilyz8i/LfS686jz34gMw9YTw2BnOIxrRVAymJqy35aGm/IkDeYb/xYB6Fcy/u7KIed004SiCn8/Qz5EeY2u/fejPk+sELQ2gTrTSF2giu+NgXwgtWTYmJhsRYA1eoDDLwS+NKx8FuUgWU/e2qH4Lrgv4RYwgIl15k0Cd9xwyj5ETMP1EBxlJ53djHfhLOP5Xp7ISp4wXyZbdiAZkdYHCZaRPGFmRfIF8yXy6aZdApXX04TdLoR3Nlno4tTYbE/IaRTPYYiU/72AzRSYnmvSay0avqPYgUwgZyP39Zqxu+skygePJQaQ04BDp+dQa9qm0IsztDnt7J2A8Faf/EMFudR5LgBHHr7lGnlrJbnFunTdMNxnGCexDX1Cu3eICzn/uduRv+HHjVNjeOsf/aRLmTaB78UODHM+Q2Wz0PMOcac68t3QxwpDCiHyuA/p2H1MD8jL3d/v2QlHdL1+EsfNHnynRgHP+Or/vu/GGZrWrI8DgK9tf9/IgjJIxZrvXGU+nMD+N80mERGF2AMe4JVyBMl5pvBtNqL3z1/1LESp8wdx+wjpAPPTWpNcq5tigaXAP6B5RUfraAtd48TYi1k5IdY/sY12ulhOcGgicBblgUl60KK/8sRsolbYGHMLnxDK2QeMH0ceWU3FL591KFP2/T4tbj9MLpMEn9cQi75NTAgG60gTAE9j8JaSSrFwyn+OcNqPoQUYyHklY2fIl1ExglKkzyC2+8F/gcZ/Ooc2A9FMXDLbJoP7sBvzSWD1UrlMXBWYV2ooBK0/TCArxw9KthyKbSTkpooB0oEwzSFQYrg1j9zKzCnYDJF/nFloNc6A5+XGWOypuTH9CeFB0hBFwWAi3oz0EMAsaXItLTcZi3G2fXZADHRLJWJLOXEmx5RZWmnwvgeg2DSjIG99bN3Daz/PRZ18+vvjo2BUpdQABMsqhRPsSi2UUPUXS+ENZSPx903xmRcQJ8X/806v2SA1aPG62cGStAx5rdw30NNh0mLuR6Az+sPYxWPQWyr9DJYGPl5guXCLtOovzUfVZDzSQYgIhBRRen2k+wt596chuCKvxdeXD+a9Okq+mabqxS+8Rrddy/Q8inx/nFEi/r3ytC3sfDNs47GXin032foJN1bCXR9jcZc//xqGGt9r2WsTwyPkfCdG2Ec2pw8MeMgIrpsSf9LgTeoF2ijUQIKWpfIUnkBVsiZm63FuRUuAVGhuAddI4BK+N4zE8XmUEmOG9B0M5Yl+tykDdEu9bqm1UywhA/CPJcNYllW+qZ4pC98N7Xr0GUEJK3tm8AbtBNBxduEIKfq81tr+1EioGJd37fEDqwlx9ya/f9Toc8P0X0PWC6ZFtLpDPpmmtRybq77kEOHwq9w1PkAJVbP4LO6edLcvCYCYrm7VqmhsrTwyCdGTlzg7uXMoTXAXGGRYxDTn43p7URa4krwQVJ+fiqi7oT7NEVgLUaaw1RSpSLuu11H/ytmgoHVAzxn3kJwAawT5O+my632lBsMO/J8UyF94Mo64ys56EKrWJUr/KQoxJj3JRQj8anVsJxheXu8dNTfioz2Isa7Rn7tv1T0N3Xgh1uzFXZG5YA1wd8Y/ocTPA0URG01S8j75VNuQNs6DJQBceso9zBa3ZBWhAjtXBOX+f+5CCDHBUjdWyrPjjPHrX3rq0fulRI4dIrCWnIB4K3LqfdfnFHotc03TZYUrZNv1ZSpUmfS2Lp0A06Fb5dYzsSUYiHxsWV3HQhNSjBSNDgDv8zlWvahyThchrJPKf6PZFRcQvmeCYJulV23w7z4M+bZgdbOpPxqtJiUlO9v6aO14Mm6Wgl5PZoMFok7tuzOICy5UDvXKl4qLsPEI4MXLNK4vzewpE39Yeu728x/KkhNyEsaykEBBRZbkLmxjjAPLo897R2A/+X4jVMAIyzy0kkJpOVMVJPdhCk00dRvy2G8ruG/VdlpdDnyDDDLEOqm1lZ6vh/B3PC+8BAYTSCsrkhTtOg6pk0KLSFSgK5FrCF+1gk8wMnRMVZXGUop7tUTOnDrrYxTrGgObNYSGyyZg1ZNTAlkQAklsI5VgFPF8lDC8ktW6szI1Ova0VgKCuMV+q64GK66DOGkDMFZ59hhdJNmQnzrsMF747EcCrI3hH23pYuDgHG7wOqOLe5cuxRzWyyBJYZgje5zSkGCuTkn5LaF/2RwUwC5FmP4/MkaoC1lCF0hCNpLBtpp2qcUVM5BDYTmBif1/plAg6M1jn2izBdr+HqJF3/GYtmJYFseTDFjTrHRHKbRNoyk4gJdTEIu/D8G8EfM1825q8QigSbuawV+NYBTrmWLoFMqkh7TtzS+v8lZjRZIb0UAHK8UDWkkfWcIfiPUGWwnTuUsyYY7Lbm2K8lcz9CRL1jd0SRpTun4bsumnbb+rGXDkmWTUtvgkAT/XaSph1iumxdfU+jnA5waA3nnGQwXt/jZIogTcQJQ+uBgYVCEZGD+nIxMMsRPgOVNNOF8X8B+FJylT8/gk5MKP/enWBRQKT2q+2SMQ70KtKmwum2+fj/L1z3jgK+9xRpnxAU4TS4l7kh7s7s6j1BTSC7DfWkD/0M3xeqnPSpjHkR/GwnC3MdyvYWvzPtGwjfCZ0P/fqIo8it/b/09AvB/DecrBwJb+WXKBBjJC2NIp+8NA4B1exDcgPpAkXv/vZpWD5BrH8TtRYmD3fqf42De7iX69DKIPPSQ9Rr2AiIOtnqBLsNyW3wxTZid0lfOArWF/5wmfzS+YxL5dRT5kkU0Pxq9yuDiGEraQlozbBFYyBlW9zAQ8719wUe3lNROpYen0J90/69Rf+JIfd3vT0alowUBr5BXSUsrChLL4nMCsZaa5a+RRK8BY195H/Ub+DoC1mCSFO1OFQtJBc6svqPlLMQ2LsCpMuZhxnseIW/SCb/xTVAWnCKI260giNr23c/R9zR0JQVoZ5CXM5u6YynBDOnkFKRaZHxPanfe+lpzBqQs2hfBNc8JdrJoqNeQuSc+mHHgGeEhYKBUuaPUhDrmIqzWeHvNsPpocG+b/eAh/HcM/J9lvOtBodEgsjgDBuLGYywEa3XM0Ngpz04Q1JaDvDeDE7CZR5IHRjcgB41ZovPhWKWg3h66KZf/GcB/ZwbzwjjCLwIPjDBfDpwkUBKnDGv6H+904Ot+w2K7YeWtRF2tVIKc2i5Ajkg/sFrF9i+YJyvtI51sIe0E1BKUnpEuXKkpAMnK32a+awj7uXD1mYIVFgeOln48Ez/xI+HZkX/2zLsXn7wQhEVZh1hOQpp4Ia6wiG6H0D/+7giL6rSpMUPgA66NhWdGigE78H0+jfo8Vej0YvTJOdR87+l0guUKvsTQ6cXfnzIUo2AcR4Hs7QWCPoveOwpp9W+GhuiW5b5GTQAAAABJRU5ErkJggg==" alt="Banco Atlántida" width="168" height="42">
+    <div class="provider-text">
+      <div class="provider-name">Vicepresidencia Adjunta de Riesgos</div>
+      <div class="provider-sub">Programa de IA aplicada al trabajo</div>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="year-badge">
+        <div class="year-dot"></div>
+        2026 · El Salvador
+      </div>
+      <h2 class="hero-tagline">
+        De documentos densos<br>a <em>decisiones claras</em><br>en segundos
+      </h2>
+      <p class="hero-sub-left">Domina el asistente de inteligencia artificial más sofisticado del mercado y llévalo a los informes, análisis y reportes del día a día en Riesgos.</p>
+      <a class="hero-cta" href="Modulo1_Bienvenido_a_Claude_Riesgos.html">
+        Comenzar Módulo 1
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <!-- Hexagon -->
+    <div class="hex-wrap">
+      <div class="hex-ring"></div>
+      <div class="hex-ring"></div>
+      <div class="hex-ring"></div>
+      <svg class="hex-svg" viewBox="0 0 280 310" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hexBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a90a1b"/>
+            <stop offset="100%" stop-color="#1b1819"/>
+          </linearGradient>
+          <radialGradient id="innerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#dc0c22" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#dc0c22" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <polygon points="140,18 258,82 258,210 140,274 22,210 22,82" fill="url(#hexBg)" stroke="#dc0c22" stroke-width="2.5" stroke-opacity="0.55"/>
+        <polygon points="140,34 244,96 244,198 140,260 36,198 36,96" fill="none" stroke="#dc0c22" stroke-width="1.5" stroke-opacity="0.18"/>
+        <polygon points="140,58 218,104 218,198 140,244 62,198 62,104" fill="rgba(27,24,25,0.75)" stroke="#dc0c22" stroke-width="1" stroke-opacity="0.12"/>
+        <ellipse cx="140" cy="155" rx="100" ry="90" fill="url(#innerGlow)"/>
+        <line x1="62" y1="155" x2="218" y2="155" stroke="#dc0c22" stroke-width="0.8" stroke-opacity="0.1"/>
+        <line x1="96" y1="96" x2="184" y2="214" stroke="#dc0c22" stroke-width="0.8" stroke-opacity="0.07"/>
+        <line x1="184" y1="96" x2="96" y2="214" stroke="#dc0c22" stroke-width="0.8" stroke-opacity="0.07"/>
+        <circle cx="140" cy="18" r="5" fill="#dc0c22" opacity="0.9"><animate attributeName="opacity" values="0.9;1;0.9" dur="2.5s" repeatCount="indefinite"/></circle>
+        <circle cx="258" cy="82" r="5" fill="#dc0c22" opacity="0.65"/>
+        <circle cx="258" cy="210" r="5" fill="#dc0c22" opacity="0.65"/>
+        <circle cx="140" cy="274" r="5" fill="#dc0c22" opacity="0.9"><animate attributeName="opacity" values="0.9;1;0.9" dur="2.5s" begin="1.2s" repeatCount="indefinite"/></circle>
+        <circle cx="22" cy="210" r="5" fill="#dc0c22" opacity="0.65"/>
+        <circle cx="22" cy="82" r="5" fill="#dc0c22" opacity="0.65"/>
+        <text x="140" y="138" font-family="DM Serif Display,Georgia,serif" font-size="46" fill="white" text-anchor="middle" letter-spacing="-1">Claude</text>
+        <rect x="100" y="148" width="80" height="24" rx="12" fill="rgba(220,12,34,0.18)" stroke="#dc0c22" stroke-width="1.5" stroke-opacity="0.55"/>
+        <text x="140" y="165" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600" fill="#ff8a96" text-anchor="middle" letter-spacing="4">AI</text>
+        <text x="140" y="196" font-family="DM Sans,sans-serif" font-size="8.5" font-weight="600" fill="rgba(255,255,255,0.4)" text-anchor="middle" letter-spacing="2.5">INTELIGENCIA ARTIFICIAL</text>
+        <text x="140" y="212" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,255,255,0.25)" text-anchor="middle">aplicada al trabajo</text>
+        <text x="140" y="234" font-family="DM Sans,sans-serif" font-size="8" fill="rgba(255,173,183,0.7)" text-anchor="middle">Banco Atlántida · 2026</text>
+        <circle r="3.5" fill="#dc0c22" opacity="0">
+          <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M22,146 L140,18"/>
+          <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="0s"/>
+        </circle>
+        <circle r="3" fill="#dc0c22" opacity="0">
+          <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.9s" path="M22,164 L258,146"/>
+          <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="0.9s"/>
+        </circle>
+        <circle r="3" fill="#4ecba0" opacity="0">
+          <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.5s" path="M258,146 L140,274"/>
+          <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <circle r="3.5" fill="#4ecba0" opacity="0">
+          <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.4s" path="M258,128 L22,164"/>
+          <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="1.4s"/>
+        </circle>
+      </svg>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-title-right">Curso de Riesgos · 15 horas</div>
+      <h1 class="hero-course-name">Claude IA<br>como <span>herramienta</span><br>de trabajo</h1>
+      <div class="inst-line">
+        <div class="inst-info">
+          <div class="inst-name">Ing. Emerson Torres</div>
+          <div class="inst-title-sm">Ing. en Ciencias de la Computación</div>
+        </div>
+        <div class="inst-avatar">ET</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gold-divider"></div>
+  <div class="section-label"><span>Programa del curso · 5 módulos · 15 horas</span></div>
+
+  <!-- ── MÓDULOS ── -->
+  <div class="modules-wrap">
+    <div class="modules-row1">
+
+      <a class="mod-card m1" href="Modulo1_Bienvenido_a_Claude_Riesgos.html">
+        <div class="mod-num">Módulo 01 · 2 h</div>
+        <div class="mod-icon-wrap">
+          <!-- Ícono: chat/conversación -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#ffadb7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="10" r="1" fill="#ffadb7"/>
+            <circle cx="12" cy="10" r="1" fill="#ffadb7"/>
+            <circle cx="15" cy="10" r="1" fill="#ffadb7"/>
+          </svg>
+        </div>
+        <div class="mod-title">Bienvenido a Claude: tu primera conversación</div>
+        <div class="mod-desc">Tu cuenta, la interfaz y los modelos disponibles. Tu primera conversación con un caso de riesgo, desde cero.</div>
+        <div class="mod-status go">Entrar al módulo
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+        </div>
+        <div class="mod-corner">01</div>
+      </a>
+
+      <div class="mod-card m2 is-soon">
+        <div class="mod-num">Módulo 02 · 3 h</div>
+        <div class="mod-icon-wrap">
+          <!-- Ícono: prompt/lápiz con chispa -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20h9" stroke="#dc0c22" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#dc0c22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19 6l-2 2" stroke="#dc0c22" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="mod-title">El Arte del Prompt Regulatorio</div>
+        <div class="mod-desc">Instrucciones con terminología regulatoria bancaria, análisis de cartera, documentos de comités e informes para Junta Directiva.</div>
+        <div class="mod-status soon">Próximamente</div>
+        <div class="mod-corner">02</div>
+      </div>
+
+    </div>
+    <div class="modules-row2">
+
+      <div class="mod-card m3 is-soon">
+        <div class="mod-num">Módulo 03 · 3 h</div>
+        <div class="mod-icon-wrap">
+          <!-- Ícono: documento con análisis -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#4ecba0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="14 2 14 8 20 8" stroke="#4ecba0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="8" y1="13" x2="16" y2="13" stroke="#4ecba0" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="8" y1="17" x2="13" y2="17" stroke="#4ecba0" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="mod-title">Claude con documentos regulatorios</div>
+        <div class="mod-desc">Reportes para la SSF, metodologías de reservas, políticas de riesgo, bases de cartera e informes del Comité de Riesgos.</div>
+        <div class="mod-status soon">Próximamente</div>
+        <div class="mod-corner">03</div>
+      </div>
+
+      <div class="mod-card m4 is-soon">
+        <div class="mod-num">Módulo 04 · 6 h</div>
+        <div class="mod-icon-wrap">
+          <!-- Ícono: maletín/área de trabajo -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="7" width="20" height="14" rx="2" stroke="#ff6f7d" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#ff6f7d" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="12" y1="12" x2="12" y2="16" stroke="#ff6f7d" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="2" y1="13" x2="22" y2="13" stroke="#ff6f7d" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="mod-title">Claude en tu área de Riesgos</div>
+        <div class="mod-desc">Práctica por perfil: Riesgo Integral, Riesgos Financieros, Crédito de Personas y Fraude Transaccional.</div>
+        <div class="mod-status soon">Próximamente</div>
+        <div class="mod-corner">04</div>
+      </div>
+
+      <div class="mod-card m5 is-soon">
+        <div class="mod-num">Módulo 05 · 1 h</div>
+        <div class="mod-icon-wrap">
+          <!-- Ícono: escudo/uso responsable -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#f08090" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="9 12 11 14 15 10" stroke="#f08090" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="mod-title">Uso responsable en Riesgos</div>
+        <div class="mod-desc">Datos de cartera y clientes, información regulatoria sensible y reportes para entes supervisores.</div>
+        <div class="mod-status soon">Próximamente</div>
+        <div class="mod-corner">05</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── FLUJO: DOCUMENTOS → CLAUDE → RESULTADOS ── -->
+  <div class="section-label" style="animation-delay:0.55s"><span>Cómo trabajarás con Claude</span></div>
+  <div class="flow-banner">
+<style>
+@keyframes pulse{0%,100%{opacity:.06}50%{opacity:.16}}
+@keyframes glow{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes flowL{0%{opacity:0;transform:translateX(0)}40%{opacity:1}100%{opacity:0;transform:translateX(120px)}}
+@keyframes flowR{0%{opacity:0;transform:translateX(0)}40%{opacity:1}100%{opacity:0;transform:translateX(-120px)}}
+.pr{animation:pulse 4s ease-in-out infinite}
+.gc{animation:glow 2.5s ease-in-out infinite}
+.fl1{animation:flowL 2.8s ease-in-out infinite}
+.fl2{animation:flowL 2.8s ease-in-out .6s infinite}
+.fl3{animation:flowL 2.8s ease-in-out 1.2s infinite}
+.fl4{animation:flowL 2.8s ease-in-out 1.8s infinite}
+.fr1{animation:flowR 2.8s ease-in-out infinite}
+.fr2{animation:flowR 2.8s ease-in-out .6s infinite}
+.fr3{animation:flowR 2.8s ease-in-out 1.2s infinite}
+.fr4{animation:flowR 2.8s ease-in-out 1.8s infinite}
+</style>
+<svg width="100%" viewBox="0 0 1280 560" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:10px">
+<defs>
+  <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#1b1819"/>
+    <stop offset="45%" stop-color="#2c2627"/>
+    <stop offset="100%" stop-color="#141213"/>
+  </linearGradient>
+  <linearGradient id="hexG" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#a90a1b"/>
+    <stop offset="100%" stop-color="#1b1819"/>
+  </linearGradient>
+  <linearGradient id="goldBar" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#dc0c22" stop-opacity="0"/>
+    <stop offset="30%" stop-color="#dc0c22" stop-opacity=".9"/>
+    <stop offset="70%" stop-color="#ff6f7d" stop-opacity=".9"/>
+    <stop offset="100%" stop-color="#dc0c22" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="glowC" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#a90a1b" stop-opacity=".45"/>
+    <stop offset="100%" stop-color="#a90a1b" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowG" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#dc0c22" stop-opacity=".18"/>
+    <stop offset="100%" stop-color="#dc0c22" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="clip"><rect width="1280" height="560" rx="10"/></clipPath>
+  <marker id="arrGold" viewBox="0 0 10 14" refX="10" refY="7" markerWidth="9" markerHeight="12.6" orient="auto">
+    <path d="M0,0 L10,7 L0,14 Z" fill="#ff6f7d"/>
+  </marker>
+  <marker id="arrTeal" viewBox="0 0 10 14" refX="10" refY="7" markerWidth="9" markerHeight="12.6" orient="auto">
+    <path d="M0,0 L10,7 L0,14 Z" fill="#4ecba0"/>
+  </marker>
+</defs>
+
+<g clip-path="url(#clip)">
+<rect width="1280" height="560" fill="url(#bg)"/>
+<ellipse cx="640" cy="280" rx="480" ry="320" fill="url(#glowC)"/>
+<ellipse cx="640" cy="280" rx="240" ry="190" fill="url(#glowG)"/>
+<rect x="0" y="0" width="1280" height="4" fill="url(#goldBar)"/>
+<rect x="0" y="556" width="1280" height="4" fill="url(#goldBar)"/>
+
+<circle cx="640" cy="280" r="220" fill="none" stroke="rgba(220,12,34,.04)" stroke-width="1.5"/>
+<circle cx="640" cy="280" r="190" fill="none" stroke="rgba(220,12,34,.07)" stroke-width="1.5"/>
+<circle cx="640" cy="280" r="160" fill="none" stroke="rgba(220,12,34,.1)" stroke-width="1.5"/>
+
+<text x="172" y="38" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.3)" text-anchor="middle" letter-spacing="2.5">DOCUMENTOS DE RIESGOS</text>
+<line x1="66" y1="44" x2="278" y2="44" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+
+<rect x="66" y="54" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(220,12,34,.45)" stroke-width="1.5"/>
+<rect x="66" y="54" width="4" height="70" rx="2" fill="#a90a1b"/>
+<text x="82" y="74" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#ffadb7" letter-spacing="1">INFORME AL COMITÉ</text>
+<rect x="82" y="80" width="175" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="82" y="87" width="160" height="3" rx="1" fill="rgba(255,255,255,.09)"/>
+<rect x="82" y="94" width="168" height="3" rx="1" fill="rgba(255,255,255,.09)"/>
+<rect x="82" y="101" width="145" height="3" rx="1" fill="rgba(255,255,255,.07)"/>
+<rect x="82" y="108" width="155" height="3" rx="1" fill="rgba(255,255,255,.07)"/>
+
+<rect x="66" y="138" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(15,122,90,.4)" stroke-width="1.5"/>
+<rect x="66" y="138" width="4" height="70" rx="2" fill="#0f7a5a"/>
+<text x="82" y="158" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">CARTERA / EXCEL</text>
+<rect x="82" y="164" width="178" height="3" rx="1" fill="rgba(15,122,90,.45)"/>
+<rect x="82" y="171" width="55" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="141" y="171" width="55" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="200" y="171" width="55" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="82" y="178" width="55" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="141" y="178" width="55" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="200" y="178" width="55" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="185" width="55" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="141" y="185" width="55" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="200" y="185" width="55" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+
+<rect x="66" y="222" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(220,12,34,.35)" stroke-width="1.5"/>
+<rect x="66" y="222" width="4" height="70" rx="2" fill="#dc0c22"/>
+<text x="82" y="242" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#ff6f7d" letter-spacing="1">POLÍTICA DE CRÉDITO</text>
+<rect x="82" y="248" width="172" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="82" y="255" width="160" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="262" width="168" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="269" width="150" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="276" width="162" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="283" width="145" height="3" rx="1" fill="rgba(255,255,255,.05)"/>
+
+<rect x="66" y="306" width="212" height="70" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(184,41,60,.35)" stroke-width="1.5"/>
+<rect x="66" y="306" width="4" height="70" rx="2" fill="#b8293c"/>
+<text x="82" y="326" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#f08090" letter-spacing="1">ALERTAS DE FRAUDE</text>
+<rect x="82" y="332" width="168" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="82" y="339" width="155" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="346" width="162" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="82" y="353" width="145" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="360" width="155" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="82" y="367" width="140" height="3" rx="1" fill="rgba(255,255,255,.05)"/>
+
+<text x="172" y="408" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,.3)" text-anchor="middle">Documentos densos</text>
+<text x="172" y="422" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(255,255,255,.2)" text-anchor="middle">sin procesar</text>
+
+<line x1="278" y1="89" x2="513.9" y2="224.5" stroke="rgba(220,12,34,.4)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+<line x1="278" y1="173" x2="513.4" y2="251.8" stroke="rgba(220,12,34,.45)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+<line x1="278" y1="257" x2="513.0" y2="279.3" stroke="rgba(220,12,34,.4)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+<line x1="278" y1="341" x2="513.1" y2="307.0" stroke="rgba(220,12,34,.35)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrGold)"/>
+
+<polygon points="640,110 760,178 760,342 640,410 520,342 520,178" fill="url(#hexG)" stroke="rgba(220,12,34,.55)" stroke-width="2.5"/>
+<polygon points="640,128 748,194 748,332 640,398 532,332 532,194" fill="none" stroke="rgba(220,12,34,.18)" stroke-width="1.5"/>
+<polygon points="640,152 720,198 720,330 640,376 560,330 560,198" fill="rgba(6,16,31,.7)" stroke="rgba(220,12,34,.12)" stroke-width="1"/>
+
+<line x1="560" y1="280" x2="720" y2="280" stroke="rgba(220,12,34,.1)" stroke-width="1"/>
+<line x1="588" y1="202" x2="692" y2="358" stroke="rgba(220,12,34,.07)" stroke-width="1"/>
+<line x1="692" y1="202" x2="588" y2="358" stroke="rgba(220,12,34,.07)" stroke-width="1"/>
+
+<circle cx="640" cy="110" r="6" fill="#dc0c22" opacity=".9"/>
+<circle cx="760" cy="178" r="6" fill="#dc0c22" opacity=".7"/>
+<circle cx="760" cy="342" r="6" fill="#dc0c22" opacity=".7"/>
+<circle cx="640" cy="410" r="6" fill="#dc0c22" opacity=".9"/>
+<circle cx="520" cy="342" r="6" fill="#dc0c22" opacity=".7"/>
+<circle cx="520" cy="178" r="6" fill="#dc0c22" opacity=".7"/>
+
+<text x="640" y="242" font-family="DM Serif Display,Georgia,serif" font-size="54" font-weight="400" fill="white" text-anchor="middle" letter-spacing="-1">Claude</text>
+<rect x="584" y="254" width="112" height="28" rx="14" fill="rgba(220,12,34,.18)" stroke="rgba(220,12,34,.55)" stroke-width="1.5"/>
+<text x="640" y="273" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#ff8a96" text-anchor="middle" letter-spacing="4">AI</text>
+<text x="640" y="306" font-family="DM Sans,sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,.45)" text-anchor="middle" letter-spacing="2">INTELIGENCIA ARTIFICIAL</text>
+<text x="640" y="322" font-family="DM Sans,sans-serif" font-size="9.5" fill="rgba(255,255,255,.28)" text-anchor="middle">aplicada al trabajo</text>
+<text x="640" y="340" font-family="DM Sans,sans-serif" font-size="9" fill="rgba(255,173,183,.7)" text-anchor="middle">Banco Atlántida · 2026</text>
+
+<line x1="760" y1="228" x2="993.9" y2="100.4" stroke="rgba(15,122,90,.55)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+<line x1="760" y1="254" x2="993.4" y2="177.2" stroke="rgba(15,122,90,.6)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+<line x1="760" y1="280" x2="993.0" y2="257.7" stroke="rgba(15,122,90,.55)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+<line x1="760" y1="306" x2="993.1" y2="340.0" stroke="rgba(15,122,90,.5)" stroke-width="1.3" stroke-dasharray="5,4" marker-end="url(#arrTeal)"/>
+
+<text x="1108" y="38" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" fill="rgba(78,203,160,.6)" text-anchor="middle" letter-spacing="2.5">RESULTADOS EN SEGUNDOS</text>
+<line x1="1000" y1="44" x2="1214" y2="44" stroke="rgba(15,122,90,.3)" stroke-width="1"/>
+
+<rect x="1000" y="54" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="54" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="75" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,75 1192,78 1199,70" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="74" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">RESUMEN PARA JUNTA</text>
+<rect x="1016" y="80" width="158" height="3" rx="1" fill="rgba(78,203,160,.28)"/>
+<rect x="1016" y="87" width="165" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="1016" y="94" width="145" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="101" width="158" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="108" width="132" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="1016" y="115" width="148" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+
+<rect x="1000" y="138" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="138" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="159" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,159 1192,162 1199,154" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="158" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">PLAN DE ACCIÓN</text>
+<rect x="1016" y="164" width="9" height="9" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1016" y="177" width="9" height="9" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1016" y="190" width="9" height="9" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1029" y="167" width="130" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="1029" y="180" width="118" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="1029" y="193" width="135" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+
+<rect x="1000" y="222" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="222" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="243" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,243 1192,246 1199,238" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="242" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">RESPUESTA A AUDITORÍA</text>
+<rect x="1016" y="248" width="158" height="3" rx="1" fill="rgba(255,255,255,.12)"/>
+<rect x="1016" y="255" width="162" height="3" rx="1" fill="rgba(255,255,255,.1)"/>
+<rect x="1016" y="262" width="142" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="269" width="152" height="3" rx="1" fill="rgba(255,255,255,.08)"/>
+<rect x="1016" y="276" width="135" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+<rect x="1016" y="283" width="148" height="3" rx="1" fill="rgba(255,255,255,.06)"/>
+
+<rect x="1000" y="306" width="214" height="70" rx="8" fill="rgba(15,122,90,.1)" stroke="rgba(15,122,90,.5)" stroke-width="1.5"/>
+<rect x="1000" y="306" width="4" height="70" rx="2" fill="#4ecba0"/>
+<circle cx="1194" cy="327" r="12" fill="rgba(15,122,90,.4)" stroke="rgba(78,203,160,.6)" stroke-width="1.5"/>
+<polyline points="1189,327 1192,330 1199,322" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1016" y="326" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#4ecba0" letter-spacing="1">ANÁLISIS DE MORA</text>
+<rect x="1016" y="370" width="160" height="1" fill="rgba(255,255,255,.2)"/>
+<rect x="1020" y="348" width="15" height="22" rx="2" fill="rgba(78,203,160,.45)"/>
+<rect x="1039" y="354" width="15" height="16" rx="2" fill="rgba(78,203,160,.4)"/>
+<rect x="1058" y="344" width="15" height="26" rx="2" fill="rgba(78,203,160,.55)"/>
+<rect x="1077" y="338" width="15" height="32" rx="2" fill="rgba(78,203,160,.65)"/>
+<rect x="1096" y="350" width="15" height="20" rx="2" fill="rgba(78,203,160,.5)"/>
+<rect x="1115" y="344" width="15" height="26" rx="2" fill="rgba(78,203,160,.58)"/>
+<rect x="1134" y="336" width="15" height="34" rx="2" fill="rgba(78,203,160,.7)"/>
+
+<text x="1108" y="408" font-family="DM Sans,sans-serif" font-size="11" font-weight="600" fill="rgba(78,203,160,.65)" text-anchor="middle">Resultados claros</text>
+<text x="1108" y="422" font-family="DM Sans,sans-serif" font-size="10" fill="rgba(78,203,160,.4)" text-anchor="middle">listos en segundos</text>
+
+<text x="640" y="470" font-family="DM Serif Display,Georgia,serif" font-size="20" fill="white" text-anchor="middle">De documentos densos a decisiones claras,</text>
+<text x="640" y="494" font-family="DM Serif Display,Georgia,serif" font-size="20" fill="#ff6f7d" text-anchor="middle" font-style="italic">en segundos, con Claude AI</text>
+
+<circle class="pr" cx="640" cy="280" r="220" fill="none" stroke="rgba(220,12,34,.07)" stroke-width="2"/>
+<circle class="gc" cx="640" cy="110" r="6" fill="#dc0c22"/>
+<circle class="gc" cx="640" cy="410" r="6" fill="#dc0c22"/>
+<circle class="fl1" cx="300" cy="224" r="4" fill="#dc0c22" opacity="0"/>
+<circle class="fl2" cx="302" cy="250" r="3.5" fill="#ff6f7d" opacity="0"/>
+<circle class="fl3" cx="298" cy="276" r="3" fill="#dc0c22" opacity="0"/>
+<circle class="fl4" cx="301" cy="302" r="3.5" fill="#dc0c22" opacity="0"/>
+<circle class="fr1" cx="980" cy="224" r="4" fill="#4ecba0" opacity="0"/>
+<circle class="fr2" cx="978" cy="250" r="3.5" fill="#4ecba0" opacity="0"/>
+<circle class="fr3" cx="982" cy="276" r="3" fill="#4ecba0" opacity="0"/>
+<circle class="fr4" cx="979" cy="302" r="3.5" fill="#4ecba0" opacity="0"/>
+
+</g>
+</svg>
+  </div>
+
+  <!-- ── INSTRUCTOR ── -->
+  <div class="instructor-section">
+    <div class="section-label"><span>Instructor del curso</span></div>
+    <div class="instructor-card">
+      <div class="instructor-avatar">ET</div>
+      <div class="instructor-info">
+        <div class="instructor-presented">Impartido por</div>
+        <div class="instructor-name">Ing. Emerson Ernesto Torres Rodríguez</div>
+        <div class="instructor-role">
+          Ingeniero en Ciencias de la Computación ·
+          <strong>Desarrollador Full Stack</strong><br>
+          Docente universitario · IA aplicada al trabajo
+        </div>
+      </div>
+      <div class="instructor-tags">
+        <span class="tag tag-gold">IA Aplicada</span>
+        <span class="tag tag-teal">Docencia Universitaria</span>
+        <span class="tag tag-blue">Desarrollo Full Stack</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-sub">Banco Atlántida El Salvador · Vicepresidencia Adjunta de Riesgos · 2026</div>
+  </div>
+
+</div>
+
+<script>
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+let W, H;
+const particles = [];
+function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+const COLORS = ['rgba(220,12,34,','rgba(78,203,160,','rgba(255,173,183,'];
+for(let i=0;i<55;i++){
+  const col = COLORS[Math.floor(Math.random()*COLORS.length)];
+  particles.push({x:Math.random()*1600,y:Math.random()*1000,r:Math.random()*1.8+0.4,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.22,alpha:Math.random()*.55+.1,col,pulse:Math.random()*Math.PI*2,pulseSpeed:Math.random()*.02+.008});
+}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  particles.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy; p.pulse+=p.pulseSpeed;
+    if(p.x<-10)p.x=W+10; if(p.x>W+10)p.x=-10;
+    if(p.y<-10)p.y=H+10; if(p.y>H+10)p.y=-10;
+    const a=p.alpha*(0.6+0.4*Math.sin(p.pulse));
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.col+a+')'; ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
