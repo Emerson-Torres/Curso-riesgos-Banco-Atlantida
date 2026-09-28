@@ -9,32 +9,30 @@
 /* ══════════════════════════════════════════════
    DESIGN TOKENS · Banco Atlántida · Vicepresidencia Adjunta de Riesgos 2026
 ══════════════════════════════════════════════ */
-/* Paleta "Atlántida Blanco": blanco + rojo institucional + grises neutros.
-   La versión anterior está en backup_paleta_original_2026-09-27/ */
 :root {
-  --bg:        #f5f5f6;
-  --bg2:       #ededef;
+  --bg:        #f7f4f4;
+  --bg2:       #efe9e9;
   --surface:   #ffffff;
-  --border:    rgba(30,30,32,.08);
-  --border2:   rgba(30,30,32,.14);
+  --border:    rgba(60,40,42,.08);
+  --border2:   rgba(60,40,42,.15);
 
-  --ink:       #1e1e20;
-  --ink-mid:   #3a3a3e;
-  --ink-soft:  #6e6e73;
-  --ink-faint: #a9a9ae;
+  --ink:       #262021;
+  --ink-mid:   #40383a;
+  --ink-soft:  #6f6566;
+  --ink-faint: #bfb4b5;
 
-  --brand-blue:      #d71920;
-  --brand-blue-l:    #e8414a;
-  --brand-blue-pale: #fdedee;
-  --brand-blue-bd:   #f4c7c9;
-  --brand-blue-dark: #a8111a;
-  --brand-blue-mid:  #c4161d;
+  --brand-blue:      #dc0c22;
+  --brand-blue-l:    #ee3447;
+  --brand-blue-pale: #fdeef0;
+  --brand-blue-bd:   #f5bcc3;
+  --brand-blue-dark: #231e1f;
+  --brand-blue-mid:  #3a3132;
 
-  --brand-gold:      #d71920;
-  --brand-gold-l:    #ffffff;
-  --brand-gold-pale: #fdedee;
-  --brand-gold-bd:   #f4c7c9;
-  --brand-gold-deep: #a8111a;
+  --brand-gold:      #f07c89;
+  --brand-gold-l:    #ffadb7;
+  --brand-gold-pale: #fff3f5;
+  --brand-gold-bd:   #ffd1d7;
+  --brand-gold-deep: #a60d1d;
 
   --amber:         var(--brand-gold);
   --amber-l:       var(--brand-gold-l);
@@ -54,26 +52,26 @@
   --rose-pale: #fff7ed;
   --rose-bd:   #fbd5a5;
 
-  --violet:    #3a3a3e;
-  --violet-pale:#f1f1f2;
-  --violet-bd: #d4d4d8;
+  --violet:    #4a3ec0;
+  --violet-pale:#f0effe;
+  --violet-bd: #c5bef5;
 
-  --cyan:      #a8111a;
-  --cyan-pale: #fbeff0;
-  --cyan-bd:   #efc3c6;
+  --cyan:      #0e7c96;
+  --cyan-pale: #e6f6fa;
+  --cyan-bd:   #a9dde9;
 
-  --slate:     #5f5f64;
-  --slate-pale:#f2f2f3;
-  --slate-bd:  #d6d6d9;
+  --slate:     #5f5758;
+  --slate-pale:#f2efef;
+  --slate-bd:  #d6cdce;
 
   --sidebar-w: 292px;
   --r:         18px;
   --r-sm:      12px;
   --r-lg:      24px;
-  --sh-sm:     0 2px 10px rgba(30,30,32,.06);
-  --sh-md:     0 10px 32px rgba(30,30,32,.10);
-  --sh-lg:     0 26px 68px rgba(30,30,32,.14);
-  --sh-gold:   0 10px 30px rgba(215,25,32,.18);
+  --sh-sm:     0 2px 10px rgba(60,40,42,.07);
+  --sh-md:     0 10px 32px rgba(60,40,42,.11);
+  --sh-lg:     0 26px 68px rgba(60,40,42,.17);
+  --sh-gold:   0 10px 30px rgba(255,173,183,.25);
   --t:         all .24s cubic-bezier(.4,0,.2,1);
 
   --ff-display: 'DM Serif Display', serif;
@@ -1094,7 +1092,7 @@ h1.ptitle em { font-style:italic; color:var(--brand-blue); }
 .prog-count { font-family:var(--ff-display); font-size:1.8rem; font-weight:400; color:var(--brand-blue); line-height:1; }
 
 .prog-bar {
-  height:9px; background:rgba(30,30,32,.08);
+  height:9px; background:rgba(60,40,42,.08);
   border-radius:100px; overflow:hidden; margin-bottom:2rem;
 }
 .prog-fill {
@@ -1735,106 +1733,6 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   h1.ptitle { font-size:1.55rem; }
   .hero-wrap{ padding:1.75rem 1.25rem; }
 }
-
-/* ══════════════════════════════════════════════
-   PALETA "ATLÁNTIDA BLANCO"
-   Barra lateral blanca, barra superior roja (logo blanco),
-   bloques destacados en rojo institucional.
-══════════════════════════════════════════════ */
-/* Barra lateral */
-.sidebar { background:#fff; border-right:1px solid var(--border2); }
-.sb-head { border-bottom-color:var(--border); }
-.sb-head::before { background:var(--brand-blue); }
-.sb-head::after { background:radial-gradient(circle, rgba(215,25,32,.07), transparent 70%); }
-.sb-pill { background:var(--brand-blue-pale); border-color:var(--brand-blue-bd); color:var(--brand-blue); }
-.sb-logo { color:var(--ink); }
-.sb-logo em { color:var(--brand-blue); }
-.sb-sub { color:var(--ink-soft); }
-.sb-prog { border-bottom-color:var(--border); }
-.sb-prog-lbl span { color:var(--ink-soft); }
-.sb-prog-lbl strong { color:var(--brand-blue); }
-.sb-bar { background:var(--bg2); }
-.sb-fill { background:var(--brand-blue); }
-.nav-section-lbl { color:var(--ink-faint); }
-.nav-item { color:var(--ink-mid); }
-.nav-item:hover { background:var(--bg); color:var(--ink); }
-.nav-item.active { background:var(--brand-blue-pale); color:var(--brand-blue); border-color:var(--brand-blue-bd); }
-.nav-item.done { color:var(--teal); }
-.nav-item.done .ni { background:var(--teal-pale); color:var(--teal); }
-.ni { background:var(--bg); color:var(--ink-soft); }
-.nav-item.active .ni { background:var(--brand-blue); color:#fff; }
-.nav-sub { color:var(--ink-faint); }
-.nav-item.active .nav-sub { color:var(--brand-blue); opacity:.75; }
-.sb-foot { border-top-color:var(--border); }
-.author-av { background:linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark)); }
-.author-name { color:var(--ink); }
-.author-role { color:var(--ink-soft); }
-.sb-back { border-color:var(--border2); background:var(--bg); color:var(--ink-mid); }
-.sb-back:hover { background:var(--brand-blue-pale); border-color:var(--brand-blue-bd); color:var(--brand-blue); }
-.nav-item:focus-visible, .sb-back:focus-visible, .pager-btn:focus-visible, .mod-link:focus-visible { outline-color:var(--brand-blue); }
-.mod-list { border-top-color:var(--border); }
-.mod-link { color:var(--ink-soft); }
-.mod-link .mod-n { background:var(--bg); color:var(--ink-soft); }
-.mod-link.current { color:var(--brand-blue); }
-.mod-link.current .mod-n { background:var(--brand-blue); color:#fff; }
-.mod-link.soon::after { color:var(--ink-faint); }
-.sidebar.open { box-shadow:4px 0 32px rgba(30,30,32,.18); }
-
-/* Barra superior: franja roja como la navegación del sitio oficial */
-.topbar { background:var(--brand-blue); border-bottom:3px solid var(--brand-blue-dark); }
-.tb-divider-v { background:rgba(255,255,255,.35); }
-.tb-bc { color:rgba(255,255,255,.8); }
-.tb-bc a { border-bottom-color:rgba(255,255,255,.45); }
-.chip-amber { background:#fff; border:1px solid #fff; color:var(--brand-blue); }
-.chip-blue  { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); color:#fff; }
-.chip-teal  { background:rgba(0,0,0,.14); border:1px solid rgba(255,255,255,.2); color:#fff; }
-.mob-toggle { background:#fff; }
-.mob-toggle span { background:var(--brand-blue); }
-.sb-scrim { background:rgba(30,30,32,.4); }
-
-/* Bloques destacados en rojo: portada, fórmula y cierre */
-.hero-wrap { background:linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%); box-shadow:0 22px 56px rgba(215,25,32,.22); }
-.hero-wrap::before { opacity:.08; }
-.hero-pill { background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.4); }
-.hero-lead { color:rgba(255,255,255,.85); }
-.hero-stat-l { color:rgba(255,255,255,.72); }
-.hero-art .hn-line { stroke:rgba(255,255,255,.5); }
-.hero-art .hn-node circle { fill:#fff; fill-opacity:.14; stroke:#fff; stroke-opacity:.85; }
-.hero-art .hn-node g { stroke:#fff; }
-.hero-art > svg > circle { fill:rgba(255,255,255,.16); }
-
-.formula { background:linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%); }
-.formula-label { color:rgba(255,255,255,.75); }
-.f-item { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25); }
-.f-result { background:#fff; color:var(--brand-blue); }
-
-.comp-inner { background:linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%); }
-.comp-inner::before {
-  background-image:
-    radial-gradient(circle,rgba(255,255,255,.55) 1.5px,transparent 1.5px),
-    radial-gradient(circle,rgba(255,255,255,.35) 1.5px,transparent 1.5px),
-    radial-gradient(circle,rgba(255,255,255,.3) 1px,transparent 1px),
-    radial-gradient(circle,rgba(255,255,255,.4) 1px,transparent 1px);
-  opacity:.5;
-}
-.comp-inner::after { background:linear-gradient(90deg,transparent,#fff,transparent); opacity:.6; }
-.comp-trophy { background:radial-gradient(circle, rgba(255,255,255,.22), transparent 72%); filter:drop-shadow(0 8px 24px rgba(0,0,0,.18)); }
-.comp-star { filter:drop-shadow(0 0 6px rgba(255,255,255,.45)); }
-.comp-badge { background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.45); }
-.comp-module { color:rgba(255,255,255,.75); }
-.comp-msg { color:rgba(255,255,255,.88); }
-.comp-stat { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25); }
-.comp-stat-l { color:rgba(255,255,255,.72); }
-.comp-footer { background:#fff; border-top:1px solid var(--border); }
-.comp-footer-text { color:var(--ink-soft); }
-.comp-footer-text strong { color:var(--ink); }
-
-/* Anatomía de la interfaz: A rojo · B grafito · C verde · D gris */
-.zone-a .anat-zone-tag { color:#fff; }
-.zone-b .anat-zone-outline { border-color:#1e1e20; }
-.zone-b .anat-zone-tag { background:#1e1e20; }
-.zone-d .anat-zone-outline { border-color:#6e6e73; }
-.zone-d .anat-zone-tag { background:#6e6e73; }
 </style>
 </head>
 <body>
@@ -2394,9 +2292,9 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
       </div>
       <div class="callout-tags">
         <div class="ctag"><div class="ctag-dot" style="background:var(--brand-gold);"></div><strong>A · Barra lateral</strong>, nuevo chat, proyectos e historial</div>
-        <div class="ctag"><div class="ctag-dot" style="background:#1e1e20;"></div><strong>B · Área central</strong>, el saludo y luego las respuestas</div>
+        <div class="ctag"><div class="ctag-dot" style="background:var(--brand-blue);"></div><strong>B · Área central</strong>, el saludo y luego las respuestas</div>
         <div class="ctag"><div class="ctag-dot" style="background:#0f7a5a;"></div><strong>C · Campo de texto</strong>, adjuntos, herramientas y modelo</div>
-        <div class="ctag"><div class="ctag-dot" style="background:#6e6e73;"></div><strong>D · Botón enviar</strong>, o simplemente presiona Enter</div>
+        <div class="ctag"><div class="ctag-dot" style="background:#6b3ec0;"></div><strong>D · Botón enviar</strong>, o simplemente presiona Enter</div>
       </div>
     </div>
 
@@ -3807,12 +3705,12 @@ setInterval(renderGreetings, 60000);   // si la clase cruza el mediodía o la no
     '         display: grid; place-items: center; min-height: 100vh; margin: 0; }',
     '  .card { background: #fff; border: 1px solid #e5e2d8; border-radius: 16px;',
     '         padding: 22px 26px; width: 250px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }',
-    '  .lbl { margin: 0; font-size: 13px; color: #6e6e73; }',
-    '  .big { margin: 6px 0 2px; font-size: 44px; font-weight: 700; color: #d71920; }',
+    '  .lbl { margin: 0; font-size: 13px; color: #6f6566; }',
+    '  .big { margin: 6px 0 2px; font-size: 44px; font-weight: 700; color: #dc0c22; }',
     '  .delta { margin: 0 0 14px; font-size: 12px; color: #b45309; }',
     '  .bars { display: flex; align-items: flex-end; gap: 6px; height: 70px; }',
-    '  .bars span { flex: 1; background: #f4c7c9; border-radius: 4px 4px 0 0; }',
-    '  .bars span:last-child { background: #d71920; }',
+    '  .bars span { flex: 1; background: #f5bcc3; border-radius: 4px 4px 0 0; }',
+    '  .bars span:last-child { background: #dc0c22; }',
     '  .note { margin: 12px 0 0; font-size: 11px; color: #8f8d86; }',
     '</style>'
   ].join('\n');
@@ -3986,14 +3884,14 @@ setInterval(renderGreetings, 60000);   // si la clase cruza el mediodía o la no
     g.shadowColor = 'rgba(0,0,0,.25)'; g.shadowBlur = 16;
     g.fillStyle = '#fff'; g.fillRect(70, 26, 340, 290);
     g.shadowBlur = 0;
-    g.fillStyle = '#d71920'; g.fillRect(90, 46, 300, 5);
-    g.fillStyle = '#1e1e20'; g.font = 'bold 18px Georgia, serif'; g.fillText('Informe de mora · Ejemplo', 90, 82);
+    g.fillStyle = '#dc0c22'; g.fillRect(90, 46, 300, 5);
+    g.fillStyle = '#262021'; g.font = 'bold 18px Georgia, serif'; g.fillText('Informe de mora · Ejemplo', 90, 82);
     g.fillStyle = '#8f8d86'; g.font = '11px sans-serif'; g.fillText('Documento de prueba · datos ficticios', 90, 100);
     var v = [2.1, 2.3, 2.2, 2.5, 2.6, 2.8], mth = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
     for (var i = 0; i < v.length; i++) {
       var h = v[i] * 50, x = 102 + i * 48;
-      g.fillStyle = i === v.length - 1 ? '#d71920' : '#f4c7c9'; g.fillRect(x, 285 - h, 30, h);
-      g.fillStyle = '#6e6e73'; g.font = '10px sans-serif';
+      g.fillStyle = i === v.length - 1 ? '#dc0c22' : '#f5bcc3'; g.fillRect(x, 285 - h, 30, h);
+      g.fillStyle = '#6f6566'; g.font = '10px sans-serif';
       g.fillText(mth[i], x + 5, 300); g.fillText(v[i] + '%', x + 3, 279 - h);
     }
     return c.toDataURL('image/png');
