@@ -1623,6 +1623,107 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
 .lab-foot button { border:1px solid var(--border2); background:var(--surface); border-radius:8px; padding:4px 11px; font:inherit; font-size:11.5px; cursor:pointer; color:var(--ink-mid); }
 
 /* ══════════════════════════════════════════════
+   MODELOS DE CLAUDE (selector interactivo)
+══════════════════════════════════════════════ */
+#sec-modelos [hidden] { display:none !important; }
+.md-grid { display:grid; grid-template-columns:1.15fr 1fr; gap:18px; align-items:stretch; }
+.md-grid > .anatomy-mockup { display:flex; flex-direction:column; }
+.md-grid > .anatomy-mockup .md-stage { flex:1; }
+.md-stage {
+  background:var(--cl-bg); min-height:440px; padding:1.1rem 1rem 1rem;
+  display:flex; flex-direction:column; justify-content:flex-end; position:relative;
+}
+.md-stage .cl-greet { justify-content:center; margin:auto 0 1rem; }
+.md-model-btn {
+  margin-left:auto; display:flex; align-items:center; gap:4px;
+  border:none; background:transparent; border-radius:8px; padding:4px 8px;
+  font:inherit; font-size:12px; color:var(--cl-soft); cursor:pointer;
+}
+.md-model-btn:hover, .md-model-btn[aria-expanded="true"] { background:var(--cl-side); color:var(--cl-ink); }
+.md-model-btn:focus-visible { outline:2px solid var(--cl-accent-l); outline-offset:1px; }
+.md-model-btn .md-think-dot { display:none; width:6px; height:6px; border-radius:50%; background:var(--cl-accent-l); }
+.md-model-btn.thinking .md-think-dot { display:inline-block; }
+.md-model-btn .cl-ico { width:12px; height:12px; }
+
+.md-menu {
+  position:absolute; right:1rem; bottom:92px; z-index:6;
+  width:min(300px, calc(100% - 2rem));
+  background:#fff; border:1px solid var(--cl-line); border-radius:14px;
+  box-shadow:0 14px 36px rgba(31,30,29,.16); padding:6px;
+}
+.md-opt {
+  display:flex; align-items:flex-start; gap:8px; width:100%;
+  border:none; background:transparent; border-radius:9px; padding:7px 9px;
+  font:inherit; text-align:left; cursor:pointer; color:var(--cl-ink);
+}
+.md-opt:hover, .md-opt:focus-visible { background:var(--cl-side); outline:none; }
+.md-opt.flash { animation:mdFlash 1.2s ease; }
+@keyframes mdFlash { 0%,100%{ background:transparent } 30%{ background:#fbeee8 } }
+.md-opt-txt { flex:1; min-width:0; }
+.md-opt-name { display:block; font-size:12.5px; font-weight:600; }
+.md-opt-desc { display:block; font-size:11px; color:var(--cl-faint); line-height:1.35; margin-top:1px; }
+.md-check { width:14px; height:14px; margin-top:2px; color:var(--cl-accent); visibility:hidden; flex-shrink:0; }
+.md-opt[aria-selected="true"] .md-check { visibility:visible; }
+.md-sep { height:1px; background:var(--cl-line); margin:5px 4px; }
+.md-row {
+  display:flex; align-items:center; gap:8px; width:100%;
+  border:none; background:transparent; border-radius:9px; padding:7px 9px;
+  font:inherit; font-size:12px; color:var(--cl-ink); cursor:pointer; text-align:left;
+}
+.md-row:hover, .md-row:focus-visible { background:var(--cl-side); outline:none; }
+.md-row small { display:block; font-size:10.5px; color:var(--cl-faint); }
+.md-switch { margin-left:auto; width:28px; height:16px; border-radius:10px; background:#d9d5cc; position:relative; flex-shrink:0; transition:background .2s; }
+.md-switch::after { content:''; position:absolute; top:2px; left:2px; width:12px; height:12px; border-radius:50%; background:#fff; transition:transform .2s; box-shadow:0 1px 2px rgba(0,0,0,.2); }
+.md-row[aria-checked="true"] .md-switch { background:var(--cl-accent-l); }
+.md-row[aria-checked="true"] .md-switch::after { transform:translateX(12px); }
+.md-more-ico { margin-left:auto; width:13px; height:13px; transition:transform .2s; }
+.md-row[aria-expanded="true"] .md-more-ico { transform:rotate(180deg); }
+
+.md-detail {
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--r);
+  padding:1.4rem 1.5rem; box-shadow:var(--sh-sm);
+  display:flex; flex-direction:column; gap:.9rem;
+}
+.md-d-top { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.md-d-name { font-family:var(--ff-display); font-size:1.45rem; line-height:1.15; color:var(--ink); }
+.md-d-tag { font-size:10.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-radius:6px; padding:2px 8px; background:var(--teal-pale); color:var(--teal); }
+.md-d-tag.alt { background:var(--slate-pale); color:var(--slate); }
+.md-d-desc { font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin-top:-.4rem; }
+.md-meters { display:grid; gap:8px; }
+.md-meter { display:grid; grid-template-columns:130px 1fr; align-items:center; gap:10px; font-size:12px; color:var(--ink-mid); font-weight:600; }
+.md-dots { display:flex; gap:5px; }
+.md-dots i { width:100%; max-width:34px; height:7px; border-radius:4px; background:var(--bg2); }
+.md-dots i.on { background:var(--brand-blue); }
+.md-meter.spd .md-dots i.on { background:var(--teal); }
+.md-d-h { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:.3rem; }
+.md-d-p { font-size:13.5px; color:var(--ink-mid); line-height:1.65; }
+.md-d-list { list-style:none; display:grid; gap:5px; }
+.md-d-list li { display:flex; gap:8px; font-size:13px; color:var(--ink-mid); line-height:1.55; }
+.md-d-list li::before { content:''; width:6px; height:6px; border-radius:2px; background:var(--brand-blue); margin-top:.5rem; flex-shrink:0; }
+.md-d-note { font-size:12px; color:var(--ink-soft); background:var(--bg); border-radius:10px; padding:.6rem .8rem; line-height:1.55; }
+.md-d-think { font-size:12.5px; color:var(--brand-gold-deep); background:var(--brand-gold-pale); border:1px solid var(--brand-gold-bd); border-radius:10px; padding:.6rem .8rem; line-height:1.55; }
+
+.md-tasks { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:10px; margin-bottom:1rem; }
+.md-task {
+  display:flex; flex-direction:column; gap:4px; text-align:left;
+  background:var(--surface); border:1px solid var(--border2); border-radius:var(--r-sm);
+  padding:.8rem 1rem; font:inherit; cursor:pointer; color:var(--ink); transition:var(--t);
+}
+.md-task:hover { border-color:var(--brand-blue-bd); box-shadow:var(--sh-sm); }
+.md-task:focus-visible { outline:2px solid var(--brand-blue); outline-offset:2px; }
+.md-task.on { border-color:var(--brand-blue); background:var(--brand-blue-pale); }
+.md-task-where { font-size:10.5px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-soft); }
+.md-task-name { font-size:13.5px; font-weight:600; line-height:1.4; }
+.md-task-model { font-size:12px; color:var(--brand-blue); font-weight:600; }
+.md-why {
+  display:flex; gap:10px; align-items:flex-start;
+  background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--brand-blue);
+  border-radius:var(--r-sm); padding:.85rem 1rem; font-size:13.5px; color:var(--ink-mid); line-height:1.65; margin-bottom:2rem;
+}
+.md-why .icon { width:18px; height:18px; color:var(--brand-blue); margin-top:3px; }
+.md-detail .md-why { margin-bottom:0; font-size:13px; background:var(--brand-blue-pale); }
+
+/* ══════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════ */
 @media(min-width:901px){
@@ -1701,6 +1802,8 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   .cl-mob-menu { display:flex; }
   .cl-chip:nth-child(n+4) { display:none; }
   .lg-screens { grid-template-columns:1fr; }
+  .md-grid { grid-template-columns:1fr; }
+  .md-meter { grid-template-columns:110px 1fr; }
   .callout-tags { flex-direction:column; }
 
   .formula { padding:1.4rem 1.1rem; }
@@ -1825,12 +1928,16 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
       <span class="nav-sub">10 min</span>
     </a>
     <a class="nav-item" href="#interfaz" data-sec="interfaz">
-      <div class="ni"><svg class="icon"><use href="#i-monitor"/></svg></div>Interfaz y modelos
+      <div class="ni"><svg class="icon"><use href="#i-monitor"/></svg></div>Interfaz de Claude
       <span class="nav-sub">10 min</span>
     </a>
     <a class="nav-item" href="#fundamentos" data-sec="fundamentos">
       <div class="ni"><svg class="icon"><use href="#i-network"/></svg></div>Fundamentos de IA
-      <span class="nav-sub">15 min</span>
+      <span class="nav-sub">10 min</span>
+    </a>
+    <a class="nav-item" href="#modelos" data-sec="modelos">
+      <div class="ni"><svg class="icon"><use href="#i-spark"/></svg></div>Modelos de Claude
+      <span class="nav-sub">10 min</span>
     </a>
     <a class="nav-item" href="#pasos" data-sec="pasos">
       <div class="ni"><svg class="icon"><use href="#i-steps"/></svg></div>Primera conversación
@@ -1842,7 +1949,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
     </a>
     <a class="nav-item" href="#ejercicios" data-sec="ejercicios">
       <div class="ni"><svg class="icon"><use href="#i-pencil"/></svg></div>Ejercicios de Riesgos
-      <span class="nav-sub">25 min</span>
+      <span class="nav-sub">20 min</span>
     </a>
     <a class="nav-item" href="#errores" data-sec="errores">
       <div class="ni"><svg class="icon"><use href="#i-alert"/></svg></div>Errores frecuentes
@@ -1906,7 +2013,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
           <h1 class="hero-title">Hoy conoces <em>Claude</em> y tu forma de trabajar cambia</h1>
           <p class="hero-lead">En las próximas dos horas vas a dejar de ver la inteligencia artificial como un concepto lejano y vas a usarla, en vivo, para resolver tareas reales de la Vicepresidencia Adjunta de Riesgos. Sin conocimientos técnicos previos. Sin código. Solo conversación.</p>
           <div class="hero-stats">
-            <div><div class="hero-stat-n">9</div><div class="hero-stat-l">Secciones guiadas</div></div>
+            <div><div class="hero-stat-n">10</div><div class="hero-stat-l">Secciones guiadas</div></div>
             <div><div class="hero-stat-n">16</div><div class="hero-stat-l">Prompts listos para copiar</div></div>
             <div><div class="hero-stat-n">4</div><div class="hero-stat-l">Áreas de Riesgos</div></div>
           </div>
@@ -2345,8 +2452,8 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
     <div class="grid-2">
       <div class="card">
         <div class="card-icon ic-blue"><svg class="icon"><use href="#i-spark"/></svg></div>
-        <h3>Modelos: elige según la tarea</h3>
-        <p>En el selector de modelo verás varias opciones de Claude. Haiku es el más rápido, para tareas breves; Sonnet es el de uso diario; Opus rinde mejor en análisis extensos y razonamientos complejos. Los nombres y versiones cambian con el tiempo.</p>
+        <h3>Selector de modelo</h3>
+        <p>Se ubica dentro del campo de texto, junto al micrófono, y muestra el modelo activo. Claude ofrece varios modelos con distinto equilibrio entre rapidez y profundidad; la sección <a href="#modelos" style="color:inherit;">Modelos de Claude</a> detalla cuándo conviene cada uno.</p>
       </div>
       <div class="card">
         <div class="card-icon ic-amber"><svg class="icon"><use href="#i-document"/></svg></div>
@@ -2594,10 +2701,98 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   </section>
 
   <!-- ════════════════════════════════
-       SECCIÓN 5 · PRIMERA CONVERSACIÓN
+       SECCIÓN 5 · MODELOS DE CLAUDE
+  ════════════════════════════════ -->
+  <section class="section" id="sec-modelos">
+    <div class="eyebrow">Sección 05 · Modelos</div>
+    <h1 class="ptitle">Elige el <em>modelo</em><br>adecuado para cada tarea</h1>
+    <p class="plead">Claude no es un único modelo: es una familia con distintos equilibrios entre rapidez y profundidad de análisis. Elegir bien permite obtener respuestas inmediatas en las tareas cotidianas y análisis más rigurosos cuando el caso lo exige.</p>
+
+    <div class="anatomy">
+      <div style="font-size:12px;color:var(--ink-soft);margin-bottom:1.1rem;display:flex;align-items:center;gap:8px;">
+        <span style="width:10px;height:10px;border-radius:3px;background:var(--amber);display:inline-block;"></span>
+        Selector de modelos de claude.ai
+      </div>
+      <div class="md-grid">
+        <div class="anatomy-mockup">
+          <div class="anat-bar" aria-hidden="true">
+            <div class="anat-dot r"></div><div class="anat-dot y"></div><div class="anat-dot g"></div>
+            <div class="anat-url"><svg class="cl-ico" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>claude.ai/new</div>
+          </div>
+          <div class="md-stage">
+            <div class="cl-greet">
+              <svg class="cl-spark" viewBox="-12 -12 24 24" fill="none" stroke="#d97757" stroke-width="2.4" stroke-linecap="round"><path d="M0 0L11 0M0 0L7.36 4.25M0 0L5.25 9.09M0 0L0 9M0 0L-5.5 9.53M0 0L-6.93 4M0 0L-10.5 0M0 0L-8.23 -4.75M0 0L-5.5 -9.53M0 0L0 -8.5M0 0L5 -8.66M0 0L7.79 -4.5"/></svg>
+              <span data-greet></span>
+            </div>
+
+            <div class="md-menu" id="mdMenu" role="listbox" aria-label="Modelos de Claude">
+              <div id="mdMain"></div>
+              <div class="md-sep"></div>
+              <button type="button" class="md-row" id="mdThink" role="switch" aria-checked="false">
+                <svg class="cl-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+                <span>Razonamiento extendido<small>Piensa más antes de responder</small></span>
+                <span class="md-switch" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="md-row" id="mdMoreBtn" aria-expanded="false">
+                <svg class="cl-ico" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+                <span>Más modelos</span>
+                <svg class="cl-ico md-more-ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div id="mdMore" hidden></div>
+            </div>
+
+            <div class="cl-input">
+              <div class="cl-placeholder">¿Cómo puedo ayudarte hoy?</div>
+              <div class="cl-tools">
+                <span class="cl-tbtn" aria-hidden="true"><svg class="cl-ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                <span class="cl-tbtn" aria-hidden="true"><svg class="cl-ico" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></span>
+                <button type="button" class="md-model-btn" id="mdBtn" aria-haspopup="listbox" aria-expanded="true" aria-controls="mdMenu">
+                  <span class="md-think-dot" title="Razonamiento extendido activo"></span>
+                  <span id="mdBtnLabel">Sonnet 5</span>
+                  <svg class="cl-ico" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <span class="cl-tbtn" style="border-color:transparent;" aria-hidden="true"><svg class="cl-ico" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span>
+                <span class="cl-send" aria-hidden="true"><svg class="cl-ico" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md-detail" id="mdDetail" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <h2 class="sec-h2"><svg class="icon"><use href="#i-target"/></svg>¿Qué modelo usar en las prácticas?</h2>
+    <p class="plead" style="margin-bottom:1.25rem;">Estas son las tareas de las siguientes secciones y el modelo que mejor se ajusta a cada una. El criterio es siempre el mismo: la complejidad del análisis y el nivel de precisión que exige el resultado.</p>
+    <div class="md-tasks" id="mdTasks" style="margin-bottom:2rem;"></div>
+
+    <div class="alert info">
+      <div class="alert-icon"><svg class="icon"><use href="#i-info"/></svg></div>
+      <p><strong>Recomendación para este módulo:</strong> Sonnet 5 es el modelo predeterminado y resuelve con solvencia la mayoría de las tareas de Riesgos. Se cambia a Opus cuando el análisis es extenso o involucra cálculos que deben sostenerse ante un comité, y a Haiku cuando la prioridad es la rapidez. Cada conversación conserva el modelo con el que se inició, aunque puede cambiarse en cualquier momento desde el selector.</p>
+    </div>
+
+    <div class="alert violet">
+      <div class="alert-icon"><svg class="icon"><use href="#i-clock"/></svg></div>
+      <p><strong>Razonamiento extendido:</strong> al activarlo, Claude analiza el problema paso a paso antes de responder. La respuesta tarda más, pero gana rigor en cálculos, comparaciones y conclusiones. Conviene en análisis de indicadores, pruebas de estrés o revisión de metodologías; en correos o resúmenes breves no aporta diferencia.</p>
+    </div>
+
+    <div class="alert warn">
+      <div class="alert-icon"><svg class="icon"><use href="#i-alert"/></svg></div>
+      <p><strong>Versiones y disponibilidad:</strong> Anthropic publica nuevas versiones de sus modelos con regularidad, por lo que los nombres del selector cambian con el tiempo. La lista disponible depende además del plan contratado por el banco. Lo que se mantiene es la lógica de la familia: Haiku para rapidez, Sonnet para el trabajo diario y Opus o Fable para el análisis más exigente.</p>
+    </div>
+
+    <div class="sec-foot">
+      <span><svg class="icon"><use href="#i-book"/></svg>Ing. Emerson Torres</span>
+      <span><svg class="icon"><use href="#i-building"/></svg>Banco Atlántida · Vicepresidencia Adjunta de Riesgos</span>
+      <span><svg class="icon"><use href="#i-pin"/></svg>Módulo 1 de 5</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SECCIÓN 6 · PRIMERA CONVERSACIÓN
   ════════════════════════════════ -->
   <section class="section" id="sec-pasos">
-    <div class="eyebrow">Sección 05 · Práctica guiada</div>
+    <div class="eyebrow">Sección 06 · Práctica guiada</div>
     <h1 class="ptitle">Tu primera<br>conversación <em>en 5 pasos</em></h1>
     <p class="plead">Sigue cada paso en orden. El facilitador te acompaña en tiempo real. Cada paso tiene instrucciones claras, un prompt listo para copiar y un tip de apoyo.</p>
 
@@ -2608,7 +2803,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
         <div class="tcard">
           <div class="teyebrow">Paso 1 · Preparación · 1 min</div>
           <h3>Ten Claude abierto en un chat nuevo</h3>
-          <p>Vuelve a la pestaña de <strong>claude.ai</strong> donde iniciaste sesión y pulsa <strong>Nuevo chat</strong>. Ubica el campo de texto: ahí escribirás todo lo que sigue.</p>
+          <p>Vuelve a la pestaña de <strong>claude.ai</strong> donde iniciaste sesión y pulsa <strong>Nuevo chat</strong>. Ubica el campo de texto: ahí escribirás todo lo que sigue. Verifica que el selector de modelo indique <strong>Sonnet 5</strong>, el modelo recomendado para esta práctica.</p>
           <div class="tip-box"><svg class="icon"><use href="#i-bulb"/></svg><span>¿Se cerró la sesión o no la tienes abierta? Repasa la sección <a href="#acceso" style="color:inherit;">Iniciar sesión</a>. Si algo se ve distinto a la simulación, puede ser una actualización de la interfaz: el campo de texto siempre es tu punto de entrada.</span></div>
         </div>
       </div>
@@ -2710,10 +2905,10 @@ O también:
   </section>
 
   <!-- ════════════════════════════════
-       SECCIÓN 6 · ARTE DEL PROMPT
+       SECCIÓN 7 · ARTE DEL PROMPT
   ════════════════════════════════ -->
   <section class="section" id="sec-prompts">
-    <div class="eyebrow">Sección 06 · Prompting</div>
+    <div class="eyebrow">Sección 07 · Prompting</div>
     <h1 class="ptitle">El arte de<br>escribir <em>buenos prompts</em></h1>
     <p class="plead">Un buen prompt es la diferencia entre un resultado genérico y uno que puedes usar directamente. Esta sección te enseña la fórmula que funciona siempre.</p>
 
@@ -2844,10 +3039,10 @@ Extensión: máximo 3 párrafos. Incluye una línea de asunto para el correo.</d
   </section>
 
   <!-- ════════════════════════════════
-       SECCIÓN 7 · EJERCICIOS
+       SECCIÓN 8 · EJERCICIOS
   ════════════════════════════════ -->
   <section class="section" id="sec-ejercicios">
-    <div class="eyebrow">Sección 07 · Práctica</div>
+    <div class="eyebrow">Sección 08 · Práctica</div>
     <h1 class="ptitle">Ejercicios prácticos<br><em>por área de Riesgos</em></h1>
     <p class="plead">Selecciona el ejercicio de tu área. Cada uno tiene prompts listos para copiar con datos ficticios, pasos a seguir y un reto adicional para quienes quieran profundizar.</p>
 
@@ -3194,10 +3389,10 @@ Tono: técnico y directo. Máximo una página.</div>
   </section>
 
   <!-- ════════════════════════════════
-       SECCIÓN 8 · ERRORES
+       SECCIÓN 9 · ERRORES
   ════════════════════════════════ -->
   <section class="section" id="sec-errores">
-    <div class="eyebrow">Sección 08 · Prevención</div>
+    <div class="eyebrow">Sección 09 · Prevención</div>
     <h1 class="ptitle">Los 6 errores más<br><em>frecuentes</em> al iniciar</h1>
     <p class="plead">Conocer los errores antes de cometerlos te ahorra frustración y tiempo. Estos son los patrones más comunes en personas que comienzan a usar Claude en entornos corporativos.</p>
 
@@ -3325,10 +3520,10 @@ Tono: técnico y directo. Máximo una página.</div>
   </section>
 
   <!-- ════════════════════════════════
-       SECCIÓN 9 · EVALUACIÓN
+       SECCIÓN 10 · EVALUACIÓN
   ════════════════════════════════ -->
   <section class="section" id="sec-evaluacion">
-    <div class="eyebrow">Sección 09 · Evaluación</div>
+    <div class="eyebrow">Sección 10 · Evaluación</div>
     <h1 class="ptitle">Evaluación de cierre:<br><em>Checklist</em> de competencias</h1>
     <p class="plead">Marca cada logro que hayas completado durante esta sesión. El objetivo es llegar al 100% antes de terminar la clase y poder avanzar al Módulo 2 con confianza.</p>
 
@@ -3447,19 +3642,20 @@ Tono: técnico y directo. Máximo una página.</div>
 var allNavItems = document.querySelectorAll('.nav-item');
 var topbarTitle  = document.getElementById('topbar-title');
 
-var SECTIONS = ['intro','acceso','interfaz','fundamentos','pasos','prompts','ejercicios','errores','evaluacion'];
+var SECTIONS = ['intro','acceso','interfaz','fundamentos','modelos','pasos','prompts','ejercicios','errores','evaluacion'];
 var visitedSections = new Set();
 
 var sectionTitles = {
   intro:       'Sección 1 · Introducción',
   acceso:      'Sección 2 · Iniciar sesión',
-  interfaz:    'Sección 3 · Interfaz y modelos',
+  interfaz:    'Sección 3 · Interfaz de Claude',
   fundamentos: 'Sección 4 · Fundamentos de IA',
-  pasos:       'Sección 5 · Primera conversación',
-  prompts:     'Sección 6 · Arte del prompt',
-  ejercicios:  'Sección 7 · Ejercicios de Riesgos',
-  errores:     'Sección 8 · Errores frecuentes',
-  evaluacion:  'Sección 9 · Evaluación de cierre',
+  modelos:     'Sección 5 · Modelos de Claude',
+  pasos:       'Sección 6 · Primera conversación',
+  prompts:     'Sección 7 · Arte del prompt',
+  ejercicios:  'Sección 8 · Ejercicios de Riesgos',
+  errores:     'Sección 9 · Errores frecuentes',
+  evaluacion:  'Sección 10 · Evaluación de cierre',
 };
 
 function updateSidebarProgress() {
@@ -3660,6 +3856,171 @@ function renderGreetings() {
 }
 renderGreetings();
 setInterval(renderGreetings, 60000);   // si la clase cruza el mediodía o la noche, se actualiza solo
+
+/* ══ MODELOS DE CLAUDE (selector interactivo) ══ */
+(function () {
+  var sec = document.getElementById('sec-modelos');
+  if (!sec) return;
+  function $(id) { return document.getElementById(id); }
+
+  // speed / depth: escala relativa de 1 a 5 dentro de la familia
+  var MODELS = {
+    fable: {
+      name: 'Claude Fable 5.1', short: 'Fable 5.1', menu: 'El más capaz, para los retos más exigentes',
+      speed: 2, depth: 5,
+      when: 'Problemas de máxima complejidad: análisis que combinan muchos documentos extensos, revisiones integrales de metodologías o trabajos que requieren un razonamiento prolongado y minucioso.',
+      riesgos: ['Revisión integral de una metodología de reservas frente a la normativa vigente', 'Contraste de varias versiones de una política extensa con sus anexos', 'Diagnóstico de brechas entre el marco de apetito de riesgo y los indicadores observados'],
+      note: 'Es el modelo de mayor capacidad y también el más pausado. Su disponibilidad depende del plan contratado por el banco.'
+    },
+    opus: {
+      name: 'Claude Opus 5.5', short: 'Opus 5.5', menu: 'Para análisis profundos y tareas complejas',
+      speed: 3, depth: 4,
+      when: 'Análisis extensos, cálculos que deben sostenerse ante un comité y documentos donde la precisión pesa más que la rapidez.',
+      riesgos: ['Interpretación de resultados de pruebas de estrés', 'Informe mensual de fraude con cálculos y recomendaciones', 'Análisis de concentración y deterioro de cartera por segmento'],
+      note: 'Responde con más detalle y rigor que Sonnet, a cambio de algunos segundos adicionales.'
+    },
+    sonnet: {
+      name: 'Claude Sonnet 5', short: 'Sonnet 5', menu: 'Inteligente y eficiente para el trabajo diario',
+      speed: 4, depth: 3, isDefault: true,
+      when: 'La mayor parte del trabajo cotidiano: redacción, resúmenes, análisis de indicadores y preparación de documentos para comités, con un equilibrio sólido entre calidad y rapidez.',
+      riesgos: ['Resumen ejecutivo de indicadores para el Comité de Riesgos', 'Correos formales y comunicaciones a otras áreas', 'Síntesis de circulares y normativa de la SSF'],
+      note: 'Es el modelo predeterminado y el recomendado para las prácticas de este módulo.'
+    },
+    haiku: {
+      name: 'Claude Haiku 4.5', short: 'Haiku 4.5', menu: 'El más rápido para tareas breves',
+      speed: 5, depth: 2,
+      when: 'Tareas breves y directas donde la inmediatez es lo más valioso: consultas rápidas, reformular un párrafo o clasificar información sencilla.',
+      riesgos: ['Reformular un párrafo con un tono más formal', 'Extraer fechas y montos de un texto corto', 'Responder dudas puntuales sobre un término'],
+      note: 'Responde casi al instante; para análisis de fondo conviene un modelo de mayor profundidad.'
+    },
+    opus5: {
+      name: 'Claude Opus 5', short: 'Opus 5', menu: 'Versión anterior de Opus', legacy: true,
+      speed: 3, depth: 4,
+      when: 'Versión anterior de la línea Opus. Se mantiene disponible para dar continuidad a conversaciones y resultados obtenidos con ella.',
+      riesgos: ['Continuar un análisis iniciado con esta versión'],
+      note: 'Para trabajo nuevo se recomienda la versión vigente, Opus 5.5.'
+    },
+    sonnet46: {
+      name: 'Claude Sonnet 4.6', short: 'Sonnet 4.6', menu: 'Versión anterior de Sonnet', legacy: true,
+      speed: 4, depth: 3,
+      when: 'Versión anterior de la línea Sonnet. Se mantiene disponible para dar continuidad a conversaciones y resultados obtenidos con ella.',
+      riesgos: ['Continuar un trabajo iniciado con esta versión'],
+      note: 'Para trabajo nuevo se recomienda la versión vigente, Sonnet 5.'
+    }
+  };
+  var MAIN = ['fable', 'opus', 'sonnet', 'haiku'], MORE = ['opus5', 'sonnet46'];
+
+  var TASKS = [
+    { where: 'Primera conversación · Paso 2', name: 'Presentarte a Claude con tu contexto', model: 'haiku',
+      why: 'Es un mensaje breve y conversacional: la rapidez importa más que la profundidad. Sonnet 5 también lo resuelve sin diferencia apreciable.' },
+    { where: 'Primera conversación · Paso 3', name: 'Correo de convocatoria al Comité', model: 'sonnet',
+      why: 'Redacción formal de extensión corta: el equilibrio de Sonnet 5 entrega un texto correcto y bien estructurado al instante.' },
+    { where: 'Primera conversación · Paso 5', name: 'Pedir ajustes de tono y extensión', model: 'sonnet',
+      why: 'Los ajustes se hacen en la misma conversación y con el mismo modelo; cambiarlo no aporta a una edición de forma.' },
+    { where: 'Ejercicios · Todas las áreas', name: 'Resumir un documento denso', model: 'sonnet',
+      why: 'Sintetizar un informe extenso en puntos clave es la tarea más frecuente del día a día y el punto fuerte de Sonnet 5.' },
+    { where: 'Ejercicios · Riesgo Integral', name: 'Resumen ejecutivo para el Comité', model: 'sonnet',
+      why: 'Sintetizar indicadores en un resumen claro es trabajo cotidiano; Sonnet 5 lo hace con precisión y rapidez.' },
+    { where: 'Ejercicios · Riesgos Financieros', name: 'Explicar una prueba de estrés', model: 'opus',
+      why: 'Interpretar resultados cuantitativos y anticipar preguntas de Junta Directiva exige mayor profundidad. Opus 5.5 con razonamiento extendido aporta rigor adicional.' },
+    { where: 'Ejercicios · Crédito de Personas', name: 'Comunicar un cambio de política', model: 'sonnet',
+      why: 'Adaptar un mismo cambio a dos audiencias es un ejercicio de redacción y tono, donde Sonnet 5 ofrece el mejor equilibrio.' },
+    { where: 'Ejercicios · Fraude Transaccional', name: 'Informe mensual de fraude con cálculos', model: 'opus',
+      why: 'Combina cálculos, análisis y recomendaciones. Conviene la mayor precisión disponible y, como siempre, verificar las cifras antes de usarlas.' }
+  ];
+
+  var menu = $('mdMenu'), btn = $('mdBtn'), btnLabel = $('mdBtnLabel'), detail = $('mdDetail'),
+      think = $('mdThink'), moreBtn = $('mdMoreBtn'), more = $('mdMore');
+  var current = 'sonnet', thinking = false, activeTask = null;
+  var CHECK = '<svg class="cl-ico md-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg>';
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function optHTML(id) {
+    var m = MODELS[id];
+    return '<button type="button" class="md-opt" role="option" data-model="' + id + '" aria-selected="false">' +
+           '<span class="md-opt-txt"><span class="md-opt-name">' + esc(m.short) + '</span>' +
+           '<span class="md-opt-desc">' + esc(m.menu) + '</span></span>' + CHECK + '</button>';
+  }
+  $('mdMain').innerHTML = MAIN.map(optHTML).join('');
+  more.innerHTML = MORE.map(optHTML).join('');
+
+  function dots(n) { var s = ''; for (var i = 1; i <= 5; i++) s += '<i class="' + (i <= n ? 'on' : '') + '"></i>'; return s; }
+  function renderDetail() {
+    var m = MODELS[current];
+    var tag = m.isDefault ? '<span class="md-d-tag">Predeterminado</span>' : (m.legacy ? '<span class="md-d-tag alt">Versión anterior</span>' : '');
+    var t = activeTask !== null ? TASKS[activeTask] : null;
+    detail.innerHTML =
+      (t ? '<div class="md-why"><svg class="icon"><use href="#i-bulb"/></svg><span><strong>' + esc(t.name) + ':</strong> ' + esc(t.why) + '</span></div>' : '') +
+      '<div class="md-d-top"><span class="md-d-name">' + esc(m.name) + '</span>' + tag + '</div>' +
+      '<p class="md-d-desc">' + esc(m.menu) + '</p>' +
+      '<div class="md-meters">' +
+        '<div class="md-meter spd"><span>Rapidez</span><span class="md-dots" aria-label="' + m.speed + ' de 5">' + dots(m.speed) + '</span></div>' +
+        '<div class="md-meter"><span>Profundidad de análisis</span><span class="md-dots" aria-label="' + m.depth + ' de 5">' + dots(m.depth) + '</span></div>' +
+      '</div>' +
+      '<div><div class="md-d-h">Cuándo usarlo</div><p class="md-d-p">' + esc(m.when) + '</p></div>' +
+      '<div><div class="md-d-h">En Riesgos</div><ul class="md-d-list">' + m.riesgos.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul></div>' +
+      (thinking ? '<div class="md-d-think"><strong>Razonamiento extendido activo:</strong> Claude analizará el problema paso a paso antes de responder. La respuesta tarda más y gana rigor en cálculos y conclusiones.</div>' : '') +
+      '<div class="md-d-note">' + esc(m.note) + '</div>';
+  }
+  function select(id, flash) {
+    current = id;
+    btnLabel.textContent = MODELS[id].short;
+    sec.querySelectorAll('.md-opt').forEach(function (o) {
+      var on = o.dataset.model === id;
+      o.setAttribute('aria-selected', on);
+      if (on && flash) { o.classList.remove('flash'); void o.offsetWidth; o.classList.add('flash'); }
+    });
+    if (MODELS[id].legacy && more.hidden) setMore(true);
+    renderDetail();
+  }
+  function setMenu(open) { menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); }
+  function setMore(open) { more.hidden = !open; moreBtn.setAttribute('aria-expanded', String(open)); }
+
+  btn.onclick = function (e) { e.stopPropagation(); setMenu(menu.hidden); };
+  menu.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var o = e.target.closest('.md-opt');
+    if (o) { select(o.dataset.model); clearTask(); }
+  });
+  think.onclick = function () {
+    thinking = !thinking;
+    think.setAttribute('aria-checked', String(thinking));
+    btn.classList.toggle('thinking', thinking);
+    renderDetail();
+  };
+  moreBtn.onclick = function () { setMore(more.hidden); };
+  document.addEventListener('click', function (e) {
+    if (!menu.hidden && !menu.contains(e.target) && e.target !== btn) setMenu(false);
+  });
+  menu.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); btn.focus(); } });
+
+  /* Tareas de las prácticas → modelo recomendado */
+  var tasksEl = $('mdTasks');
+  tasksEl.innerHTML = TASKS.map(function (t, i) {
+    return '<button type="button" class="md-task" data-i="' + i + '">' +
+           '<span class="md-task-where">' + esc(t.where) + '</span>' +
+           '<span class="md-task-name">' + esc(t.name) + '</span>' +
+           '<span class="md-task-model">Recomendado: ' + esc(MODELS[t.model].short) + '</span></button>';
+  }).join('');
+  function clearTask() {
+    activeTask = null;
+    tasksEl.querySelectorAll('.md-task').forEach(function (b) { b.classList.remove('on'); });
+    renderDetail();
+  }
+  tasksEl.addEventListener('click', function (e) {
+    var b = e.target.closest('.md-task');
+    if (!b) return;
+    e.stopPropagation();   // evita que el cierre por clic externo cierre el menú recién abierto
+    activeTask = +b.dataset.i;
+    tasksEl.querySelectorAll('.md-task').forEach(function (x) { x.classList.toggle('on', x === b); });
+    setMenu(true);
+    select(TASKS[activeTask].model, true);
+    menu.closest('.anatomy').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  select('sonnet');
+  setMenu(true);
+})();
 
 /* ══ LABORATORIO DE IA (sección Fundamentos) ══ */
 (function () {
