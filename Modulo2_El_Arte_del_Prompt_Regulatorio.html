@@ -3249,6 +3249,9 @@ function updateSidebarProgress() {
 }
 
 var COURSE_HOME = 'Bienvenida_Curso_Riesgos_Banco_Atlantida.html';
+// Módulos vecinos: enlazan el inicio y el cierre de este módulo con el resto del curso (null = volver al programa)
+var PREV_MODULE = { href: 'Modulo1_Bienvenido_a_Claude_Riesgos.html', title: 'Módulo 1: Bienvenido a Claude' };
+var NEXT_MODULE = null;
 
 function showSec(id) {
   if (SECTIONS.indexOf(id) === -1) id = 'intro';
@@ -3294,13 +3297,17 @@ SECTIONS.forEach(function(id, i) {
     var prev = SECTIONS[i - 1];
     html += pagerBtn('prev', '#' + prev, ICON_ARROW + 'Anterior', sectionTitles[prev]);
   } else {
-    html += pagerBtn('prev', COURSE_HOME, ICON_ARROW + 'Volver', 'Programa del curso');
+    html += PREV_MODULE
+      ? pagerBtn('prev', PREV_MODULE.href, ICON_ARROW + 'Módulo anterior', PREV_MODULE.title)
+      : pagerBtn('prev', COURSE_HOME, ICON_ARROW + 'Volver', 'Programa del curso');
   }
   if (i < SECTIONS.length - 1) {
     var next = SECTIONS[i + 1];
     html += pagerBtn('next primary', '#' + next, 'Siguiente' + ICON_ARROW, sectionTitles[next]);
   } else {
-    html += pagerBtn('next primary', COURSE_HOME, 'Terminar' + ICON_ARROW, 'Volver al programa del curso');
+    html += NEXT_MODULE
+      ? pagerBtn('next primary', NEXT_MODULE.href, 'Siguiente módulo' + ICON_ARROW, NEXT_MODULE.title)
+      : pagerBtn('next primary', COURSE_HOME, 'Terminar' + ICON_ARROW, 'Volver al programa del curso');
   }
   var nav = document.createElement('nav');
   nav.className = 'sec-pager';
