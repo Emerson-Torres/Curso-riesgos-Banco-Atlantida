@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Módulo 2: El Arte del Prompt Regulatorio · Banco Atlántida · Curso de Riesgos</title>
+<title>Módulo 2: El arte del prompt regulatorio · Banco Atlántida · Curso de Riesgos</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════
@@ -1963,6 +1963,150 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   .tech-head, .ws-head, .lib-head { flex-wrap:wrap; }
   .level-row { gap:.6rem; }
 }
+
+/* ══════════════════════════════════════════════
+   INDICADORES DE CONVERSACIÓN (nuevo chat / mismo chat)
+   Réplica de dos elementos de claude.ai: el botón "Nuevo chat"
+   de la barra lateral y el campo de texto con su botón de enviar.
+══════════════════════════════════════════════ */
+:root { --chat-accent:#c96442; --chat-accent-l:#d97757; --chat-line:#e5e2d8; --chat-bg:#faf9f5; }
+
+.p-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:.45rem; }
+.p-head .prompt-lbl { margin:0 0 0 auto; }
+.choose-opt .p-head, .ex-content .p-head { margin-top:.2rem; }
+
+/* Nuevo chat */
+.chat-new {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#fff; border:1px solid var(--chat-line); border-radius:10px;
+  padding:4px 12px 4px 5px;
+  font-family:var(--ff-body); font-size:12.5px; font-weight:600; line-height:1.2; color:var(--chat-accent);
+  cursor:pointer; transition:var(--t); box-shadow:0 1px 2px rgba(31,30,29,.05);
+}
+.chat-new .chat-dot {
+  width:22px; height:22px; border-radius:50%; flex-shrink:0;
+  background:var(--chat-accent); color:#fff;
+  display:flex; align-items:center; justify-content:center; transition:var(--t);
+}
+.chat-new .chat-dot .icon { width:13px; height:13px; stroke-width:2.2; }
+.chat-new:hover { border-color:var(--chat-accent-l); background:#fdf3ee; }
+.chat-new:hover .chat-dot { transform:rotate(90deg); }
+.chat-new:focus-visible { outline:2px solid var(--chat-accent-l); outline-offset:2px; }
+.chat-new.copied { border-color:var(--teal-bd); color:var(--teal); background:var(--teal-pale); }
+.chat-new.copied .chat-dot { background:var(--teal); }
+.chat-new.is-static { cursor:default; }
+.chat-new.is-static:hover { background:#fff; border-color:var(--chat-line); }
+.chat-new.is-static:hover .chat-dot { transform:none; }
+
+/* Mismo chat */
+.chat-cont {
+  display:inline-flex; align-items:center; gap:9px;
+  background:#fff; border:1px solid var(--chat-line); border-radius:12px;
+  padding:3px 3px 3px 10px;
+  font-family:var(--ff-body); font-size:12.5px; font-weight:600; line-height:1.2; color:var(--ink-mid);
+  box-shadow:0 1px 2px rgba(31,30,29,.05);
+}
+.chat-cont .chat-reply { width:14px; height:14px; color:var(--ink-soft); }
+.chat-cont .chat-ref { font-weight:500; color:var(--ink-soft); }
+.chat-cont .chat-send {
+  width:22px; height:22px; border-radius:7px; flex-shrink:0;
+  background:var(--chat-accent-l); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+}
+.chat-cont .chat-send .icon { width:12px; height:12px; stroke-width:2.3; }
+.challenge .chat-cont { margin:0 0 .5rem; }
+.challenge > div > .chat-cont { display:flex; width:max-content; max-width:100%; }
+
+/* Hilo: une los mensajes de una misma conversación */
+.chat-thread-tag {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:11.5px; font-weight:600; color:var(--ink-soft);
+  background:var(--chat-bg); border:1px solid var(--chat-line); border-radius:20px;
+  padding:3px 11px; margin-bottom:1rem;
+}
+.chat-thread-tag .icon { width:13px; height:13px; color:var(--chat-accent); }
+.timeline.chat-thread .tline {
+  width:2px;
+  background:repeating-linear-gradient(to bottom, var(--chat-accent-l) 0 6px, transparent 6px 11px);
+  opacity:.6;
+}
+.ex-body.chat-thread .ex-step-row { position:relative; }
+.ex-body.chat-thread .ex-step-row:not(.t-end)::before {
+  content:''; position:absolute; left:12px; top:32px; bottom:-14px; width:2px;
+  background:repeating-linear-gradient(to bottom, var(--chat-accent-l) 0 6px, transparent 6px 11px);
+  opacity:.6;
+}
+.chat-seq.chat-thread { position:relative; padding-left:26px; margin:.4rem 0 .6rem; }
+.chat-seq.chat-thread::before {
+  content:''; position:absolute; left:8px; top:46px; bottom:18px; width:2px;
+  background:repeating-linear-gradient(to bottom, var(--chat-accent-l) 0 6px, transparent 6px 11px);
+  opacity:.6;
+}
+.chat-seq .chat-thread-tag { margin-left:-26px; }
+.chat-seq .t-item { position:relative; margin-bottom:1.1rem; }
+.chat-seq .t-item:last-child { margin-bottom:0; }
+.chat-seq .t-item::before {
+  content:''; position:absolute; left:-23px; top:9px; width:10px; height:10px; border-radius:50%;
+  background:#fff; border:2px solid var(--chat-accent-l);
+}
+.chat-seq .t-item.t-start::before { background:var(--chat-accent); border-color:var(--chat-accent); }
+.chat-seq .prompt-wrap { margin-top:0; }
+
+/* Elige uno: control segmentado */
+.chat-choose-bar {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin:.7rem 0 .55rem; font-size:12px; font-weight:600; color:var(--ink-soft);
+}
+.chat-choose-bar > .icon { width:14px; height:14px; }
+.chat-seg { display:inline-flex; flex-wrap:wrap; background:var(--slate-pale); border:1px solid var(--slate-bd); border-radius:9px; padding:2px; }
+.chat-seg button {
+  border:none; background:transparent; font-family:var(--ff-body); font-size:12px; font-weight:600;
+  color:var(--ink-soft); padding:4px 11px; border-radius:7px; cursor:pointer; transition:var(--t);
+}
+.chat-seg button:hover { color:var(--ink); }
+.chat-seg button.on { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.chat-seg button:focus-visible { outline:2px solid var(--chat-accent-l); outline-offset:1px; }
+.choose-opt[hidden] { display:none !important; }
+.choose-opt .prompt-wrap { margin-top:0; }
+
+/* Fragmento de prompt: ilustra un componente, no se envía solo */
+.frag-lbl {
+  display:flex; align-items:center; gap:6px; margin-bottom:.4rem;
+  font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--slate);
+}
+.frag-lbl .icon { width:14px; height:14px; }
+.prompt-box.frag {
+  background:var(--surface); border:1px dashed var(--slate-bd); border-left:1px dashed var(--slate-bd);
+  border-radius:var(--r-sm); color:var(--ink-soft);
+}
+
+/* Lista de ajustes independientes */
+.adj-list .prompt-wrap { margin-top:.75rem; }
+
+/* Regla general (una vez por módulo) */
+.chat-rule { margin:0 0 2.25rem; }
+.chat-rule-h { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:.6rem; }
+.chat-rule-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.chat-rule-card { background:var(--surface); border:1px solid var(--border2); border-radius:var(--r-sm); padding:1rem 1.15rem; box-shadow:var(--sh-sm); }
+.chat-rule-card p { font-size:13.5px; color:var(--ink-mid); line-height:1.6; margin-top:.65rem; }
+
+/* Aviso al copiar */
+.chat-toast {
+  position:fixed; left:50%; bottom:24px; z-index:300;
+  transform:translateX(-50%) translateY(16px); opacity:0; pointer-events:none;
+  background:#262021; color:#fff; font-family:var(--ff-body); font-size:13px;
+  padding:.65rem 1.05rem; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.25);
+  display:flex; align-items:center; gap:9px; max-width:calc(100vw - 32px); transition:var(--t);
+}
+.chat-toast.on { opacity:1; transform:translateX(-50%) translateY(0); }
+.chat-toast .chat-dot { width:20px; height:20px; border-radius:50%; background:var(--chat-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.chat-toast .chat-dot .icon { width:12px; height:12px; stroke-width:2.2; color:#fff; }
+
+@media (max-width:640px) {
+  .chat-rule-grid { grid-template-columns:1fr; }
+  .p-head .prompt-lbl { margin-left:0; width:100%; }
+}
+
 </style>
 </head>
 <body>
@@ -2029,7 +2173,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
 <aside class="sidebar" id="sidebar">
   <div class="sb-head">
     <div class="sb-pill">Módulo 2 de 5</div>
-    <div class="sb-logo">El Arte del <em>Prompt</em></div>
+    <div class="sb-logo">El arte del <em>prompt</em></div>
     <div class="sb-sub">Banco Atlántida · Vicepresidencia Adjunta de Riesgos</div>
   </div>
 
@@ -2114,7 +2258,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
       <div class="tb-bc">
         <a href="Bienvenida_Curso_Riesgos_Banco_Atlantida.html">Claude IA · Curso de Riesgos</a>
         <span class="sep">›</span>
-        <strong id="topbar-title">Módulo 2: El Arte del Prompt Regulatorio</strong>
+        <strong id="topbar-title">Módulo 2: El arte del prompt regulatorio</strong>
       </div>
     </div>
     <div class="tb-chips">
@@ -2141,7 +2285,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
           <p class="hero-lead">En el Módulo 1 aprendiste a hablarle a Claude. Ahora vas a pedirle con la precisión que exige un área supervisada: con el vocabulario de Riesgos, con tus datos y con límites claros sobre lo que no debe inventar.</p>
           <div class="hero-stats">
             <div><div class="hero-stat-n">9</div><div class="hero-stat-l">Secciones guiadas</div></div>
-            <div><div class="hero-stat-n">45</div><div class="hero-stat-l">Prompts listos para copiar</div></div>
+            <div><div class="hero-stat-n">49</div><div class="hero-stat-l">Prompts listos para copiar</div></div>
             <div><div class="hero-stat-n">4</div><div class="hero-stat-l">Áreas de Riesgos</div></div>
           </div>
         </div>
@@ -2189,13 +2333,27 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
       <div class="card">
         <div class="card-icon ic-violet"><svg class="icon"><use href="#i-calendar"/></svg></div>
         <h3>Un módulo en dos partes</h3>
-        <p><strong>Primera parte (2 horas):</strong> anatomía, terminología, técnicas, taller y errores. <strong>Segunda parte (1 hora):</strong> análisis cuantitativo de cartera, biblioteca de prompts y evaluación. El menú lateral marca dónde empieza cada parte.</p>
+        <p><strong>Primera parte (2 horas):</strong> anatomía, terminología, técnicas, taller y errores. <strong>Segunda parte (1 hora):</strong> análisis cuantitativo de cartera, biblioteca de prompts y evaluación.</p>
       </div>
     </div>
 
     <div class="alert info">
       <div class="alert-icon"><svg class="icon"><use href="#i-bulb"/></svg></div>
-      <p><strong>¿Dónde quedamos?</strong> En el Módulo 1 usaste la fórmula básica: qué quieres, para quién, qué tono y cuánto. Hoy le sumamos tres piezas que en Riesgos marcan la diferencia: el <strong>rol</strong>, los <strong>datos y definiciones</strong> que tú aportas y las <strong>restricciones</strong>.</p>
+      <p><strong>¿Dónde quedamos?</strong> En el Módulo 1 trabajaste con cinco componentes: rol, tarea, receptor, tono, y extensión y formato. En Riesgos se amplían a seis: el <strong>rol</strong> deja de describirte a ti y le asigna a Claude una especialidad, el receptor se integra en la tarea, y se suman el <strong>contexto con los datos y definiciones</strong> que tú aportas y las <strong>restricciones</strong>.</p>
+    </div>
+
+    <div class="chat-rule">
+      <div class="chat-rule-h">Indicadores de conversación · cada prompt indica dónde se envía</div>
+      <div class="chat-rule-grid">
+        <div class="chat-rule-card">
+          <span class="chat-new is-static"><span class="chat-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>Nuevo chat</span>
+          <p>El prompt inicia un tema nuevo y va en una conversación limpia. En este módulo es clave: las comparaciones entre prompts solo son válidas si cada uno parte de cero.</p>
+        </div>
+        <div class="chat-rule-card">
+          <span class="chat-cont"><svg class="icon chat-reply" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h10a6 6 0 0 1 6 6v1"/></svg>Mismo chat<span class="chat-send"><svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></span></span>
+          <p>El prompt continúa la conversación abierta: depende de la respuesta anterior de Claude. Una línea punteada une los mensajes de una misma conversación.</p>
+        </div>
+      </div>
     </div>
 
     <div class="divider"></div>
@@ -2234,17 +2392,17 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   <section class="section" id="sec-anatomia">
     <div class="eyebrow">Sección 02 · Anatomía</div>
     <h1 class="ptitle">Los <em>6 componentes</em><br>de un prompt regulatorio</h1>
-    <p class="plead">Un prompt poderoso tiene hasta seis componentes. No siempre necesitas todos, pero conocerlos te da control total sobre el resultado, que es justo lo que exige un documento de Riesgos.</p>
+    <p class="plead">Un prompt regulatorio tiene hasta seis componentes. No siempre se necesitan todos, pero conocerlos permite controlar con precisión el resultado, que es justo lo que exige un documento de Riesgos.</p>
 
     <div class="ap-box">
-      <div class="ap-label"><svg class="icon"><use href="#i-search"/></svg>Toca cada parte del prompt para ver su función</div>
-      <p class="ap-sentence"><span class="ap-part ap-c1" data-part="1" onclick="showPart(1)">Eres analista senior de Riesgo Integral en Banco Atlántida El Salvador, con experiencia en reportes para órganos de gobierno.</span><span class="ap-part ap-c2" data-part="2" onclick="showPart(2)"> Al cierre de septiembre, la mora de tarjeta de crédito subió de 3.3% a 3.9% y se acerca al nivel de alerta interno de 4.0%.</span><span class="ap-part ap-c3" data-part="3" onclick="showPart(3)"> Redacta el apartado de riesgo de crédito del informe mensual al Comité de Riesgos: explica la variación, sus causas probables y las acciones propuestas.</span><span class="ap-part ap-c4" data-part="4" onclick="showPart(4)"> Usa un tono técnico y sobrio; evita adjetivos alarmistas.</span><span class="ap-part ap-c5" data-part="5" onclick="showPart(5)"> Formato: 3 párrafos breves y una tabla con indicador, valor anterior, valor actual y variación en puntos porcentuales.</span><span class="ap-part ap-c6" data-part="6" onclick="showPart(6)"> No inventes cifras que no te di ni cites normativa; si necesitas un dato que falta, escribe [DATO PENDIENTE].</span></p>
+      <div class="ap-label"><svg class="icon"><use href="#i-search"/></svg>Anatomía de un prompt regulatorio · seis componentes</div>
+      <p class="ap-sentence"><span class="ap-part ap-c1" data-part="1" onclick="showPart(1)">Eres analista senior de Riesgo Integral en Banco Atlántida El Salvador, con experiencia en reportes para órganos de gobierno.</span><span class="ap-part ap-c2" data-part="2" onclick="showPart(2)"> Al cierre de septiembre, la mora de tarjeta de crédito subió de 3.1% a 3.9% y se acerca al nivel de alerta interno de 4.0%.</span><span class="ap-part ap-c3" data-part="3" onclick="showPart(3)"> Redacta el apartado de riesgo de crédito del informe mensual al Comité de Riesgos: explica la variación, sus causas probables y las acciones propuestas.</span><span class="ap-part ap-c4" data-part="4" onclick="showPart(4)"> Usa un tono técnico y sobrio; evita adjetivos alarmistas.</span><span class="ap-part ap-c5" data-part="5" onclick="showPart(5)"> Formato: 3 párrafos breves y una tabla con indicador, valor anterior, valor actual y variación en puntos porcentuales.</span><span class="ap-part ap-c6" data-part="6" onclick="showPart(6)"> No inventes cifras que no te di ni cites normativa; si necesitas un dato que falta, escribe [DATO PENDIENTE].</span></p>
       <div class="ap-info ap-c1" id="ap-info-1"><strong>Componente 1 · Rol.</strong> Le indica a Claude desde qué especialidad responder. Activa el vocabulario técnico y el nivel de formalidad correctos. En informes para Comité y Junta, el rol es lo que separa un texto genérico de uno que suena a Riesgos.</div><div class="ap-info ap-c2" id="ap-info-2"><strong>Componente 2 · Contexto.</strong> La situación concreta y los datos que Claude necesita. En Riesgos, el contexto casi siempre incluye cifras: dáselas tú. Si no las das, Claude puede suponerlas.</div><div class="ap-info ap-c3" id="ap-info-3"><strong>Componente 3 · Tarea.</strong> Lo que quieres que haga, con verbos claros (redacta, resume, compara, calcula) y los puntos que debe cubrir.</div><div class="ap-info ap-c4" id="ap-info-4"><strong>Componente 4 · Tono.</strong> El registro del texto y lo que no quieres que aparezca. En documentos para órganos de gobierno, el tono sobrio transmite control de la situación.</div><div class="ap-info ap-c5" id="ap-info-5"><strong>Componente 5 · Formato.</strong> Cómo quieres ver la respuesta: tabla, secciones, correo, viñetas. Pedirlo desde el inicio te ahorra reformatear después.</div><div class="ap-info ap-c6" id="ap-info-6"><strong>Componente 6 · Restricciones.</strong> El componente más importante en Riesgos. Le prohíbe a Claude rellenar vacíos con suposiciones y te deja marcado lo que falta, para que lo completes con la fuente oficial.</div>
       <div class="ap-legend"><button class="ap-leg" data-part="1" onclick="showPart(1)"><span class="ap-dot ap-c1"></span><span><span class="ap-leg-name">1 · Rol</span><span class="ap-leg-desc">Quién debe ser Claude</span></span></button><button class="ap-leg" data-part="2" onclick="showPart(2)"><span class="ap-dot ap-c2"></span><span><span class="ap-leg-name">2 · Contexto</span><span class="ap-leg-desc">La situación y los datos</span></span></button><button class="ap-leg" data-part="3" onclick="showPart(3)"><span class="ap-dot ap-c3"></span><span><span class="ap-leg-name">3 · Tarea</span><span class="ap-leg-desc">La instrucción central</span></span></button><button class="ap-leg" data-part="4" onclick="showPart(4)"><span class="ap-dot ap-c4"></span><span><span class="ap-leg-name">4 · Tono</span><span class="ap-leg-desc">Estilo y lo que evitar</span></span></button><button class="ap-leg" data-part="5" onclick="showPart(5)"><span class="ap-dot ap-c5"></span><span><span class="ap-leg-name">5 · Formato</span><span class="ap-leg-desc">Cómo presentar el resultado</span></span></button><button class="ap-leg" data-part="6" onclick="showPart(6)"><span class="ap-dot ap-c6"></span><span><span class="ap-leg-name">6 · Restricciones</span><span class="ap-leg-desc">Qué NO debe hacer</span></span></button></div>
     </div>
     <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>El prompt completo, listo para probar</div>
-            <div class="prompt-box" id="pa-full">Eres analista senior de Riesgo Integral en Banco Atlántida El Salvador, con experiencia en reportes para órganos de gobierno. Al cierre de septiembre, la mora de tarjeta de crédito subió de 3.3% a 3.9% y se acerca al nivel de alerta interno de 4.0%. Redacta el apartado de riesgo de crédito del informe mensual al Comité de Riesgos: explica la variación, sus causas probables y las acciones propuestas. Usa un tono técnico y sobrio; evita adjetivos alarmistas. Formato: 3 párrafos breves y una tabla con indicador, valor anterior, valor actual y variación en puntos porcentuales. No inventes cifras que no te di ni cites normativa; si necesitas un dato que falta, escribe [DATO PENDIENTE].</div>
+            <div class="prompt-box" id="pa-full" data-chat="new">Eres analista senior de Riesgo Integral en Banco Atlántida El Salvador, con experiencia en reportes para órganos de gobierno. Al cierre de septiembre, la mora de tarjeta de crédito subió de 3.1% a 3.9% y se acerca al nivel de alerta interno de 4.0%. Redacta el apartado de riesgo de crédito del informe mensual al Comité de Riesgos: explica la variación, sus causas probables y las acciones propuestas. Usa un tono técnico y sobrio; evita adjetivos alarmistas. Formato: 3 párrafos breves y una tabla con indicador, valor anterior, valor actual y variación en puntos porcentuales. No inventes cifras que no te di ni cites normativa; si necesitas un dato que falta, escribe [DATO PENDIENTE].</div>
           </div>
           <button class="copy-btn" onclick="copyP('pa-full',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt</button>
 
@@ -2265,7 +2423,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
         <p class="level-note">Funciona, pero el resultado será genérico.</p>
         <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Nivel 1 · 1 componente</div>
-            <div class="prompt-box" id="pa-l1">Escribe un aviso sobre fraude.</div>
+            <div class="prompt-box" id="pa-l1" data-chat="new">Escribe un aviso sobre fraude.</div>
           </div>
           <button class="copy-btn" onclick="copyP('pa-l1',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar y probar</button>
       </div>
@@ -2277,7 +2435,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
         <p class="level-note">Mejor: ya tiene destinatario y dirección clara.</p>
         <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Nivel 2 · 3 componentes</div>
-            <div class="prompt-box" id="pa-l2">Redacta un aviso para el personal de agencias sobre el aumento de fraudes por suplantación telefónica de este mes, en el que el estafador se hace pasar por el banco para pedir códigos de verificación. Tono claro y directo. Máximo 3 párrafos.</div>
+            <div class="prompt-box" id="pa-l2" data-chat="new">Redacta un aviso para el personal de agencias sobre el aumento de fraudes por suplantación telefónica de este mes, en el que el estafador se hace pasar por el banco para pedir códigos de verificación. Tono claro y directo. Máximo 3 párrafos.</div>
           </div>
           <button class="copy-btn" onclick="copyP('pa-l2',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar y probar</button>
       </div>
@@ -2289,7 +2447,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
         <p class="level-note">Resultado listo para revisar y enviar.</p>
         <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Nivel 3 · prompt regulatorio</div>
-            <div class="prompt-box" id="pa-l3">Eres especialista en prevención de fraude transaccional de Banco Atlántida El Salvador.
+            <div class="prompt-box" id="pa-l3" data-chat="new">Eres especialista en prevención de fraude transaccional de Banco Atlántida El Salvador.
 
 Contexto: este mes los casos confirmados de suplantación telefónica subieron de 12 a 21 (datos ficticios). El estafador llama haciéndose pasar por el banco y pide al cliente el código de verificación que recibe por SMS.
 
@@ -2353,14 +2511,14 @@ Restricciones: no menciones montos de pérdida, nombres de clientes ni detalles 
     <div class="rule-list">
       <div class="rule"><div class="rule-n">1</div><div><h4>Define el término y la fórmula</h4><p>No escribas solo "calcula la mora". Escribe "índice de mora = saldo con más de 90 días de atraso / saldo total". Así Claude usa la definición del banco y no una distinta.</p></div></div>
       <div class="rule"><div class="rule-n">2</div><div><h4>Pega la norma, no pidas que la recuerde</h4><p>Si el texto debe apoyarse en una norma, copia el artículo relevante en el prompt. Pedirle a Claude que cite normativa de memoria es la forma más común de obtener referencias incorrectas.</p></div></div>
-      <div class="rule"><div class="rule-n">3</div><div><h4>Pide que marque lo que no viene de ti</h4><p>Agrega: "si usas información que no está en mis datos, márcala con [VERIFICAR]". Así distingues de un vistazo lo que aportaste de lo que Claude completó.</p></div></div>
+      <div class="rule"><div class="rule-n">3</div><div><h4>Pide que marque lo que no viene de ti</h4><p>Agrega: "si usas información que no está en mis datos, márcala con [VERIFICAR]". Así distingues de un vistazo lo que aportaste de lo que Claude completó. Para la información que falta, la marca es [DATO PENDIENTE]: son las dos únicas marcas que se usan en el curso.</p></div></div>
     </div>
 
     <h2 class="sec-h2"><svg class="icon"><use href="#i-clipboard"/></svg>Tu bloque de contexto reutilizable</h2>
     <p style="font-size:14px;color:var(--ink-soft);margin-bottom:.5rem;">Este bloque va al inicio de cualquier conversación de trabajo. Complétalo una vez con los datos de tu área y reutilízalo. En el Módulo 4 lo convertiremos en las instrucciones del Proyecto de tu área.</p>
     <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Plantilla · bloque de contexto</div>
-            <div class="prompt-box" id="pt-bloque">Contexto para esta conversación:
+            <div class="prompt-box" id="pt-bloque" data-chat="new">Contexto para esta conversación:
 - Trabajo en [tu área] de la Vicepresidencia Adjunta de Riesgos de Banco Atlántida El Salvador.
 - Mis textos se dirigen normalmente a [Comité de Riesgos / Junta Directiva / áreas de Negocios / auditoría].
 - Definiciones que usamos:
@@ -2380,14 +2538,14 @@ Reglas:
       <div class="ref-block-lbl"><svg class="icon"><use href="#i-star"/></svg>Practica: un término, tres audiencias</div>
       <div class="ref-block-sub">Pega este prompt en Claude. Observa cómo cambia la explicación según quién la va a leer.</div>
       <div class="prompt-wrap">
-        <div class="prompt-box" id="pt-aud">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador.
+        <div class="prompt-box" id="pt-aud" data-chat="new">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador.
 
 Explica el coeficiente de cobertura de liquidez (CCL) a tres audiencias distintas:
 1. Un nuevo miembro de la Junta Directiva: 4 líneas, enfoque en para qué sirve y qué decisiones apoya.
 2. Un gerente de agencia: 3 líneas, sin fórmulas.
 3. Un analista recién incorporado a Riesgos: un párrafo con la fórmula general y un ejemplo con números ficticios.
 
-No menciones el límite regulatorio vigente; si lo necesitas, escribe [VERIFICAR LÍMITE].</div>
+No menciones el límite regulatorio vigente; si lo necesitas, escribe [DATO PENDIENTE].</div>
       </div>
       <button class="copy-btn" onclick="copyP('pt-aud',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt</button>
     </div>
@@ -2405,7 +2563,7 @@ No menciones el límite regulatorio vigente; si lo necesitas, escribe [VERIFICAR
   <section class="section" id="sec-tecnicas">
     <div class="eyebrow">Sección 04 · Técnicas</div>
     <h1 class="ptitle">5 técnicas para<br>resultados <em>profesionales</em></h1>
-    <p class="plead">Estas técnicas convierten a un usuario ocasional en uno experto. No requieren conocimientos técnicos: solo saber cuándo aplicar cada una. Todos los ejemplos usan datos ficticios.</p>
+    <p class="plead">Estas técnicas marcan la diferencia entre un uso ocasional de Claude y un uso profesional. No requieren conocimientos técnicos: solo saber cuándo aplicar cada una. Todos los ejemplos usan datos ficticios.</p>
 
     <div class="tech">
       <div class="tech-head">
@@ -2423,12 +2581,12 @@ No menciones el límite regulatorio vigente; si lo necesitas, escribe [VERIFICAR
         </div>
         <div class="cmp-col good">
           <div class="cmp-tag"><svg class="icon"><use href="#i-check"/></svg>Con rol: respuesta para tu audiencia</div>
-          <p>Rol de gerente de Riesgo Integral, un destinatario concreto (un nuevo miembro de Junta Directiva), los puntos que debe cubrir y una extensión máxima. Pruébalo con el prompt de abajo.</p>
+          <p>Se asigna el rol de gerente de Riesgo Integral, un destinatario concreto (un nuevo miembro de Junta Directiva), los puntos que debe cubrir y una extensión máxima, como en el prompt siguiente.</p>
           <p class="why">El rol y la audiencia orientan el nivel de detalle, el vocabulario y el propósito de la explicación.</p>
         </div>
       </div><div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt con rol</div>
-            <div class="prompt-box" id="pk-1">Eres gerente de Riesgo Integral en un banco salvadoreño. Explica a un nuevo miembro de Junta Directiva qué es el apetito de riesgo, cómo se traduce en límites por indicador y qué decisiones le tocará tomar sobre él. Máximo 4 párrafos, sin jerga innecesaria.</div>
+            <div class="prompt-box" id="pk-1" data-chat="new">Eres gerente de Riesgo Integral en un banco salvadoreño. Explica a un nuevo miembro de Junta Directiva qué es el apetito de riesgo, cómo se traduce en límites por indicador y qué decisiones le tocará tomar sobre él. Máximo 4 párrafos, sin jerga innecesaria.</div>
           </div>
           <button class="copy-btn" onclick="copyP('pk-1',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt</button>
         <div class="tip-box"><svg class="icon"><use href="#i-bulb"/></svg><span><strong>Cuándo usarla:</strong> para explicar conceptos a audiencias distintas, redactar para órganos de gobierno y cuando la primera respuesta suena demasiado general.</span></div>
@@ -2442,11 +2600,36 @@ No menciones el límite regulatorio vigente; si lo necesitas, escribe [VERIFICAR
       </div>
       <div class="tech-body">
         <div class="tech-area"><span class="ex-tag tag-integral">Riesgo Integral</span></div>
-        <div class="chain"><div class="chain-step"><div class="chain-n">Mensaje 1</div><p>Soy analista de Riesgo Integral en Banco Atlántida El Salvador. Voy a preparar el informe mensual de perfil de riesgo para el Comité de Riesgos. Primero, propón una estructura de secciones para este tipo de informe, sin redactar contenido todavía.</p></div><div class="chain-step"><div class="chain-n">Mensaje 2</div><p>Bien. Ahora redacta la sección de riesgo de crédito con estos datos ficticios: mora total 2.2% (mes anterior 2.1%, límite 3.5%); mora de tarjeta 3.9% (mes anterior 3.3%, nivel de alerta 4.0%); cobertura de reservas 116% (mínimo interno 110%). Máximo 2 párrafos.</p></div><div class="chain-step"><div class="chain-n">Mensaje 3</div><p>Ahora redacta la sección de liquidez con estos datos ficticios: CCL 138% (límite interno 115%); CFEN 112% (límite interno 105%). Máximo 1 párrafo.</p></div><div class="chain-step"><div class="chain-n">Mensaje 4</div><p>Con todo lo anterior, redacta un resumen ejecutivo de 5 líneas y cierra con los 2 puntos que requieren decisión o seguimiento del Comité.</p></div></div><div class="prompt-box" id="pk-2" hidden>Mensaje 1: Soy analista de Riesgo Integral en Banco Atlántida El Salvador. Voy a preparar el informe mensual de perfil de riesgo para el Comité de Riesgos. Primero, propón una estructura de secciones para este tipo de informe, sin redactar contenido todavía.
-Mensaje 2: Bien. Ahora redacta la sección de riesgo de crédito con estos datos ficticios: mora total 2.2% (mes anterior 2.1%, límite 3.5%); mora de tarjeta 3.9% (mes anterior 3.3%, nivel de alerta 4.0%); cobertura de reservas 116% (mínimo interno 110%). Máximo 2 párrafos.
-Mensaje 3: Ahora redacta la sección de liquidez con estos datos ficticios: CCL 138% (límite interno 115%); CFEN 112% (límite interno 105%). Máximo 1 párrafo.
-Mensaje 4: Con todo lo anterior, redacta un resumen ejecutivo de 5 líneas y cierra con los 2 puntos que requieren decisión o seguimiento del Comité.</div>
-        <button class="copy-btn" onclick="copyP('pk-2',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar la secuencia</button>
+        <div class="chat-seq" data-thread="Una sola conversación · 4 mensajes, uno a la vez">
+          <div class="t-item">
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Mensaje 1 · Estructura</div>
+              <div class="prompt-box" id="pk-2" data-chat="new">Soy analista de Riesgo Integral en Banco Atlántida El Salvador. Voy a preparar el informe mensual de perfil de riesgo para el Comité de Riesgos. Primero, propón una estructura de secciones para este tipo de informe, sin redactar contenido todavía.</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('pk-2',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mensaje 1</button>
+          </div>
+          <div class="t-item">
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Mensaje 2 · Riesgo de crédito</div>
+              <div class="prompt-box" id="pk-2b" data-chat="cont" data-after="del mensaje 1">Bien. Ahora redacta la sección de riesgo de crédito con estos datos ficticios: mora total 2.2% (mes anterior 2.1%, límite 3.5%); mora de tarjeta 3.9% (mes anterior 3.1%, nivel de alerta 4.0%); cobertura de reservas 116% (mínimo interno 110%). Máximo 2 párrafos.</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('pk-2b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mensaje 2</button>
+          </div>
+          <div class="t-item">
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Mensaje 3 · Liquidez</div>
+              <div class="prompt-box" id="pk-2c" data-chat="cont" data-after="del mensaje 2">Ahora redacta la sección de liquidez con estos datos ficticios: CCL 138% (límite interno 115%); CFEN 112% (límite interno 105%). Máximo 1 párrafo.</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('pk-2c',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mensaje 3</button>
+          </div>
+          <div class="t-item">
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Mensaje 4 · Resumen ejecutivo</div>
+              <div class="prompt-box" id="pk-2d" data-chat="cont" data-after="del mensaje 3">Con todo lo anterior, redacta un resumen ejecutivo de 5 líneas y cierra con los 2 puntos que requieren decisión o seguimiento del Comité.</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('pk-2d',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mensaje 4</button>
+          </div>
+        </div>
         <div class="tip-box"><svg class="icon"><use href="#i-bulb"/></svg><span><strong>Cuándo usarla:</strong> para informes con varias secciones, preparación de comités y cualquier documento donde quieras revisar la estructura antes del contenido. Envía los mensajes de uno en uno, no todos juntos.</span></div>
       </div>
     </div>
@@ -2460,7 +2643,7 @@ Mensaje 4: Con todo lo anterior, redacta un resumen ejecutivo de 5 líneas y cie
         <div class="tech-area"><span class="ex-tag tag-financieros">Riesgos Financieros</span></div>
         <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt con ejemplo</div>
-            <div class="prompt-box" id="pk-3">Voy a mostrarte cómo comentamos los indicadores en nuestros informes. Replica exactamente este estilo, estructura y extensión.
+            <div class="prompt-box" id="pk-3" data-chat="new">Voy a mostrarte cómo comentamos los indicadores en nuestros informes. Replica exactamente este estilo, estructura y extensión.
 
 EJEMPLO:
 "La mora de préstamos de consumo cerró septiembre en 2.2%, sin variación frente a agosto y por debajo del límite de apetito de 3.5%. El indicador se mantiene estable por tercer mes consecutivo. Sin acciones adicionales; se mantiene en seguimiento mensual."
@@ -2486,7 +2669,7 @@ Ahora redacta el comentario para este indicador (datos ficticios):
         <div class="tech-area"><span class="ex-tag tag-financieros">Riesgos Financieros</span></div>
         <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt con formato definido</div>
-            <div class="prompt-box" id="pk-4">Con estos indicadores ficticios de liquidez, arma una tabla de seguimiento:
+            <div class="prompt-box" id="pk-4" data-chat="new">Con estos indicadores ficticios de liquidez, arma una tabla de seguimiento:
 - CCL: 138%, límite interno 115%
 - CFEN: 112%, límite interno 105%
 - Concentración de los 20 mayores depositantes: 24% de los depósitos, límite interno 25%
@@ -2509,7 +2692,7 @@ Debajo de la tabla, una sola oración con el indicador que requiere más atenci�
         <div class="tech-area"><span class="ex-tag tag-integral">Riesgo Integral</span></div>
         <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt con restricciones</div>
-            <div class="prompt-box" id="pk-5">Soy analista de Riesgo Integral en Banco Atlántida El Salvador. Auditoría interna solicita una explicación sobre las excepciones a la política de crédito aprobadas durante el tercer trimestre.
+            <div class="prompt-box" id="pk-5" data-chat="new">Soy analista de Riesgo Integral en Banco Atlántida El Salvador. Auditoría interna solicita una explicación sobre las excepciones a la política de crédito aprobadas durante el tercer trimestre.
 
 Datos ficticios: 14 excepciones aprobadas; 9 por relación cuota/ingreso superior al máximo y 5 por antigüedad laboral menor a la requerida. Todas contaron con la aprobación del nivel correspondiente.
 
@@ -2548,7 +2731,7 @@ Si falta información para completar la respuesta, escribe [DATO PENDIENTE] en e
     <p class="plead">Cuatro prompts débiles de situaciones reales de la Vicepresidencia y su versión regulatoria. Pruébalos en Claude y compara: la diferencia se aprende mejor viéndola que leyéndola.</p>
 <div class="alert info">
       <div class="alert-icon"><svg class="icon"><use href="#i-info"/></svg></div>
-      <p><strong>Cómo funciona el taller:</strong> prueba primero el prompt débil en una conversación nueva, luego el mejorado en otra, y compara. Después, escribe tu propia versión mejorada de una tarea real de tu puesto, sin datos sensibles.</p>
+      <p><strong>Método del taller:</strong> el prompt débil y su versión regulatoria se prueban en conversaciones separadas para comparar los resultados en igualdad de condiciones. Después, escribe tu propia versión mejorada de una tarea real de tu puesto, sin datos sensibles.</p>
     </div>
     <div class="ws">
       <div class="ws-head">
@@ -2561,22 +2744,22 @@ Si falta información para completar la respuesta, escribe [DATO PENDIENTE] en e
           <div class="ws-lbl"><svg class="icon"><use href="#i-x"/></svg>Prompt débil</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-1a">Hazme un resumen del perfil de riesgo.</div>
+            <div class="prompt-box" id="pw-1a" data-chat="new">Hazme un resumen del perfil de riesgo.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-1a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar débil</button>
+          <button class="copy-btn" onclick="copyP('pw-1a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt débil</button>
         </div>
         <div class="ws-col strong">
           <div class="ws-lbl"><svg class="icon"><use href="#i-check"/></svg>Prompt regulatorio</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-1b">Eres analista de Riesgo Integral en Banco Atlántida El Salvador. Redacta el resumen de apertura del informe de perfil de riesgo de septiembre para la Junta Directiva, con estos datos ficticios:
+            <div class="prompt-box" id="pw-1b" data-chat="new">Eres analista de Riesgo Integral en Banco Atlántida El Salvador. Redacta el resumen de apertura del informe de perfil de riesgo de septiembre para la Junta Directiva, con estos datos ficticios:
 - Mora total: 2.2% (límite de apetito 3.5%)
 - Cobertura de reservas: 116% (mínimo interno 110%)
 - CCL: 138% (límite interno 115%)
 - Eventos de riesgo operacional: 5, pérdida total de $6,400
 Tono ejecutivo y sobrio. Máximo 5 líneas. Debe responder si el banco está dentro del apetito de riesgo y qué indicador conviene vigilar. No agregues cifras que no estén aquí.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-1b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mejorado</button>
+          <button class="copy-btn" onclick="copyP('pw-1b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt regulatorio</button>
         </div>
       </div>
       <div class="ws-changed"><svg class="icon"><use href="#i-spark"/></svg><span><strong>Lo que cambió:</strong> se agregaron el rol, el destinatario, los datos con su límite, la pregunta que el texto debe responder y una restricción sobre cifras. El débil obliga a Claude a inventar el contenido completo.</span></div>
@@ -2592,22 +2775,22 @@ Tono ejecutivo y sobrio. Máximo 5 líneas. Debe responder si el banco está den
           <div class="ws-lbl"><svg class="icon"><use href="#i-x"/></svg>Prompt débil</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-2a">Analiza los vencimientos de depósitos.</div>
+            <div class="prompt-box" id="pw-2a" data-chat="new">Analiza los vencimientos de depósitos.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-2a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar débil</button>
+          <button class="copy-btn" onclick="copyP('pw-2a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt débil</button>
         </div>
         <div class="ws-col strong">
           <div class="ws-lbl"><svg class="icon"><use href="#i-check"/></svg>Prompt regulatorio</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-2b">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador. Con estos vencimientos ficticios de depósitos a plazo, en millones de dólares, identifica la concentración por banda y su efecto en la liquidez:
+            <div class="prompt-box" id="pw-2b" data-chat="new">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador. Con estos vencimientos ficticios de depósitos a plazo, en millones de dólares, identifica la concentración por banda y su efecto en la liquidez:
 - 0 a 30 días: 48.0
 - 31 a 90 días: 71.5
 - 91 a 180 días: 39.2
 - 181 a 365 días: 26.3
 Entrega: 1) una tabla con el monto y el porcentaje del total por banda, mostrando el total; 2) dos párrafos para el Comité de Riesgos sobre la banda más concentrada y su implicación. Tono técnico. No propongas tasas ni productos comerciales.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-2b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mejorado</button>
+          <button class="copy-btn" onclick="copyP('pw-2b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt regulatorio</button>
         </div>
       </div>
       <div class="ws-changed"><svg class="icon"><use href="#i-spark"/></svg><span><strong>Lo que cambió:</strong> se dieron los datos por banda, se pidió el cálculo explícito con total para poder verificarlo, se definieron dos entregables con formato y se excluyó lo que no le corresponde decidir a Riesgos.</span></div>
@@ -2623,21 +2806,21 @@ Entrega: 1) una tabla con el monto y el porcentaje del total por banda, mostrand
           <div class="ws-lbl"><svg class="icon"><use href="#i-x"/></svg>Prompt débil</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-3a">Evalúa la campaña de tarjetas.</div>
+            <div class="prompt-box" id="pw-3a" data-chat="new">Evalúa la campaña de tarjetas.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-3a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar débil</button>
+          <button class="copy-btn" onclick="copyP('pw-3a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt débil</button>
         </div>
         <div class="ws-col strong">
           <div class="ws-lbl"><svg class="icon"><use href="#i-check"/></svg>Prompt regulatorio</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-3b">Soy analista de Políticas y Modelos de Riesgo en Banco Atlántida El Salvador. Evalúa esta campaña ficticia de tarjeta de crédito a los 60 días de su lanzamiento:
+            <div class="prompt-box" id="pw-3b" data-chat="new">Soy analista de Políticas y Modelos de Riesgo en Banco Atlántida El Salvador. Evalúa esta campaña ficticia de tarjeta de crédito a los 60 días de su lanzamiento:
 - Solicitudes: 2,400 | Aprobadas: 1,080 | Meta de colocación: 1,000 tarjetas
 - Mora temprana (más de 30 días) a los 60 días: 2.8% | Referencia de campañas anteriores: 1.9%
 - Segmento con peor desempeño: clientes sin historial en buró, 4.6% de mora temprana
 Entrega: tasa de aprobación calculada, comparación con meta y referencia en tabla, y 3 recomendaciones de ajuste a los criterios de admisión. Tono analítico. Marca con [VERIFICAR] cualquier supuesto que no venga de estos datos.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-3b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mejorado</button>
+          <button class="copy-btn" onclick="copyP('pw-3b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt regulatorio</button>
         </div>
       </div>
       <div class="ws-changed"><svg class="icon"><use href="#i-spark"/></svg><span><strong>Lo que cambió:</strong> se agregaron las cifras con su punto de comparación, se pidió un cálculo verificable (aprobación de 45%), un formato concreto y la marca [VERIFICAR] para separar datos de supuestos.</span></div>
@@ -2653,20 +2836,20 @@ Entrega: tasa de aprobación calculada, comparación con meta y referencia en ta
           <div class="ws-lbl"><svg class="icon"><use href="#i-x"/></svg>Prompt débil</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-4a">Dime qué cambiar en la regla de fraude.</div>
+            <div class="prompt-box" id="pw-4a" data-chat="new">Dime qué cambiar en la regla de fraude.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-4a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar débil</button>
+          <button class="copy-btn" onclick="copyP('pw-4a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt débil</button>
         </div>
         <div class="ws-col strong">
           <div class="ws-lbl"><svg class="icon"><use href="#i-check"/></svg>Prompt regulatorio</div>
           <div class="prompt-wrap">
             
-            <div class="prompt-box" id="pw-4b">Soy analista de Analítica de Fraude en Banco Atlántida El Salvador. Esta regla ficticia genera demasiadas alertas:
+            <div class="prompt-box" id="pw-4b" data-chat="new">Soy analista de Analítica de Fraude en Banco Atlántida El Salvador. Esta regla ficticia genera demasiadas alertas:
 - Regla: alertar toda compra no presencial mayor a $150 hecha con tarjeta en su primera semana de uso
 - Alertas al mes: 1,200 | Fraudes confirmados: 36
-Tarea: calcula la efectividad de la regla, propone 2 ajustes que reduzcan falsos positivos y, para cada uno, explica qué fraude podría dejar de detectarse. Formato: tabla con ajuste, efecto esperado en alertas y riesgo residual. No propongas desactivar la regla ni cambios que no puedan medirse.</div>
+Tarea: calcula la efectividad de la regla, propón 2 ajustes que reduzcan falsos positivos y, para cada uno, explica qué fraude podría dejar de detectarse. Formato: tabla con ajuste, efecto esperado en alertas y riesgo residual. No propongas desactivar la regla ni cambios que no puedan medirse.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pw-4b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mejorado</button>
+          <button class="copy-btn" onclick="copyP('pw-4b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt regulatorio</button>
         </div>
       </div>
       <div class="ws-changed"><svg class="icon"><use href="#i-spark"/></svg><span><strong>Lo que cambió:</strong> se describió la regla con su volumen, se pidió el cálculo (3% de efectividad), cada ajuste debe venir con su riesgo residual y se pusieron límites a lo que se puede proponer.</span></div>
@@ -2795,23 +2978,23 @@ Tarea: calcula la efectividad de la regla, propone 2 ajustes que reduzcan falsos
           <tr><th rowspan="2">Producto</th><th colspan="3">Agosto</th><th colspan="3">Septiembre</th></tr>
           <tr><th>Saldo</th><th>Mora</th><th>Reservas</th><th>Saldo</th><th>Mora</th><th>Reservas</th></tr>
         </thead>
-        <tbody><tr><td>Tarjeta de crédito</td><td>62.0</td><td>2.05</td><td>2.60</td><td>63.5</td><td>2.48</td><td>2.85</td></tr><tr><td>Préstamos de consumo</td><td>145.0</td><td>3.19</td><td>4.10</td><td>147.2</td><td>3.24</td><td>4.15</td></tr><tr><td>Vivienda</td><td>210.0</td><td>2.94</td><td>3.30</td><td>211.5</td><td>2.90</td><td>3.30</td></tr><tr><td>PYME</td><td>98.0</td><td>2.45</td><td>2.70</td><td>97.1</td><td>2.62</td><td>2.75</td></tr><tr class="tot"><td>Total</td><td>515.0</td><td>10.63</td><td>12.70</td><td>519.3</td><td>11.24</td><td>13.05</td></tr></tbody>
+        <tbody><tr><td>Tarjeta de crédito</td><td>62.0</td><td>1.92</td><td>2.60</td><td>63.5</td><td>2.48</td><td>2.85</td></tr><tr><td>Préstamos de consumo</td><td>145.0</td><td>3.19</td><td>4.10</td><td>147.2</td><td>3.24</td><td>4.15</td></tr><tr><td>Vivienda</td><td>210.0</td><td>2.94</td><td>3.30</td><td>211.5</td><td>2.90</td><td>3.30</td></tr><tr><td>PYME</td><td>98.0</td><td>2.45</td><td>2.70</td><td>97.1</td><td>2.62</td><td>2.75</td></tr><tr class="tot"><td>Total</td><td>515.0</td><td>10.50</td><td>12.70</td><td>519.3</td><td>11.24</td><td>13.05</td></tr></tbody>
       </table>
     </div>
 
-    <div class="timeline" style="margin-top:1.75rem;">
+    <div data-thread="Una sola conversación · del Paso 1 al Paso 4" class="timeline" style="margin-top:1.75rem;">
       <div class="tstep">
         <div class="tstep-l"><div class="tbadge">1</div><div class="tline"></div></div>
         <div class="tcard">
           <div class="teyebrow">Paso 1 · Calcular · 8 min</div>
           <h3>Pide los indicadores con fórmula y operación</h3>
-          <p>Este prompt ya incluye los datos de la tabla. Cópialo completo en una conversación nueva.</p>
+          <p>Este prompt ya incluye los datos de la tabla. Cópialo completo en una conversación nueva. Para cálculos que van a un comité conviene <strong>Opus 5.5 con razonamiento extendido</strong>, como se vio en <a href="Modulo1_Bienvenido_a_Claude_Riesgos.html#modelos" style="color:inherit;">Modelos de Claude</a>.</p>
           <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt · cálculo</div>
-            <div class="prompt-box" id="pq-1">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador. Te comparto datos ficticios de cartera en millones de dólares. "Mora" es el saldo con más de 90 días de atraso.
+            <div class="prompt-box" id="pq-1" data-chat="new">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador. Te comparto datos ficticios de cartera en millones de dólares. "Mora" es el saldo con más de 90 días de atraso.
 
 Producto | Saldo ago | Mora ago | Reservas ago | Saldo sep | Mora sep | Reservas sep
-Tarjeta de crédito | 62.0 | 2.05 | 2.60 | 63.5 | 2.48 | 2.85
+Tarjeta de crédito | 62.0 | 1.92 | 2.60 | 63.5 | 2.48 | 2.85
 Préstamos de consumo | 145.0 | 3.19 | 4.10 | 147.2 | 3.24 | 4.15
 Vivienda | 210.0 | 2.94 | 3.30 | 211.5 | 2.90 | 3.30
 PYME | 98.0 | 2.45 | 2.70 | 97.1 | 2.62 | 2.75
@@ -2840,7 +3023,7 @@ Usa dos decimales en la mora y uno en la cobertura. No agregues datos que no est
             <div class="dtable-wrap">
               <table class="dtable key">
                 <thead><tr><th>Producto</th><th>Mora ago</th><th>Mora sep</th><th>Variación (pp)</th><th>Cobertura ago</th><th>Cobertura sep</th></tr></thead>
-                <tbody><tr><td>Tarjeta de crédito</td><td>3.31%</td><td>3.91%</td><td>+0.60</td><td>126.8%</td><td>114.9%</td></tr><tr><td>Préstamos de consumo</td><td>2.20%</td><td>2.20%</td><td>+0.00</td><td>128.5%</td><td>128.1%</td></tr><tr><td>Vivienda</td><td>1.40%</td><td>1.37%</td><td>-0.03</td><td>112.2%</td><td>113.8%</td></tr><tr><td>PYME</td><td>2.50%</td><td>2.70%</td><td>+0.20</td><td>110.2%</td><td class="flag">105.0%</td></tr><tr class="tot"><td>Total</td><td>2.06%</td><td>2.16%</td><td>+0.10</td><td>119.5%</td><td>116.1%</td></tr></tbody>
+                <tbody><tr><td>Tarjeta de crédito</td><td>3.10%</td><td>3.91%</td><td>+0.81</td><td>135.4%</td><td>114.9%</td></tr><tr><td>Préstamos de consumo</td><td>2.20%</td><td>2.20%</td><td>+0.00</td><td>128.5%</td><td>128.1%</td></tr><tr><td>Vivienda</td><td>1.40%</td><td>1.37%</td><td>-0.03</td><td>112.2%</td><td>113.8%</td></tr><tr><td>PYME</td><td>2.50%</td><td>2.70%</td><td>+0.20</td><td>110.2%</td><td class="flag">105.0%</td></tr><tr class="tot"><td>Total</td><td>2.04%</td><td>2.16%</td><td>+0.12</td><td>121.0%</td><td>116.1%</td></tr></tbody>
               </table>
             </div>
             <p class="key-note">Resaltado: cobertura por debajo del mínimo interno de 110%.</p>
@@ -2853,8 +3036,8 @@ Usa dos decimales en la mora y uno en la cobertura. No agregues datos que no est
           <div class="teyebrow">Paso 3 · Interpretar · 5 min</div>
           <h3>Pide el análisis, no solo los números</h3>
           <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt · análisis (misma conversación)</div>
-            <div class="prompt-box" id="pq-2">Con la tabla que calculaste, identifica: 1) el producto con mayor deterioro de mora; 2) los productos cuya cobertura quedó por debajo del mínimo interno de 110%; 3) si el total mejoró o empeoró. Responde en 3 viñetas, cada una con su cifra.</div>
+            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt · análisis</div>
+            <div class="prompt-box" id="pq-2" data-chat="cont" data-after="del Paso 1">Con la tabla que calculaste, identifica: 1) el producto con mayor deterioro de mora; 2) los productos cuya cobertura quedó por debajo del mínimo interno de 110%; 3) si el total mejoró o empeoró. Responde en 3 viñetas, cada una con su cifra.</div>
           </div>
           <button class="copy-btn" onclick="copyP('pq-2',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt</button>
         </div>
@@ -2865,8 +3048,8 @@ Usa dos decimales en la mora y uno en la cobertura. No agregues datos que no est
           <div class="teyebrow">Paso 4 · Redactar · 5 min</div>
           <h3>Convierte el análisis en texto para el Comité</h3>
           <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt · redacción (misma conversación)</div>
-            <div class="prompt-box" id="pq-3">Redacta el párrafo de riesgo de crédito para el informe mensual al Comité de Riesgos con base en tu análisis. Máximo 120 palabras, tono técnico y sobrio. Menciona primero la situación del total y después los dos productos que requieren atención. No propongas causas: donde haga falta explicar la causa, escribe [CAUSA POR CONFIRMAR].</div>
+            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt · redacción</div>
+            <div class="prompt-box" id="pq-3" data-chat="cont" data-after="del Paso 3">Redacta el párrafo de riesgo de crédito para el informe mensual al Comité de Riesgos con base en tu análisis. Máximo 120 palabras, tono técnico y sobrio. Menciona primero la situación del total y después los dos productos que requieren atención. No propongas causas: donde haga falta explicar la causa, escribe [DATO PENDIENTE].</div>
           </div>
           <button class="copy-btn" onclick="copyP('pq-3',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt</button>
         </div>
@@ -2878,7 +3061,7 @@ Usa dos decimales en la mora y uno en la cobertura. No agregues datos que no est
       <p><strong>Sobre los cálculos:</strong> con tablas pequeñas Claude calcula bien, pero puede equivocarse en decimales o redondeos, sobre todo en tablas grandes. Si tu cuenta tiene habilitada la ejecución de código, pídele que haga los cálculos con código: el resultado es más confiable. Con bases de datos completas es mejor adjuntar el archivo de Excel, como veremos en el Módulo 3.</p>
     </div>
 
-    <div class="challenge">
+    <div class="challenge" data-chat="cont" data-after="del Paso 4">
       <svg class="icon"><use href="#i-target"/></svg>
       <div><strong>Reto adicional:</strong> pide a Claude que proponga qué gráfico usarías para mostrar esta información a la Junta Directiva y que lo genere. Luego pregúntale qué conclusión podría sacar erróneamente alguien que solo mire el gráfico.</div>
     </div>
@@ -2900,7 +3083,7 @@ Usa dos decimales en la mora y uno en la cobertura. No agregues datos que no est
 
     <div class="alert info">
       <div class="alert-icon"><svg class="icon"><use href="#i-info"/></svg></div>
-      <p><strong>Cómo usar la biblioteca:</strong> copia la plantilla, reemplaza lo que está entre [corchetes] con tu información y envíala. Si prefieres ver primero cómo funciona, abre el ejemplo completo con datos ficticios.</p>
+      <p><strong>Estructura de cada plantilla:</strong> los campos entre [corchetes] se reemplazan con la información propia del puesto. Cada plantilla incluye además un ejemplo completo con datos ficticios que muestra el resultado esperado.</p>
     </div>
     <div class="ex-tabs"><div class="ex-tab lib-tab active" onclick="showLib('lib-integral',this)"><svg class="icon"><use href="#i-shield"/></svg>Riesgo Integral</div><div class="ex-tab lib-tab" onclick="showLib('lib-financieros',this)"><svg class="icon"><use href="#i-target"/></svg>Riesgos Financieros</div><div class="ex-tab lib-tab" onclick="showLib('lib-credito',this)"><svg class="icon"><use href="#i-users"/></svg>Crédito de Personas</div><div class="ex-tab lib-tab" onclick="showLib('lib-fraude',this)"><svg class="icon"><use href="#i-alert"/></svg>Fraude Transaccional</div></div>
     <div class="ex-panel lib-panel active" id="lib-integral">
@@ -3064,14 +3247,14 @@ Máximo 2 párrafos, tono técnico. Explica la variación solo con las causas qu
       </div>
       <div class="lib-card">
         <div class="lib-head"><div><h3>Efectividad de una regla</h3><p>Falsos positivos y propuesta de ajuste</p></div><span class="ex-tag tag-fraude">Fraude Transaccional</span></div>
-        <div class="prompt-box" id="pl-fraude-2">Soy analista de Analítica de Fraude. Evalúa la regla [descripción]: alertas [n], fraudes confirmados [n], tiempo promedio de revisión por alerta [minutos]. Calcula efectividad, falsos positivos y horas de revisión al mes; propone 2 ajustes con su riesgo residual en una tabla. Muestra los cálculos.</div>
+        <div class="prompt-box" id="pl-fraude-2">Soy analista de Analítica de Fraude. Evalúa la regla [descripción]: alertas [n], fraudes confirmados [n], tiempo promedio de revisión por alerta [minutos]. Calcula efectividad, falsos positivos y horas de revisión al mes; propón 2 ajustes con su riesgo residual en una tabla. Muestra los cálculos.</div>
         <div class="lib-actions">
           <button class="copy-btn" onclick="copyP('pl-fraude-2',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar plantilla</button>
           <button class="copy-btn ghost" onclick="toggleKey('pl-fraude-2-ex',this)"><svg class="icon"><use href="#i-star"/></svg><span>Ver ejemplo</span></button>
         </div>
         <div class="lib-ex" id="pl-fraude-2-ex" hidden>
           <div class="lib-ex-lbl">Ejemplo completo con datos ficticios, listo para copiar</div>
-          <div class="prompt-box" id="pl-fraude-2x">Soy analista de Analítica de Fraude. Evalúa la regla ficticia "transferencias mayores a $500 a cuentas agregadas hace menos de 24 horas": alertas 860, fraudes confirmados 43, tiempo promedio de revisión por alerta 6 minutos. Calcula efectividad, falsos positivos y horas de revisión al mes; propone 2 ajustes con su riesgo residual en una tabla. Muestra los cálculos.</div>
+          <div class="prompt-box" id="pl-fraude-2x">Soy analista de Analítica de Fraude. Evalúa la regla ficticia "transferencias mayores a $500 a cuentas agregadas hace menos de 24 horas": alertas 860, fraudes confirmados 43, tiempo promedio de revisión por alerta 6 minutos. Calcula efectividad, falsos positivos y horas de revisión al mes; propón 2 ajustes con su riesgo residual en una tabla. Muestra los cálculos.</div>
           <button class="copy-btn" onclick="copyP('pl-fraude-2x',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ejemplo</button>
         </div>
       </div>
@@ -3182,7 +3365,7 @@ Máximo 2 párrafos, tono técnico. Explica la variación solo con las causas qu
         </div>
         <div class="comp-badge"><svg class="icon"><use href="#i-check"/></svg>Módulo 2 completado</div>
         <h3 class="comp-title">Dominas el <em>prompt regulatorio</em></h3>
-        <div class="comp-module">Módulo 2: El Arte del Prompt Regulatorio</div>
+        <div class="comp-module">Módulo 2: El arte del prompt regulatorio</div>
         <p class="comp-msg">
           Ya sabes pedirle a Claude con la precisión que exige Riesgos.<br>
           <strong>Siguiente paso:</strong> en el Módulo 3 trabajarás con documentos completos:
@@ -3474,6 +3657,162 @@ function toggleKey(id, btn) {
   if (!lbl.dataset.orig) lbl.dataset.orig = lbl.textContent;
   lbl.textContent = box.hidden ? lbl.dataset.orig : (lbl.dataset.orig.indexOf('ejemplo') > -1 ? 'Ocultar ejemplo' : 'Ocultar la clave');
 }
+
+/* ══ INDICADORES DE CONVERSACIÓN ══
+   Lee las marcas del HTML y dibuja los indicadores:
+   - data-chat="new"               → botón "Nuevo chat" (copia el prompt)
+   - data-chat="cont" data-after   → indicador "Mismo chat · después de…"
+   - data-thread="…"               → hilo punteado que une una conversación
+   - .chat-choose > .choose-opt    → control "Elige uno" (una opción visible a la vez) */
+(function () {
+  var ICO = {
+    plus:  '<svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
+    reply: '<svg class="icon chat-reply" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h10a6 6 0 0 1 6 6v1"/></svg>',
+    up:    '<svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>',
+    chat:  '<svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1V16a1 1 0 0 1-1 1H9l-4 3.5V17H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1Z"/></svg>',
+    split: '<svg class="icon" viewBox="0 0 24 24"><path d="M6 3v6a6 6 0 0 0 6 6h6M18 15l-3-3M18 15l-3 3M6 21v-6"/></svg>'
+  };
+
+  /* Aviso breve al copiar */
+  var toastEl = null, toastTimer = null;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'chat-toast';
+      toastEl.setAttribute('role', 'status');
+      document.body.appendChild(toastEl);
+    }
+    toastEl.innerHTML = '<span class="chat-dot">' + ICO.plus + '</span><span>' + msg + '</span>';
+    toastEl.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('on'); }, 2800);
+  }
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function () { fallbackCopy(text); });
+    }
+    fallbackCopy(text);
+    return Promise.resolve();
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  /* 1 · Biblioteca (Módulo 2): plantilla y ejemplo pasan a ser "Elige uno" */
+  document.querySelectorAll('.lib-card').forEach(function (card) {
+    var tpl = card.querySelector(':scope > .prompt-box');
+    var acts = card.querySelector(':scope > .lib-actions');
+    var ex = card.querySelector(':scope > .lib-ex');
+    if (!tpl || !acts || !ex) return;
+    var exBox = ex.querySelector('.prompt-box');
+    var copyEx = ex.querySelector('.copy-btn');
+    var copyTpl = acts.querySelector('.copy-btn:not(.ghost)');
+    var group = document.createElement('div');
+    group.className = 'chat-choose';
+    group.dataset.label = 'Elige una versión';
+    function option(label, box, btn) {
+      var o = document.createElement('div');
+      o.className = 'choose-opt';
+      o.dataset.optLabel = label;
+      box.dataset.chat = 'new';
+      o.appendChild(box);
+      if (btn) o.appendChild(btn);
+      return o;
+    }
+    group.appendChild(option('Ejemplo con datos ficticios', exBox, copyEx));
+    group.appendChild(option('Plantilla', tpl, copyTpl));
+    card.insertBefore(group, acts);
+    acts.remove();
+    ex.remove();
+  });
+
+  /* 2 · Indicadores por bloque */
+  function chipNew(box) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chat-new';
+    b.title = 'Copia este prompt para pegarlo en un chat nuevo';
+    b.innerHTML = '<span class="chat-dot">' + ICO.plus + '</span>Nuevo chat';
+    b.addEventListener('click', function () {
+      copyText(box.innerText.trim());
+      toast('Prompt copiado. Pégalo en un <strong>chat nuevo</strong> de Claude.');
+      b.classList.add('copied');
+      setTimeout(function () { b.classList.remove('copied'); }, 1800);
+    });
+    return b;
+  }
+  function chipCont(after) {
+    var s = document.createElement('span');
+    s.className = 'chat-cont';
+    s.innerHTML = ICO.reply + 'Mismo chat' +
+      (after ? '<span class="chat-ref">· después ' + after + '</span>' : '') +
+      '<span class="chat-send">' + ICO.up + '</span>';
+    return s;
+  }
+  document.querySelectorAll('[data-chat]').forEach(function (el) {
+    var chip = el.dataset.chat === 'new' ? chipNew(el) : chipCont(el.dataset.after);
+    // Retos: el indicador va al inicio del texto del reto
+    if (el.classList.contains('challenge')) {
+      var txt = el.querySelector(':scope > div');
+      if (txt) txt.insertBefore(chip, txt.firstChild);
+      return;
+    }
+    var head = document.createElement('div');
+    head.className = 'p-head';
+    var prev = el.previousElementSibling;
+    var hasLabel = prev && prev.classList.contains('prompt-lbl');
+    el.parentNode.insertBefore(head, hasLabel ? prev : el);
+    head.appendChild(chip);
+    if (hasLabel) head.appendChild(prev);
+  });
+
+  /* 3 · Elige uno */
+  document.querySelectorAll('.chat-choose').forEach(function (g) {
+    var opts = Array.prototype.filter.call(g.children, function (c) { return c.classList.contains('choose-opt'); });
+    if (!opts.length) return;
+    var bar = document.createElement('div');
+    bar.className = 'chat-choose-bar';
+    bar.innerHTML = ICO.split + '<span>' + (g.dataset.label || 'Elige una opción') + '</span>';
+    var seg = document.createElement('div');
+    seg.className = 'chat-seg';
+    seg.setAttribute('role', 'tablist');
+    opts.forEach(function (o, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.textContent = o.dataset.optLabel || ('Opción ' + (i + 1));
+      b.addEventListener('click', function () { select(i); });
+      seg.appendChild(b);
+    });
+    bar.appendChild(seg);
+    g.insertBefore(bar, g.firstChild);
+    function select(i) {
+      opts.forEach(function (o, j) { o.hidden = j !== i; });
+      seg.querySelectorAll('button').forEach(function (b, j) {
+        b.classList.toggle('on', j === i);
+        b.setAttribute('aria-selected', String(j === i));
+      });
+    }
+    select(0);
+  });
+
+  /* 4 · Hilos de conversación */
+  document.querySelectorAll('[data-thread]').forEach(function (t) {
+    t.classList.add('chat-thread');
+    var tag = document.createElement('div');
+    tag.className = 'chat-thread-tag';
+    tag.innerHTML = ICO.chat + '<span>' + t.dataset.thread + '</span>';
+    t.insertBefore(tag, t.firstChild);
+    var rows = t.querySelectorAll(':scope > .ex-step-row');
+    if (rows.length) rows[rows.length - 1].classList.add('t-end');
+    var items = t.querySelectorAll(':scope > .t-item');
+    if (items.length) items[0].classList.add('t-start');
+  });
+})();
 
 /* ══ INIT ══ */
 visitedSections.add('intro');

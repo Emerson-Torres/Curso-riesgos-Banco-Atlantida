@@ -1836,6 +1836,150 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   h1.ptitle { font-size:1.55rem; }
   .hero-wrap{ padding:1.75rem 1.25rem; }
 }
+
+/* ══════════════════════════════════════════════
+   INDICADORES DE CONVERSACIÓN (nuevo chat / mismo chat)
+   Réplica de dos elementos de claude.ai: el botón "Nuevo chat"
+   de la barra lateral y el campo de texto con su botón de enviar.
+══════════════════════════════════════════════ */
+:root { --chat-accent:#c96442; --chat-accent-l:#d97757; --chat-line:#e5e2d8; --chat-bg:#faf9f5; }
+
+.p-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:.45rem; }
+.p-head .prompt-lbl { margin:0 0 0 auto; }
+.choose-opt .p-head, .ex-content .p-head { margin-top:.2rem; }
+
+/* Nuevo chat */
+.chat-new {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#fff; border:1px solid var(--chat-line); border-radius:10px;
+  padding:4px 12px 4px 5px;
+  font-family:var(--ff-body); font-size:12.5px; font-weight:600; line-height:1.2; color:var(--chat-accent);
+  cursor:pointer; transition:var(--t); box-shadow:0 1px 2px rgba(31,30,29,.05);
+}
+.chat-new .chat-dot {
+  width:22px; height:22px; border-radius:50%; flex-shrink:0;
+  background:var(--chat-accent); color:#fff;
+  display:flex; align-items:center; justify-content:center; transition:var(--t);
+}
+.chat-new .chat-dot .icon { width:13px; height:13px; stroke-width:2.2; }
+.chat-new:hover { border-color:var(--chat-accent-l); background:#fdf3ee; }
+.chat-new:hover .chat-dot { transform:rotate(90deg); }
+.chat-new:focus-visible { outline:2px solid var(--chat-accent-l); outline-offset:2px; }
+.chat-new.copied { border-color:var(--teal-bd); color:var(--teal); background:var(--teal-pale); }
+.chat-new.copied .chat-dot { background:var(--teal); }
+.chat-new.is-static { cursor:default; }
+.chat-new.is-static:hover { background:#fff; border-color:var(--chat-line); }
+.chat-new.is-static:hover .chat-dot { transform:none; }
+
+/* Mismo chat */
+.chat-cont {
+  display:inline-flex; align-items:center; gap:9px;
+  background:#fff; border:1px solid var(--chat-line); border-radius:12px;
+  padding:3px 3px 3px 10px;
+  font-family:var(--ff-body); font-size:12.5px; font-weight:600; line-height:1.2; color:var(--ink-mid);
+  box-shadow:0 1px 2px rgba(31,30,29,.05);
+}
+.chat-cont .chat-reply { width:14px; height:14px; color:var(--ink-soft); }
+.chat-cont .chat-ref { font-weight:500; color:var(--ink-soft); }
+.chat-cont .chat-send {
+  width:22px; height:22px; border-radius:7px; flex-shrink:0;
+  background:var(--chat-accent-l); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+}
+.chat-cont .chat-send .icon { width:12px; height:12px; stroke-width:2.3; }
+.challenge .chat-cont { margin:0 0 .5rem; }
+.challenge > div > .chat-cont { display:flex; width:max-content; max-width:100%; }
+
+/* Hilo: une los mensajes de una misma conversación */
+.chat-thread-tag {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:11.5px; font-weight:600; color:var(--ink-soft);
+  background:var(--chat-bg); border:1px solid var(--chat-line); border-radius:20px;
+  padding:3px 11px; margin-bottom:1rem;
+}
+.chat-thread-tag .icon { width:13px; height:13px; color:var(--chat-accent); }
+.timeline.chat-thread .tline {
+  width:2px;
+  background:repeating-linear-gradient(to bottom, var(--chat-accent-l) 0 6px, transparent 6px 11px);
+  opacity:.6;
+}
+.ex-body.chat-thread .ex-step-row { position:relative; }
+.ex-body.chat-thread .ex-step-row:not(.t-end)::before {
+  content:''; position:absolute; left:12px; top:32px; bottom:-14px; width:2px;
+  background:repeating-linear-gradient(to bottom, var(--chat-accent-l) 0 6px, transparent 6px 11px);
+  opacity:.6;
+}
+.chat-seq.chat-thread { position:relative; padding-left:26px; margin:.4rem 0 .6rem; }
+.chat-seq.chat-thread::before {
+  content:''; position:absolute; left:8px; top:46px; bottom:18px; width:2px;
+  background:repeating-linear-gradient(to bottom, var(--chat-accent-l) 0 6px, transparent 6px 11px);
+  opacity:.6;
+}
+.chat-seq .chat-thread-tag { margin-left:-26px; }
+.chat-seq .t-item { position:relative; margin-bottom:1.1rem; }
+.chat-seq .t-item:last-child { margin-bottom:0; }
+.chat-seq .t-item::before {
+  content:''; position:absolute; left:-23px; top:9px; width:10px; height:10px; border-radius:50%;
+  background:#fff; border:2px solid var(--chat-accent-l);
+}
+.chat-seq .t-item.t-start::before { background:var(--chat-accent); border-color:var(--chat-accent); }
+.chat-seq .prompt-wrap { margin-top:0; }
+
+/* Elige uno: control segmentado */
+.chat-choose-bar {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin:.7rem 0 .55rem; font-size:12px; font-weight:600; color:var(--ink-soft);
+}
+.chat-choose-bar > .icon { width:14px; height:14px; }
+.chat-seg { display:inline-flex; flex-wrap:wrap; background:var(--slate-pale); border:1px solid var(--slate-bd); border-radius:9px; padding:2px; }
+.chat-seg button {
+  border:none; background:transparent; font-family:var(--ff-body); font-size:12px; font-weight:600;
+  color:var(--ink-soft); padding:4px 11px; border-radius:7px; cursor:pointer; transition:var(--t);
+}
+.chat-seg button:hover { color:var(--ink); }
+.chat-seg button.on { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.08); }
+.chat-seg button:focus-visible { outline:2px solid var(--chat-accent-l); outline-offset:1px; }
+.choose-opt[hidden] { display:none !important; }
+.choose-opt .prompt-wrap { margin-top:0; }
+
+/* Fragmento de prompt: ilustra un componente, no se envía solo */
+.frag-lbl {
+  display:flex; align-items:center; gap:6px; margin-bottom:.4rem;
+  font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--slate);
+}
+.frag-lbl .icon { width:14px; height:14px; }
+.prompt-box.frag {
+  background:var(--surface); border:1px dashed var(--slate-bd); border-left:1px dashed var(--slate-bd);
+  border-radius:var(--r-sm); color:var(--ink-soft);
+}
+
+/* Lista de ajustes independientes */
+.adj-list .prompt-wrap { margin-top:.75rem; }
+
+/* Regla general (una vez por módulo) */
+.chat-rule { margin:0 0 2.25rem; }
+.chat-rule-h { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:.6rem; }
+.chat-rule-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.chat-rule-card { background:var(--surface); border:1px solid var(--border2); border-radius:var(--r-sm); padding:1rem 1.15rem; box-shadow:var(--sh-sm); }
+.chat-rule-card p { font-size:13.5px; color:var(--ink-mid); line-height:1.6; margin-top:.65rem; }
+
+/* Aviso al copiar */
+.chat-toast {
+  position:fixed; left:50%; bottom:24px; z-index:300;
+  transform:translateX(-50%) translateY(16px); opacity:0; pointer-events:none;
+  background:#262021; color:#fff; font-family:var(--ff-body); font-size:13px;
+  padding:.65rem 1.05rem; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.25);
+  display:flex; align-items:center; gap:9px; max-width:calc(100vw - 32px); transition:var(--t);
+}
+.chat-toast.on { opacity:1; transform:translateX(-50%) translateY(0); }
+.chat-toast .chat-dot { width:20px; height:20px; border-radius:50%; background:var(--chat-accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.chat-toast .chat-dot .icon { width:12px; height:12px; stroke-width:2.2; color:#fff; }
+
+@media (max-width:640px) {
+  .chat-rule-grid { grid-template-columns:1fr; }
+  .p-head .prompt-lbl { margin-left:0; width:100%; }
+}
+
 </style>
 </head>
 <body>
@@ -1889,6 +2033,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
 <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.3"/><circle cx="12" cy="7.7" r=".95" fill="currentColor" stroke="none"/></symbol>
 <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.3l3.6 2.1"/></symbol>
 <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6Z"/><path d="M9 12l2 2 4-4.2"/></symbol>
+<symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M9 4h3.5a1.5 1.5 0 1 1 3 0H19v4.5a1.5 1.5 0 1 0 0 3V16h-4.5a1.5 1.5 0 1 0-3 0H8v-4.5a1.5 1.5 0 1 1 0-3V4z"/></symbol>
 </defs>
 </svg>
 
@@ -2014,7 +2159,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
           <p class="hero-lead">En las próximas dos horas vas a dejar de ver la inteligencia artificial como un concepto lejano y vas a usarla, en vivo, para resolver tareas reales de la Vicepresidencia Adjunta de Riesgos. Sin conocimientos técnicos previos. Sin código. Solo conversación.</p>
           <div class="hero-stats">
             <div><div class="hero-stat-n">10</div><div class="hero-stat-l">Secciones guiadas</div></div>
-            <div><div class="hero-stat-n">16</div><div class="hero-stat-l">Prompts listos para copiar</div></div>
+            <div><div class="hero-stat-n">20</div><div class="hero-stat-l">Prompts listos para copiar</div></div>
             <div><div class="hero-stat-n">4</div><div class="hero-stat-l">Áreas de Riesgos</div></div>
           </div>
         </div>
@@ -2111,7 +2256,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
 
     <div class="alert info" style="margin-top:1rem;">
       <div class="alert-icon"><svg class="icon"><use href="#i-info"/></svg></div>
-      <p><strong>Cómo usar este material:</strong> Cada sección tiene una duración estimada visible en el menú lateral. Si estás en clase, el facilitador te acompaña en tiempo real. Si revisas este material de forma independiente, cada sección es completamente autónoma y tiene todo lo que necesitas para avanzar.</p>
+      <p><strong>Modalidad del curso:</strong> el módulo se desarrolla en sesión presencial con acompañamiento del facilitador, y también puede repasarse de forma independiente: cada sección es autónoma y contiene lo necesario para avanzar.</p>
     </div>
 
     <div class="sec-foot">
@@ -2794,9 +2939,23 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   <section class="section" id="sec-pasos">
     <div class="eyebrow">Sección 06 · Práctica guiada</div>
     <h1 class="ptitle">Tu primera<br>conversación <em>en 5 pasos</em></h1>
-    <p class="plead">Sigue cada paso en orden. El facilitador te acompaña en tiempo real. Cada paso tiene instrucciones claras, un prompt listo para copiar y un tip de apoyo.</p>
+    <p class="plead">Una conversación completa con Claude, desde la presentación inicial hasta el ajuste del resultado. Cada paso se apoya en el anterior, por lo que se siguen en orden y dentro de la misma conversación.</p>
 
-    <div class="timeline">
+    <div class="chat-rule">
+      <div class="chat-rule-h">Indicadores de conversación · se usan en todo el curso</div>
+      <div class="chat-rule-grid">
+        <div class="chat-rule-card">
+          <span class="chat-new is-static"><span class="chat-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>Nuevo chat</span>
+          <p>El prompt inicia un tema nuevo y va en una conversación limpia. Así el rol, los datos y las restricciones de un caso no influyen en el siguiente.</p>
+        </div>
+        <div class="chat-rule-card">
+          <span class="chat-cont"><svg class="icon chat-reply" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h10a6 6 0 0 1 6 6v1"/></svg>Mismo chat<span class="chat-send"><svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></span></span>
+          <p>El prompt continúa la conversación abierta: depende de la respuesta anterior de Claude. Una línea punteada une los mensajes de una misma conversación.</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-thread="Una sola conversación · del Paso 1 al Paso 5" class="timeline">
 
       <div class="tstep">
         <div class="tstep-l"><div class="tbadge">1</div><div class="tline"></div></div>
@@ -2816,7 +2975,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
           <p>Copia este mensaje, reemplaza los corchetes con tu información real y envíalo. Es importante dar contexto desde el primer mensaje.</p>
           <div class="prompt-wrap">
             <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt · Paso 2</div>
-            <div class="prompt-box" id="p1">Hola, me llamo [tu nombre] y trabajo en [tu área] de la Vicepresidencia Adjunta de Riesgos de Banco Atlántida El Salvador. Estoy participando en una capacitación de inteligencia artificial por primera vez. ¿Puedes presentarte brevemente y decirme en qué tipo de tareas específicas de mi área puedes ayudarme más?</div>
+            <div class="prompt-box" id="p1" data-chat="new">Hola, me llamo [tu nombre] y trabajo en [tu área] de la Vicepresidencia Adjunta de Riesgos de Banco Atlántida El Salvador. Estoy participando en una capacitación de inteligencia artificial por primera vez. ¿Puedes presentarte brevemente y decirme en qué tipo de tareas específicas de mi área puedes ayudarme más?</div>
           </div>
           <button class="copy-btn" onclick="copyP('p1',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar mensaje</button>
           <div class="tip-box" style="margin-top:.75rem;"><svg class="icon"><use href="#i-search"/></svg><span><strong>Observa la respuesta:</strong> ¿Adaptó Claude su presentación a tu área? ¿Mencionó tareas específicas? Si no fue lo suficientemente específica, pasaremos al siguiente paso para ajustarla.</span></div>
@@ -2829,21 +2988,29 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
           <div class="teyebrow">Paso 3 · Primera tarea · 6 min</div>
           <h3>Pide algo concreto relacionado a tu trabajo</h3>
           <p>Sin abrir una conversación nueva, en la misma ventana, pide una tarea real de tu área. Selecciona el ejemplo que más se aplique a ti o escribe tu propia solicitud:</p>
-          <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo A. Riesgo Integral y Riesgos Financieros</div>
-            <div class="prompt-box" id="p2a">Redacta un correo para convocar a los miembros del Comité de Riesgos a la sesión ordinaria del próximo jueves a las 3:00 p. m. Menciona que se presentará el informe de perfil de riesgo del mes y que el material se enviará con un día de anticipación. Tono formal. Firma: Subgerencia de Riesgo Integral. Máximo 5 líneas.</div>
+          <div class="chat-choose" data-label="Elige el ejemplo de tu área">
+            <div class="choose-opt" data-opt-label="Integral y Financieros">
+              <div class="prompt-wrap">
+                <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo A. Riesgo Integral y Riesgos Financieros</div>
+                <div class="prompt-box" id="p2a" data-chat="cont" data-after="del Paso 2">Redacta un correo para convocar a los miembros del Comité de Riesgos a la sesión ordinaria del próximo jueves a las 3:00 p. m. Menciona que se presentará el informe de perfil de riesgo del mes y que el material se enviará con un día de anticipación. Tono formal. Firma: Subgerencia de Riesgo Integral. Máximo 5 líneas.</div>
+              </div>
+              <button class="copy-btn" onclick="copyP('p2a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar Ejemplo A</button>
+            </div>
+            <div class="choose-opt" data-opt-label="Crédito de Personas">
+              <div class="prompt-wrap">
+                <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo B. Crédito de Personas</div>
+                <div class="prompt-box" id="p2b" data-chat="cont" data-after="del Paso 2">Necesito un correo breve para informar al área de Productos que la nueva campaña de tarjeta de crédito fue aprobada por Riesgos, con la condición de revisar su desempeño a los 60 días. Tono profesional y cordial. Firma: Riesgos de Banca de Personas. Máximo 5 líneas.</div>
+              </div>
+              <button class="copy-btn" onclick="copyP('p2b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar Ejemplo B</button>
+            </div>
+            <div class="choose-opt" data-opt-label="Fraude Transaccional">
+              <div class="prompt-wrap">
+                <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo C. Fraude Transaccional</div>
+                <div class="prompt-box" id="p2c" data-chat="cont" data-after="del Paso 2">Redacta una respuesta profesional y empática para un cliente que reportó un cargo no reconocido en su tarjeta. La respuesta debe confirmar que su reclamo fue recibido, explicar que se encuentra en investigación y comprometer una respuesta en un plazo de 10 días hábiles. Máximo 5 líneas.</div>
+              </div>
+              <button class="copy-btn" onclick="copyP('p2c',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar Ejemplo C</button>
+            </div>
           </div>
-          <button class="copy-btn" onclick="copyP('p2a',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar Ejemplo A</button>
-          <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo B. Crédito de Personas</div>
-            <div class="prompt-box" id="p2b">Necesito un correo breve para informar al área de Productos que la nueva campaña de tarjeta de crédito fue aprobada por Riesgos, con la condición de revisar su desempeño a los 60 días. Tono profesional y cordial. Firma: Riesgos de Banca de Personas. Máximo 5 líneas.</div>
-          </div>
-          <button class="copy-btn" onclick="copyP('p2b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar Ejemplo B</button>
-          <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo C. Fraude Transaccional</div>
-            <div class="prompt-box" id="p2c">Redacta una respuesta profesional y empática para un cliente que reportó un cargo no reconocido en su tarjeta. La respuesta debe confirmar que su reclamo fue recibido, explicar que se encuentra en investigación y comprometer una respuesta en un plazo de 10 días hábiles. Máximo 5 líneas.</div>
-          </div>
-          <button class="copy-btn" onclick="copyP('p2c',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar Ejemplo C</button>
         </div>
       </div>
 
@@ -2869,23 +3036,29 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
           <div class="teyebrow">Paso 5 · El poder de los ajustes · 5 min</div>
           <h3>Pide cambios, nunca empieces de cero</h3>
           <p>Este es el paso más importante del módulo. Si la respuesta no es exactamente lo que necesitas, <strong>no abras una conversación nueva</strong>. Solo pide ajustes en la misma ventana. Claude recuerda todo el contexto acumulado.</p>
-          <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Mensajes de ajuste, elige uno o combínalos</div>
-            <div class="prompt-box" id="p3">Está bien, pero hazlo más breve, máximo 3 líneas.
-
-También podrías probar:
-
-Cámbialo a un tono más formal.
-
-O también:
-
-Agrega al final: "Quedamos atentos a cualquier consulta. Equipo de [tu área]."
-
-O también:
-
-¿Puedes darme 3 versiones diferentes con distintos niveles de formalidad?</div>
+          <p style="margin-top:.75rem;">Cuatro mensajes de ajuste: se envía uno a la vez y pueden combinarse en mensajes sucesivos.</p>
+          <div class="adj-list">
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ajuste 1 · Extensión</div>
+              <div class="prompt-box" id="p3" data-chat="cont" data-after="del Paso 3">Está bien, pero hazlo más breve, máximo 3 líneas.</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('p3',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ajuste 2 · Tono</div>
+              <div class="prompt-box" id="p3b" data-chat="cont" data-after="del Paso 3">Cámbialo a un tono más formal.</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('p3b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ajuste 3 · Cierre</div>
+              <div class="prompt-box" id="p3c" data-chat="cont" data-after="del Paso 3">Agrega al final: "Quedamos atentos a cualquier consulta. Equipo de [tu área]."</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('p3c',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
+            <div class="prompt-wrap">
+              <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ajuste 4 · Versiones</div>
+              <div class="prompt-box" id="p3d" data-chat="cont" data-after="del Paso 3">¿Puedes darme 3 versiones diferentes con distintos niveles de formalidad?</div>
+            </div>
+            <button class="copy-btn" onclick="copyP('p3d',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
           </div>
-          <button class="copy-btn" onclick="copyP('p3',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar opciones de ajuste</button>
           <div class="tip-box" style="margin-top:.75rem;"><svg class="icon"><use href="#i-star"/></svg><span><strong>Principio fundamental:</strong> Claude recuerda toda la conversación mientras esté abierta. Una sesión puede tener 10, 30 o 50 mensajes sin perder contexto. Cada ajuste construye sobre el anterior, exactamente como trabajar con un colega.</span></div>
         </div>
       </div>
@@ -2927,58 +3100,55 @@ O también:
       </div>
     </div>
 
-    <h2 class="sec-h2"><svg class="icon"><use href="#i-message"/></svg>Los 5 elementos de un prompt poderoso</h2>
+    <h2 class="sec-h2"><svg class="icon"><use href="#i-message"/></svg>Los 5 componentes de un prompt efectivo</h2>
     <div class="timeline">
       <div class="tstep vis">
         <div class="tstep-l"><div class="tbadge" style="background:var(--amber);">1</div><div class="tline"></div></div>
         <div class="tcard">
-          <div class="teyebrow">Elemento 1</div>
+          <div class="teyebrow">Componente 1</div>
           <h3>Rol o contexto profesional</h3>
           <p>Dile a Claude quién eres o cuál es el contexto de tu organización. Esto orienta inmediatamente el tono y nivel del resultado.</p>
           <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo</div>
-            <div class="prompt-box" id="pe-r">Soy analista de Riesgo Integral en Banco Atlántida El Salvador...</div>
+            <div class="frag-lbl"><svg class="icon"><use href="#i-puzzle"/></svg>Fragmento · componente 1 · Rol</div>
+            <div class="prompt-box frag" id="pe-r">Soy analista de Riesgo Integral en Banco Atlántida El Salvador...</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pe-r',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar</button>
         </div>
       </div>
       <div class="tstep vis">
         <div class="tstep-l"><div class="tbadge" style="background:var(--sapphire);">2</div><div class="tline"></div></div>
         <div class="tcard">
-          <div class="teyebrow">Elemento 2</div>
+          <div class="teyebrow">Componente 2</div>
           <h3>La tarea específica</h3>
           <p>Sé preciso sobre qué quieres. Usa verbos claros: redacta, resume, lista, explica, traduce, analiza, compara.</p>
           <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Vago frente a específico</div>
-            <div class="prompt-box" id="pe-t">Vago: "Hazme algo sobre la mora."
+            <div class="frag-lbl"><svg class="icon"><use href="#i-puzzle"/></svg>Fragmento · componente 2 · Tarea, vaga frente a específica</div>
+            <div class="prompt-box frag" id="pe-t">Vago: "Hazme algo sobre la mora."
 
 Específico: "Redacta 2 párrafos que expliquen por qué la mora de tarjeta de crédito subió de 3.1% a 3.9% este mes, a partir de los datos que te comparto."</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pe-t',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar</button>
         </div>
       </div>
       <div class="tstep vis">
         <div class="tstep-l"><div class="tbadge" style="background:var(--teal);">3</div><div class="tline"></div></div>
         <div class="tcard">
-          <div class="teyebrow">Elemento 3</div>
+          <div class="teyebrow">Componente 3</div>
           <h3>El receptor del texto</h3>
           <p>¿Para quién es este texto? ¿Un colega de Riesgos? ¿El área de Negocios? ¿El Comité de Riesgos? ¿La Junta Directiva? El receptor define automáticamente el tono y el nivel de detalle.</p>
           <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplo</div>
-            <div class="prompt-box" id="pe-rec">Dirigido a gerentes del área de Negocios, que no son especialistas en riesgos.</div>
+            <div class="frag-lbl"><svg class="icon"><use href="#i-puzzle"/></svg>Fragmento · componente 3 · Receptor</div>
+            <div class="prompt-box frag" id="pe-rec">Dirigido a gerentes del área de Negocios, que no son especialistas en riesgos.</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pe-rec',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar</button>
         </div>
       </div>
       <div class="tstep vis">
         <div class="tstep-l"><div class="tbadge" style="background:var(--violet);">4</div><div class="tline"></div></div>
         <div class="tcard">
-          <div class="teyebrow">Elemento 4</div>
+          <div class="teyebrow">Componente 4</div>
           <h3>El tono deseado</h3>
           <p>Nombra el tono explícitamente. Claude puede ajustarse a prácticamente cualquier estilo de comunicación corporativa.</p>
           <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Opciones de tono</div>
-            <div class="prompt-box" id="pe-tono">Formal y protocolario
+            <div class="frag-lbl"><svg class="icon"><use href="#i-puzzle"/></svg>Fragmento · componente 4 · Opciones de tono</div>
+            <div class="prompt-box frag" id="pe-tono">Formal y protocolario
 Formal pero amigable
 Cálido y cercano
 Técnico y preciso
@@ -2986,25 +3156,23 @@ Empático y comprensivo
 Neutral e informativo
 Directo y breve</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pe-tono',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar opciones</button>
         </div>
       </div>
       <div class="tstep vis">
         <div class="tstep-l"><div class="tbadge" style="background:var(--rose);">5</div><div class="tline"></div></div>
         <div class="tcard">
-          <div class="teyebrow">Elemento 5</div>
+          <div class="teyebrow">Componente 5</div>
           <h3>Extensión y formato</h3>
           <p>Indica cuánto quieres: número de párrafos, líneas, puntos o palabras. También el formato: lista, tabla, párrafo, correo, comunicado, informe.</p>
           <div class="prompt-wrap">
-            <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Ejemplos de límites de extensión</div>
-            <div class="prompt-box" id="pe-ext">"Máximo 3 párrafos"
+            <div class="frag-lbl"><svg class="icon"><use href="#i-puzzle"/></svg>Fragmento · componente 5 · Límites de extensión</div>
+            <div class="prompt-box frag" id="pe-ext">"Máximo 3 párrafos"
 "En 5 puntos clave"
 "No más de 100 palabras"
 "En formato de lista numerada"
 "Como tabla comparativa con 3 columnas"
 "Un correo breve de no más de 5 líneas"</div>
           </div>
-          <button class="copy-btn" onclick="copyP('pe-ext',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar</button>
         </div>
       </div>
     </div>
@@ -3013,8 +3181,8 @@ Directo y breve</div>
 
     <h2 class="sec-h2"><svg class="icon"><use href="#i-star"/></svg>Ejemplo completo: prompt de alta calidad</h2>
     <div class="prompt-wrap">
-      <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt completo con todos los elementos</div>
-      <div class="prompt-box" id="pfull">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador.
+      <div class="prompt-lbl"><svg class="icon"><use href="#i-clipboard"/></svg>Prompt completo con los 5 componentes</div>
+      <div class="prompt-box" id="pfull" data-chat="new">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador.
 
 Necesito que redactes un correo para explicar por qué aumentaron las reservas de la cartera de consumo este trimestre. Los datos (ficticios) son: reservas de $14.2 millones al cierre de junio y $15.9 millones al cierre de septiembre, principalmente por mayor mora en tarjeta de crédito.
 
@@ -3028,7 +3196,7 @@ Extensión: máximo 3 párrafos. Incluye una línea de asunto para el correo.</d
 
     <div class="alert success" style="margin-top:1.5rem;">
       <div class="alert-icon"><svg class="icon"><use href="#i-star"/></svg></div>
-      <p><strong>Consejo de experto:</strong> No necesitas incluir los 5 elementos en cada mensaje. Para tareas simples, 2 o 3 son suficientes. La práctica te enseñará cuándo necesitas más detalle. Empieza simple y añade contexto cuando el resultado no sea lo que esperabas.</p>
+      <p><strong>Consejo de experto:</strong> No necesitas incluir los 5 componentes en cada mensaje. Para tareas simples, 2 o 3 son suficientes. La práctica te enseñará cuándo necesitas más detalle. Empieza simple y añade contexto cuando el resultado no sea lo que esperabas.</p>
     </div>
 
     <div class="sec-foot">
@@ -3069,7 +3237,7 @@ Extensión: máximo 3 párrafos. Incluye una línea de asunto para el correo.</d
           </div>
           <div class="ex-tag tag-todos">Todas las áreas</div>
         </div>
-        <div class="ex-body">
+        <div class="ex-body" data-thread="Una sola conversación · prompt, ajuste y reto">
           <div class="ex-step-row">
             <div class="ex-sn">1</div>
             <div class="ex-content"><p><strong>Objetivo del ejercicio:</strong> aprender a sintetizar información densa en segundos. Es la habilidad que más vas a usar, sin importar tu área dentro de Riesgos.</p></div>
@@ -3077,9 +3245,27 @@ Extensión: máximo 3 párrafos. Incluye una línea de asunto para el correo.</d
           <div class="ex-step-row">
             <div class="ex-sn">2</div>
             <div class="ex-content">
-              <p><strong>Abre Claude y pega este prompt:</strong></p>
+              <p><strong>Pega este prompt.</strong> El ejemplo trae un acta ficticia preparada para la práctica; la plantilla sirve después con un texto propio.</p>
+              <div class="chat-choose" data-label="Elige una versión">
+                <div class="choose-opt" data-opt-label="Ejemplo con acta ficticia">
+                  <div class="prompt-wrap">
+                    <div class="prompt-box" id="pe1-full" data-chat="new">Necesito que resumas el siguiente texto de forma clara y útil.
+
+El resumen debe incluir:
+- Máximo 5 puntos clave en formato de lista numerada
+- Lenguaje sencillo y directo
+- Una conclusión de 2 oraciones al final
+- Todas las cifras, fechas y responsables que aparezcan en el texto
+
+Aquí está el texto:
+
+Extracto de acta del Comité de Riesgos, sesión de septiembre (texto ficticio para práctica). El Comité revisó el informe de perfil de riesgo al cierre de agosto. El índice de mora de la cartera de consumo aumentó de 2.3% a 2.7%, impulsado principalmente por tarjeta de crédito, cuya mora pasó de 3.1% a 3.9%. La cobertura de reservas se mantiene en 118%, por encima del mínimo interno de 110%. En liquidez, el coeficiente de cobertura de liquidez cerró en 142%, dentro del apetito aprobado. Se registraron 6 eventos de riesgo operacional con una pérdida total de $8,750, ninguno clasificado como crítico. El Comité acordó: (1) solicitar a Riesgos de Banca de Personas un análisis de las cosechas de tarjeta originadas en el primer semestre, con entrega al 15 de octubre; (2) revisar los criterios de admisión de la campaña de tarjeta vigente; y (3) presentar a Junta Directiva el resumen del perfil de riesgo en la sesión de octubre.</div>
+                  </div>
+                  <button class="copy-btn" onclick="copyP('pe1-full',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ejemplo completo</button>
+                </div>
+                <div class="choose-opt" data-opt-label="Plantilla para tu texto">
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe1">Necesito que resumas el siguiente texto de forma clara y útil.
+                <div class="prompt-box" id="pe1" data-chat="new">Necesito que resumas el siguiente texto de forma clara y útil.
 
 El resumen debe incluir:
 - Máximo 5 puntos clave en formato de lista numerada
@@ -3091,7 +3277,9 @@ Aquí está el texto:
 
 [Pega aquí el texto que quieres resumir]</div>
               </div>
-              <button class="copy-btn" onclick="copyP('pe1',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar prompt</button>
+              <button class="copy-btn" onclick="copyP('pe1',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar plantilla</button>
+                </div>
+              </div>
             </div>
           </div>
           <div class="ex-step-row">
@@ -3103,35 +3291,16 @@ Aquí está el texto:
             <div class="ex-content">
               <p><strong>Ahora pide este ajuste en la misma conversación:</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe1b">Ahora convierte ese resumen en un correo para mi jefatura. Incluye: línea de asunto, un párrafo breve con lo más importante, los acuerdos en una tabla con las columnas acuerdo, responsable y fecha, y un cierre profesional. Firma: [tu nombre y cargo].</div>
+                <div class="prompt-box" id="pe1b" data-chat="cont" data-after="del paso 2">Ahora convierte ese resumen en un correo para mi jefatura. Incluye: línea de asunto, un párrafo breve con lo más importante, los acuerdos en una tabla con las columnas acuerdo, responsable y fecha, y un cierre profesional. Firma: [tu nombre y cargo].</div>
               </div>
               <button class="copy-btn" onclick="copyP('pe1b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
             </div>
           </div>
-          <div class="challenge">
+          <div class="challenge" data-chat="cont" data-after="del paso 4">
             <svg class="icon"><use href="#i-target"/></svg>
             <div><strong>Reto adicional:</strong> pide a Claude una tabla que muestre qué indicadores empeoraron, cuáles mejoraron y cuáles se mantienen respecto al mes anterior.</div>
           </div>
           <div class="reflection"><svg class="icon"><use href="#i-question"/></svg><em>¿Qué cifra de este resumen verificarías contra la fuente original antes de enviarlo?</em></div>
-
-          <div class="ref-block">
-            <div class="ref-block-lbl"><svg class="icon"><use href="#i-star"/></svg>Ejemplo completo, listo para copiar</div>
-            <div class="ref-block-sub">Copia este ejemplo ya completado, pégalo en Claude tal cual y observa cómo funciona. El texto es ficticio y fue preparado para la práctica.</div>
-            <div class="prompt-wrap">
-              <div class="prompt-box" id="pe1-full">Necesito que resumas el siguiente texto de forma clara y útil.
-
-El resumen debe incluir:
-- Máximo 5 puntos clave en formato de lista numerada
-- Lenguaje sencillo y directo
-- Una conclusión de 2 oraciones al final
-- Todas las cifras, fechas y responsables que aparezcan en el texto
-
-Aquí está el texto:
-
-Extracto de acta del Comité de Riesgos, sesión de septiembre (texto ficticio para práctica). El Comité revisó el informe de perfil de riesgo al cierre de agosto. El índice de mora de la cartera de consumo aumentó de 2.3% a 2.7%, impulsado principalmente por tarjeta de crédito, cuya mora pasó de 3.1% a 3.9%. La cobertura de reservas se mantiene en 118%, por encima del mínimo interno de 110%. En liquidez, el coeficiente de cobertura de liquidez cerró en 142%, dentro del apetito aprobado. Se registraron 6 eventos de riesgo operacional con una pérdida total de $8,750, ninguno clasificado como crítico. El Comité acordó: (1) solicitar a Riesgos de Banca de Personas un análisis de las cosechas de tarjeta originadas en el primer semestre, con entrega al 15 de octubre; (2) revisar los criterios de admisión de la campaña de tarjeta vigente; y (3) presentar a Junta Directiva el resumen del perfil de riesgo en la sesión de octubre.</div>
-            </div>
-            <button class="copy-btn" onclick="copyP('pe1-full',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ejemplo completo</button>
-          </div>
         </div>
       </div>
     </div>
@@ -3146,7 +3315,7 @@ Extracto de acta del Comité de Riesgos, sesión de septiembre (texto ficticio p
           </div>
           <div class="ex-tag tag-integral">Riesgo Integral</div>
         </div>
-        <div class="ex-body">
+        <div class="ex-body" data-thread="Una sola conversación · prompt, ajuste y reto">
           <div class="ex-step-row">
             <div class="ex-sn">1</div>
             <div class="ex-content"><p><strong>Objetivo del ejercicio:</strong> usar Claude para convertir un conjunto de indicadores en un resumen ejecutivo claro, que destaque lo que el Comité necesita saber.</p></div>
@@ -3154,9 +3323,9 @@ Extracto de acta del Comité de Riesgos, sesión de septiembre (texto ficticio p
           <div class="ex-step-row">
             <div class="ex-sn">2</div>
             <div class="ex-content">
-              <p><strong>Abre Claude y pega este prompt (los datos son ficticios):</strong></p>
+              <p><strong>Pega este prompt (los datos son ficticios):</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe2">Trabajo en la Subgerencia de Riesgo Integral de Banco Atlántida El Salvador.
+                <div class="prompt-box" id="pe2" data-chat="new">Trabajo en la Subgerencia de Riesgo Integral de Banco Atlántida El Salvador.
 
 Con estos indicadores de cierre de mes, redacta un resumen ejecutivo para el Comité de Riesgos:
 
@@ -3184,12 +3353,12 @@ Requisitos:
             <div class="ex-content">
               <p><strong>Ahora pide este ajuste en la misma conversación:</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe2b">Convierte los indicadores en una tabla con cuatro columnas: indicador, valor actual, límite y estado. En estado usa verde, amarillo o rojo según qué tan cerca está del límite, y explica debajo de la tabla el criterio que usaste.</div>
+                <div class="prompt-box" id="pe2b" data-chat="cont" data-after="del paso 2">Convierte los indicadores en una tabla con cuatro columnas: indicador, valor actual, límite y estado. En estado usa verde, amarillo o rojo según qué tan cerca está del límite, y explica debajo de la tabla el criterio que usaste.</div>
               </div>
               <button class="copy-btn" onclick="copyP('pe2b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
             </div>
           </div>
-          <div class="challenge">
+          <div class="challenge" data-chat="cont" data-after="del paso 4">
             <svg class="icon"><use href="#i-target"/></svg>
             <div><strong>Reto adicional:</strong> pide una versión de máximo 5 líneas para Junta Directiva, sin tecnicismos, que responda dos preguntas: ¿estamos dentro del apetito de riesgo? y ¿qué debemos vigilar el próximo mes?</div>
           </div>
@@ -3208,7 +3377,7 @@ Requisitos:
           </div>
           <div class="ex-tag tag-financieros">Riesgos Financieros</div>
         </div>
-        <div class="ex-body">
+        <div class="ex-body" data-thread="Una sola conversación · prompt, ajuste y reto">
           <div class="ex-step-row">
             <div class="ex-sn">1</div>
             <div class="ex-content"><p><strong>Objetivo del ejercicio:</strong> usar Claude para comunicar resultados cuantitativos a una audiencia no técnica, sin perder precisión.</p></div>
@@ -3216,9 +3385,9 @@ Requisitos:
           <div class="ex-step-row">
             <div class="ex-sn">2</div>
             <div class="ex-content">
-              <p><strong>Abre Claude y pega este prompt (los datos son ficticios):</strong></p>
+              <p><strong>Pega este prompt (los datos son ficticios):</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe3">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador.
+                <div class="prompt-box" id="pe3" data-chat="new">Soy analista de Riesgos Financieros en Banco Atlántida El Salvador.
 
 Necesito explicar a gerentes del área de Negocios, que no son especialistas en riesgos, los resultados de una prueba de estrés:
 
@@ -3244,12 +3413,12 @@ Tono: claro y directo, sin jerga técnica. Máximo 3 párrafos.</div>
             <div class="ex-content">
               <p><strong>Ahora pide este ajuste en la misma conversación:</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe3b">Agrega al final un mini glosario con 4 términos: mora, reservas, coeficiente de cobertura de liquidez y escenario adverso. Cada uno explicado en una sola línea.</div>
+                <div class="prompt-box" id="pe3b" data-chat="cont" data-after="del paso 2">Agrega al final un mini glosario con 4 términos: mora, reservas, coeficiente de cobertura de liquidez y escenario adverso. Cada uno explicado en una sola línea.</div>
               </div>
               <button class="copy-btn" onclick="copyP('pe3b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
             </div>
           </div>
-          <div class="challenge">
+          <div class="challenge" data-chat="cont" data-after="del paso 4">
             <svg class="icon"><use href="#i-target"/></svg>
             <div><strong>Reto adicional:</strong> pide a Claude las 3 preguntas más difíciles que podría hacer un miembro de Junta Directiva sobre estos resultados, con una respuesta sugerida para cada una.</div>
           </div>
@@ -3268,7 +3437,7 @@ Tono: claro y directo, sin jerga técnica. Máximo 3 párrafos.</div>
           </div>
           <div class="ex-tag tag-credito">Crédito de Personas</div>
         </div>
-        <div class="ex-body">
+        <div class="ex-body" data-thread="Una sola conversación · prompt, ajuste y reto">
           <div class="ex-step-row">
             <div class="ex-sn">1</div>
             <div class="ex-content"><p><strong>Objetivo del ejercicio:</strong> usar Claude para llevar un mismo cambio de política a dos audiencias distintas: la fuerza de ventas y el equipo que configura el motor de decisión.</p></div>
@@ -3276,9 +3445,9 @@ Tono: claro y directo, sin jerga técnica. Máximo 3 párrafos.</div>
           <div class="ex-step-row">
             <div class="ex-sn">2</div>
             <div class="ex-content">
-              <p><strong>Abre Claude y pega este prompt (los datos son ficticios):</strong></p>
+              <p><strong>Pega este prompt (los datos son ficticios):</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe4">Trabajo en Riesgos de Banca de Personas de Banco Atlántida El Salvador.
+                <div class="prompt-box" id="pe4" data-chat="new">Trabajo en Riesgos de Banca de Personas de Banco Atlántida El Salvador.
 
 Se aprobó este cambio a la política de admisión de tarjeta de crédito:
 - Ingreso mínimo: sube de $500 a $600 mensuales
@@ -3304,12 +3473,12 @@ Tono: claro y profesional.</div>
             <div class="ex-content">
               <p><strong>Ahora pide este ajuste en la misma conversación:</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe4b">Ahora redacta el requerimiento funcional para que Infraestructura de Riesgos actualice el motor de decisión. Incluye: objetivo del cambio, las reglas en formato «SI… ENTONCES…» y 3 casos de prueba con los datos del solicitante y el resultado esperado (aprobado o rechazado).</div>
+                <div class="prompt-box" id="pe4b" data-chat="cont" data-after="del paso 2">Ahora redacta el requerimiento funcional para que Infraestructura de Riesgos actualice el motor de decisión. Incluye: objetivo del cambio, las reglas en formato «SI… ENTONCES…» y 3 casos de prueba con los datos del solicitante y el resultado esperado (aprobado o rechazado).</div>
               </div>
               <button class="copy-btn" onclick="copyP('pe4b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
             </div>
           </div>
-          <div class="challenge">
+          <div class="challenge" data-chat="cont" data-after="del paso 4">
             <svg class="icon"><use href="#i-target"/></svg>
             <div><strong>Reto adicional:</strong> pide a Claude que liste las 3 objeciones más probables de la fuerza de ventas ante este cambio y una respuesta breve para cada una.</div>
           </div>
@@ -3328,7 +3497,7 @@ Tono: claro y profesional.</div>
           </div>
           <div class="ex-tag tag-fraude">Fraude Transaccional</div>
         </div>
-        <div class="ex-body">
+        <div class="ex-body" data-thread="Una sola conversación · prompt, ajuste y reto">
           <div class="ex-step-row">
             <div class="ex-sn">1</div>
             <div class="ex-content"><p><strong>Objetivo del ejercicio:</strong> usar Claude para estructurar un informe de fraude con cálculos, análisis y recomendaciones, y comprobar que los números sean correctos.</p></div>
@@ -3336,9 +3505,9 @@ Tono: claro y profesional.</div>
           <div class="ex-step-row">
             <div class="ex-sn">2</div>
             <div class="ex-content">
-              <p><strong>Abre Claude y pega este prompt (los datos son ficticios):</strong></p>
+              <p><strong>Pega este prompt (los datos son ficticios):</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe5">Trabajo en Riesgo de Fraude Transaccional de Banco Atlántida El Salvador.
+                <div class="prompt-box" id="pe5" data-chat="new">Trabajo en Riesgo de Fraude Transaccional de Banco Atlántida El Salvador.
 
 Con estos datos del mes, redacta un informe breve para la Gerencia:
 - Alertas generadas por el sistema de monitoreo: 420
@@ -3367,12 +3536,12 @@ Tono: técnico y directo. Máximo una página.</div>
             <div class="ex-content">
               <p><strong>Ahora pide este ajuste en la misma conversación:</strong></p>
               <div class="prompt-wrap">
-                <div class="prompt-box" id="pe5b">Ahora redacta un mensaje preventivo para clientes sobre la tipología principal: una versión para SMS de máximo 160 caracteres y otra para redes sociales de máximo 80 palabras. Incluye que el banco nunca solicita claves ni códigos por teléfono.</div>
+                <div class="prompt-box" id="pe5b" data-chat="cont" data-after="del paso 2">Ahora redacta un mensaje preventivo para clientes sobre la tipología principal: una versión para SMS de máximo 160 caracteres y otra para redes sociales de máximo 80 palabras. Incluye que el banco nunca solicita claves ni códigos por teléfono.</div>
               </div>
               <button class="copy-btn" onclick="copyP('pe5b',this)"><svg class="icon"><use href="#i-clipboard"/></svg>Copiar ajuste</button>
             </div>
           </div>
-          <div class="challenge">
+          <div class="challenge" data-chat="cont" data-after="del paso 4">
             <svg class="icon"><use href="#i-target"/></svg>
             <div><strong>Reto adicional:</strong> pide a Claude que proponga 2 reglas de detección para la tipología principal y que explique qué falsos positivos podría generar cada una.</div>
           </div>
@@ -4407,6 +4576,162 @@ setInterval(renderGreetings, 60000);   // si la clase cruza el mediodía o la no
 
   showEmpty();
   setMode('text');
+})();
+
+/* ══ INDICADORES DE CONVERSACIÓN ══
+   Lee las marcas del HTML y dibuja los indicadores:
+   - data-chat="new"               → botón "Nuevo chat" (copia el prompt)
+   - data-chat="cont" data-after   → indicador "Mismo chat · después de…"
+   - data-thread="…"               → hilo punteado que une una conversación
+   - .chat-choose > .choose-opt    → control "Elige uno" (una opción visible a la vez) */
+(function () {
+  var ICO = {
+    plus:  '<svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
+    reply: '<svg class="icon chat-reply" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h10a6 6 0 0 1 6 6v1"/></svg>',
+    up:    '<svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>',
+    chat:  '<svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1V16a1 1 0 0 1-1 1H9l-4 3.5V17H4a1 1 0 0 1-1-1V6.5a1 1 0 0 1 1-1Z"/></svg>',
+    split: '<svg class="icon" viewBox="0 0 24 24"><path d="M6 3v6a6 6 0 0 0 6 6h6M18 15l-3-3M18 15l-3 3M6 21v-6"/></svg>'
+  };
+
+  /* Aviso breve al copiar */
+  var toastEl = null, toastTimer = null;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'chat-toast';
+      toastEl.setAttribute('role', 'status');
+      document.body.appendChild(toastEl);
+    }
+    toastEl.innerHTML = '<span class="chat-dot">' + ICO.plus + '</span><span>' + msg + '</span>';
+    toastEl.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('on'); }, 2800);
+  }
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function () { fallbackCopy(text); });
+    }
+    fallbackCopy(text);
+    return Promise.resolve();
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  /* 1 · Biblioteca (Módulo 2): plantilla y ejemplo pasan a ser "Elige uno" */
+  document.querySelectorAll('.lib-card').forEach(function (card) {
+    var tpl = card.querySelector(':scope > .prompt-box');
+    var acts = card.querySelector(':scope > .lib-actions');
+    var ex = card.querySelector(':scope > .lib-ex');
+    if (!tpl || !acts || !ex) return;
+    var exBox = ex.querySelector('.prompt-box');
+    var copyEx = ex.querySelector('.copy-btn');
+    var copyTpl = acts.querySelector('.copy-btn:not(.ghost)');
+    var group = document.createElement('div');
+    group.className = 'chat-choose';
+    group.dataset.label = 'Elige una versión';
+    function option(label, box, btn) {
+      var o = document.createElement('div');
+      o.className = 'choose-opt';
+      o.dataset.optLabel = label;
+      box.dataset.chat = 'new';
+      o.appendChild(box);
+      if (btn) o.appendChild(btn);
+      return o;
+    }
+    group.appendChild(option('Ejemplo con datos ficticios', exBox, copyEx));
+    group.appendChild(option('Plantilla', tpl, copyTpl));
+    card.insertBefore(group, acts);
+    acts.remove();
+    ex.remove();
+  });
+
+  /* 2 · Indicadores por bloque */
+  function chipNew(box) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chat-new';
+    b.title = 'Copia este prompt para pegarlo en un chat nuevo';
+    b.innerHTML = '<span class="chat-dot">' + ICO.plus + '</span>Nuevo chat';
+    b.addEventListener('click', function () {
+      copyText(box.innerText.trim());
+      toast('Prompt copiado. Pégalo en un <strong>chat nuevo</strong> de Claude.');
+      b.classList.add('copied');
+      setTimeout(function () { b.classList.remove('copied'); }, 1800);
+    });
+    return b;
+  }
+  function chipCont(after) {
+    var s = document.createElement('span');
+    s.className = 'chat-cont';
+    s.innerHTML = ICO.reply + 'Mismo chat' +
+      (after ? '<span class="chat-ref">· después ' + after + '</span>' : '') +
+      '<span class="chat-send">' + ICO.up + '</span>';
+    return s;
+  }
+  document.querySelectorAll('[data-chat]').forEach(function (el) {
+    var chip = el.dataset.chat === 'new' ? chipNew(el) : chipCont(el.dataset.after);
+    // Retos: el indicador va al inicio del texto del reto
+    if (el.classList.contains('challenge')) {
+      var txt = el.querySelector(':scope > div');
+      if (txt) txt.insertBefore(chip, txt.firstChild);
+      return;
+    }
+    var head = document.createElement('div');
+    head.className = 'p-head';
+    var prev = el.previousElementSibling;
+    var hasLabel = prev && prev.classList.contains('prompt-lbl');
+    el.parentNode.insertBefore(head, hasLabel ? prev : el);
+    head.appendChild(chip);
+    if (hasLabel) head.appendChild(prev);
+  });
+
+  /* 3 · Elige uno */
+  document.querySelectorAll('.chat-choose').forEach(function (g) {
+    var opts = Array.prototype.filter.call(g.children, function (c) { return c.classList.contains('choose-opt'); });
+    if (!opts.length) return;
+    var bar = document.createElement('div');
+    bar.className = 'chat-choose-bar';
+    bar.innerHTML = ICO.split + '<span>' + (g.dataset.label || 'Elige una opción') + '</span>';
+    var seg = document.createElement('div');
+    seg.className = 'chat-seg';
+    seg.setAttribute('role', 'tablist');
+    opts.forEach(function (o, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.textContent = o.dataset.optLabel || ('Opción ' + (i + 1));
+      b.addEventListener('click', function () { select(i); });
+      seg.appendChild(b);
+    });
+    bar.appendChild(seg);
+    g.insertBefore(bar, g.firstChild);
+    function select(i) {
+      opts.forEach(function (o, j) { o.hidden = j !== i; });
+      seg.querySelectorAll('button').forEach(function (b, j) {
+        b.classList.toggle('on', j === i);
+        b.setAttribute('aria-selected', String(j === i));
+      });
+    }
+    select(0);
+  });
+
+  /* 4 · Hilos de conversación */
+  document.querySelectorAll('[data-thread]').forEach(function (t) {
+    t.classList.add('chat-thread');
+    var tag = document.createElement('div');
+    tag.className = 'chat-thread-tag';
+    tag.innerHTML = ICO.chat + '<span>' + t.dataset.thread + '</span>';
+    t.insertBefore(tag, t.firstChild);
+    var rows = t.querySelectorAll(':scope > .ex-step-row');
+    if (rows.length) rows[rows.length - 1].classList.add('t-end');
+    var items = t.querySelectorAll(':scope > .t-item');
+    if (items.length) items[0].classList.add('t-start');
+  });
 })();
 
 /* ══ INIT ══ */
