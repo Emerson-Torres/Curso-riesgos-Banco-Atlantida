@@ -1,0 +1,521 @@
+﻿ID_Alerta,Fecha,Hora,Canal,Regla,Nombre_Regla,Monto_USD,Resultado,Tipologia,Minutos_Revision
+AL-260901,2026-09-01,01:30,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,600.33,Falso positivo,,7
+AL-260902,2026-09-01,02:04,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,849.03,Falso positivo,,9
+AL-260903,2026-09-01,05:24,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,800.28,Falso positivo,,9
+AL-260904,2026-09-01,09:14,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,698.27,Falso positivo,,4
+AL-260905,2026-09-01,10:10,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,365.11,Falso positivo,,3
+AL-260906,2026-09-01,11:45,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,3060.68,Falso positivo,,7
+AL-260907,2026-09-01,12:45,ATM,R05,Retiro en ATM fuera del país de residencia,775.65,Falso positivo,,11
+AL-260908,2026-09-01,14:49,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,495.63,Falso positivo,,8
+AL-260909,2026-09-01,15:17,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,530.9,Falso positivo,,12
+AL-260910,2026-09-01,16:29,ATM,R05,Retiro en ATM fuera del país de residencia,711.94,Falso positivo,,8
+AL-260911,2026-09-01,16:57,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,845.52,Falso positivo,,3
+AL-260912,2026-09-01,18:12,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,908.13,Falso positivo,,6
+AL-260913,2026-09-01,22:16,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,363.49,Falso positivo,,6
+AL-260914,2026-09-01,22:20,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,651.21,Falso positivo,,5
+AL-260915,2026-09-01,22:59,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,442.42,Falso positivo,,12
+AL-260916,2026-09-01,23:51,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,571.83,Falso positivo,,8
+AL-260917,2026-09-02,07:12,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2470.32,Falso positivo,,8
+AL-260918,2026-09-02,07:17,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,709.97,Falso positivo,,4
+AL-260919,2026-09-02,07:39,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2262.89,Falso positivo,,8
+AL-260920,2026-09-02,07:47,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,254.21,Falso positivo,,11
+AL-260921,2026-09-02,12:02,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,663.61,Falso positivo,,3
+AL-260922,2026-09-02,12:05,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,742.51,Falso positivo,,5
+AL-260923,2026-09-02,13:32,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,693.8,Falso positivo,,12
+AL-260924,2026-09-02,13:36,ATM,R05,Retiro en ATM fuera del país de residencia,392.04,Falso positivo,,4
+AL-260925,2026-09-02,14:21,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,468.78,Falso positivo,,6
+AL-260926,2026-09-02,14:40,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,283.15,Falso positivo,,8
+AL-260927,2026-09-02,15:30,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,394.07,Falso positivo,,7
+AL-260928,2026-09-02,18:47,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1425.17,Fraude confirmado,Suplantación telefónica,12
+AL-260929,2026-09-02,19:12,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,840.87,Falso positivo,,3
+AL-260930,2026-09-02,19:35,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,226.01,Falso positivo,,3
+AL-260931,2026-09-02,20:22,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1776.6,Falso positivo,,3
+AL-260932,2026-09-02,21:28,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,279.67,Falso positivo,,10
+AL-260933,2026-09-02,21:32,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,656.92,Falso positivo,,9
+AL-260934,2026-09-02,22:08,ATM,R05,Retiro en ATM fuera del país de residencia,423.16,Falso positivo,,3
+AL-260935,2026-09-02,23:05,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,151.54,Falso positivo,,11
+AL-260936,2026-09-03,00:59,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,568.59,Falso positivo,,8
+AL-260937,2026-09-03,01:27,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1914.09,Falso positivo,,6
+AL-260938,2026-09-03,02:08,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,59.7,Falso positivo,,5
+AL-260939,2026-09-03,02:19,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,660.48,Falso positivo,,12
+AL-260940,2026-09-03,03:51,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,723.14,Falso positivo,,12
+AL-260941,2026-09-03,08:13,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,895.34,Falso positivo,,4
+AL-260942,2026-09-03,09:19,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,223.16,Falso positivo,,10
+AL-260943,2026-09-03,10:14,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2000.66,Falso positivo,,9
+AL-260944,2026-09-03,12:24,ATM,R05,Retiro en ATM fuera del país de residencia,210.81,Falso positivo,,7
+AL-260945,2026-09-03,14:51,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,404.41,Falso positivo,,3
+AL-260946,2026-09-03,18:47,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,233.7,Falso positivo,,3
+AL-260947,2026-09-03,20:12,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,253.45,Falso positivo,,6
+AL-260948,2026-09-03,20:25,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,337.81,Falso positivo,,9
+AL-260949,2026-09-03,23:13,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,3446.2,Falso positivo,,4
+AL-260950,2026-09-04,00:15,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,232.34,Falso positivo,,6
+AL-260951,2026-09-04,01:05,ATM,R05,Retiro en ATM fuera del país de residencia,589.7,Falso positivo,,7
+AL-260952,2026-09-04,03:00,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1936.23,Fraude confirmado,Toma de cuenta,7
+AL-260953,2026-09-04,03:17,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1027.2,Falso positivo,,3
+AL-260954,2026-09-04,04:57,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,837.02,Falso positivo,,12
+AL-260955,2026-09-04,05:06,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2733.84,Falso positivo,,9
+AL-260956,2026-09-04,06:38,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2768.89,Fraude confirmado,Toma de cuenta,4
+AL-260957,2026-09-04,06:44,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2003.1,Falso positivo,,5
+AL-260958,2026-09-04,09:01,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,515.91,Falso positivo,,6
+AL-260959,2026-09-04,10:36,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,149.04,Falso positivo,,11
+AL-260960,2026-09-04,14:19,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2808.93,Falso positivo,,9
+AL-260961,2026-09-04,14:19,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1011.53,Falso positivo,,8
+AL-260962,2026-09-04,15:13,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,43.19,Falso positivo,,7
+AL-260963,2026-09-04,15:52,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,750.42,Falso positivo,,5
+AL-260964,2026-09-04,17:01,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1099.51,Falso positivo,,6
+AL-260965,2026-09-04,17:09,ATM,R05,Retiro en ATM fuera del país de residencia,554.41,Falso positivo,,6
+AL-260966,2026-09-04,19:04,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,502.26,Falso positivo,,3
+AL-260967,2026-09-04,23:22,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,835.31,Falso positivo,,12
+AL-260968,2026-09-05,01:23,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1098.62,Falso positivo,,12
+AL-260969,2026-09-05,04:11,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,677.5,Falso positivo,,7
+AL-260970,2026-09-05,04:11,ATM,R05,Retiro en ATM fuera del país de residencia,754.24,Falso positivo,,3
+AL-260971,2026-09-05,04:28,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,850.43,Falso positivo,,10
+AL-260972,2026-09-05,05:32,ATM,R05,Retiro en ATM fuera del país de residencia,563.62,Falso positivo,,7
+AL-260973,2026-09-05,06:29,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,45.02,Fraude confirmado,Compra no presencial,12
+AL-260974,2026-09-05,08:01,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2374.88,Fraude confirmado,Toma de cuenta,8
+AL-260975,2026-09-05,09:54,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,417.69,Falso positivo,,5
+AL-260976,2026-09-05,10:20,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,830.95,Falso positivo,,7
+AL-260977,2026-09-05,11:05,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,824.92,Falso positivo,,7
+AL-260978,2026-09-05,11:05,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,655.17,Falso positivo,,11
+AL-260979,2026-09-05,12:53,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,167.02,Falso positivo,,8
+AL-260980,2026-09-05,13:10,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,585.4,Falso positivo,,11
+AL-260981,2026-09-05,14:56,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,349.76,Falso positivo,,5
+AL-260982,2026-09-05,15:35,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,242.88,Falso positivo,,8
+AL-260983,2026-09-05,16:47,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,159.71,Fraude confirmado,Compra no presencial,4
+AL-260984,2026-09-05,17:14,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,351.01,Falso positivo,,8
+AL-260985,2026-09-05,18:44,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,421.09,Falso positivo,,11
+AL-260986,2026-09-05,18:56,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,449.93,Falso positivo,,8
+AL-260987,2026-09-05,19:12,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,559.14,Falso positivo,,8
+AL-260988,2026-09-05,19:50,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1132.47,Falso positivo,,8
+AL-260989,2026-09-05,20:14,ATM,R05,Retiro en ATM fuera del país de residencia,378.03,Falso positivo,,9
+AL-260990,2026-09-05,20:57,ATM,R05,Retiro en ATM fuera del país de residencia,549.06,Falso positivo,,10
+AL-260991,2026-09-05,22:37,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,429.77,Falso positivo,,4
+AL-260992,2026-09-06,05:45,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1190.38,Falso positivo,,3
+AL-260993,2026-09-06,10:48,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,540.76,Falso positivo,,11
+AL-260994,2026-09-06,13:33,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2881.92,Falso positivo,,5
+AL-260995,2026-09-06,16:22,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1000.22,Falso positivo,,7
+AL-260996,2026-09-06,16:49,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,87.97,Falso positivo,,12
+AL-260997,2026-09-06,20:37,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1986.71,Falso positivo,,9
+AL-260998,2026-09-07,04:02,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,276.31,Falso positivo,,10
+AL-260999,2026-09-07,05:10,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,419.59,Falso positivo,,6
+AL-261000,2026-09-07,05:31,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,919.69,Falso positivo,,3
+AL-261001,2026-09-07,06:16,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,243.78,Falso positivo,,12
+AL-261002,2026-09-07,06:23,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,538.13,Falso positivo,,7
+AL-261003,2026-09-07,08:09,ATM,R05,Retiro en ATM fuera del país de residencia,197.46,Falso positivo,,5
+AL-261004,2026-09-07,08:30,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,529.05,Falso positivo,,12
+AL-261005,2026-09-07,09:37,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2882.12,Falso positivo,,3
+AL-261006,2026-09-07,09:57,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,608.41,Falso positivo,,12
+AL-261007,2026-09-07,10:37,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,933.04,Falso positivo,,4
+AL-261008,2026-09-07,13:10,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,995.04,Falso positivo,,7
+AL-261009,2026-09-07,13:12,ATM,R05,Retiro en ATM fuera del país de residencia,209.31,Falso positivo,,9
+AL-261010,2026-09-07,13:21,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,262.72,Falso positivo,,5
+AL-261011,2026-09-07,14:49,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,788.64,Falso positivo,,11
+AL-261012,2026-09-07,17:20,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1054.78,Falso positivo,,6
+AL-261013,2026-09-07,18:39,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,243.1,Falso positivo,,5
+AL-261014,2026-09-07,20:08,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,155.53,Falso positivo,,8
+AL-261015,2026-09-07,21:40,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,713.99,Falso positivo,,12
+AL-261016,2026-09-07,22:24,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1016.06,Falso positivo,,3
+AL-261017,2026-09-07,23:12,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,852.79,Falso positivo,,8
+AL-261018,2026-09-08,04:07,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,447.55,Falso positivo,,3
+AL-261019,2026-09-08,06:35,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,787.96,Fraude confirmado,Compra no presencial,9
+AL-261020,2026-09-08,07:32,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2738.56,Fraude confirmado,Suplantación telefónica,6
+AL-261021,2026-09-08,08:56,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,922.41,Falso positivo,,9
+AL-261022,2026-09-08,11:53,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,404.68,Falso positivo,,6
+AL-261023,2026-09-08,12:03,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,621.65,Falso positivo,,7
+AL-261024,2026-09-08,14:43,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1195.68,Falso positivo,,9
+AL-261025,2026-09-08,17:28,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,743.37,Falso positivo,,8
+AL-261026,2026-09-08,17:44,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,551.48,Falso positivo,,3
+AL-261027,2026-09-08,19:24,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,824.66,Falso positivo,,12
+AL-261028,2026-09-08,19:58,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1010.58,Falso positivo,,7
+AL-261029,2026-09-08,20:01,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,946.72,Falso positivo,,4
+AL-261030,2026-09-08,20:24,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,988.67,Falso positivo,,10
+AL-261031,2026-09-08,20:32,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,186.78,Falso positivo,,4
+AL-261032,2026-09-08,21:23,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2655.8,Falso positivo,,6
+AL-261033,2026-09-08,22:55,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,797.3,Falso positivo,,12
+AL-261034,2026-09-08,23:32,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,898.43,Falso positivo,,9
+AL-261035,2026-09-08,23:58,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,691.58,Falso positivo,,7
+AL-261036,2026-09-09,01:48,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2604.95,Fraude confirmado,Suplantación telefónica,11
+AL-261037,2026-09-09,03:10,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1010.91,Falso positivo,,8
+AL-261038,2026-09-09,06:50,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,670.92,Fraude confirmado,Suplantación telefónica,9
+AL-261039,2026-09-09,08:41,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2172.97,Falso positivo,,5
+AL-261040,2026-09-09,10:02,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1061.08,Falso positivo,,8
+AL-261041,2026-09-09,10:27,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,395.65,Falso positivo,,8
+AL-261042,2026-09-09,15:25,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,148.38,Falso positivo,,12
+AL-261043,2026-09-09,15:52,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,665.01,Falso positivo,,8
+AL-261044,2026-09-09,18:46,ATM,R05,Retiro en ATM fuera del país de residencia,135.58,Falso positivo,,12
+AL-261045,2026-09-09,19:57,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1375.41,Falso positivo,,7
+AL-261046,2026-09-09,20:15,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2649.2,Fraude confirmado,Suplantación telefónica,12
+AL-261047,2026-09-09,21:54,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2150.23,Falso positivo,,9
+AL-261048,2026-09-09,23:15,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,505.58,Falso positivo,,12
+AL-261049,2026-09-09,23:27,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1593.04,Falso positivo,,12
+AL-261050,2026-09-10,01:16,ATM,R05,Retiro en ATM fuera del país de residencia,562.19,Falso positivo,,9
+AL-261051,2026-09-10,05:51,ATM,R05,Retiro en ATM fuera del país de residencia,174.7,Falso positivo,,4
+AL-261052,2026-09-10,07:43,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2869.42,Falso positivo,,10
+AL-261053,2026-09-10,09:37,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,516.53,Falso positivo,,6
+AL-261054,2026-09-10,10:01,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,829.13,Falso positivo,,7
+AL-261055,2026-09-10,11:03,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3508.82,Falso positivo,,11
+AL-261056,2026-09-10,12:05,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,589.26,Falso positivo,,11
+AL-261057,2026-09-10,14:29,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,886.0,Falso positivo,,3
+AL-261058,2026-09-10,15:59,ATM,R05,Retiro en ATM fuera del país de residencia,714.55,Falso positivo,,8
+AL-261059,2026-09-10,18:29,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1407.95,Fraude confirmado,Suplantación telefónica,6
+AL-261060,2026-09-10,18:34,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,832.61,Falso positivo,,9
+AL-261061,2026-09-10,18:37,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1392.54,Fraude confirmado,Toma de cuenta,3
+AL-261062,2026-09-10,20:03,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1931.28,Falso positivo,,10
+AL-261063,2026-09-10,21:46,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,491.38,Falso positivo,,7
+AL-261064,2026-09-10,23:19,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,215.36,Falso positivo,,4
+AL-261065,2026-09-11,00:43,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,389.81,Falso positivo,,6
+AL-261066,2026-09-11,02:03,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1002.23,Falso positivo,,8
+AL-261067,2026-09-11,03:08,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1558.57,Falso positivo,,6
+AL-261068,2026-09-11,05:08,ATM,R05,Retiro en ATM fuera del país de residencia,670.45,Falso positivo,,12
+AL-261069,2026-09-11,08:30,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,472.66,Falso positivo,,9
+AL-261070,2026-09-11,10:03,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,271.06,Falso positivo,,12
+AL-261071,2026-09-11,10:21,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1409.04,Fraude confirmado,Suplantación telefónica,4
+AL-261072,2026-09-11,10:22,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,265.08,Falso positivo,,11
+AL-261073,2026-09-11,11:39,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1600.27,Falso positivo,,12
+AL-261074,2026-09-11,12:14,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2855.79,Falso positivo,,4
+AL-261075,2026-09-11,12:19,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,648.11,Falso positivo,,10
+AL-261076,2026-09-11,13:47,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,545.96,Falso positivo,,12
+AL-261077,2026-09-11,13:50,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,561.7,Falso positivo,,6
+AL-261078,2026-09-11,18:16,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,290.53,Falso positivo,,12
+AL-261079,2026-09-11,19:15,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,433.87,Falso positivo,,3
+AL-261080,2026-09-11,19:31,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,516.87,Falso positivo,,12
+AL-261081,2026-09-11,20:38,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,261.74,Falso positivo,,4
+AL-261082,2026-09-11,21:18,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3764.97,Falso positivo,,4
+AL-261083,2026-09-11,22:09,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,666.66,Falso positivo,,11
+AL-261084,2026-09-11,22:55,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1357.7,Falso positivo,,6
+AL-261085,2026-09-11,23:01,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,185.78,Falso positivo,,12
+AL-261086,2026-09-11,23:04,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,275.32,Falso positivo,,8
+AL-261087,2026-09-12,00:06,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,861.48,Falso positivo,,11
+AL-261088,2026-09-12,00:30,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,327.15,Falso positivo,,5
+AL-261089,2026-09-12,00:42,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,637.63,Falso positivo,,4
+AL-261090,2026-09-12,01:38,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1040.5,Falso positivo,,8
+AL-261091,2026-09-12,08:12,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,259.84,Falso positivo,,11
+AL-261092,2026-09-12,09:27,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,296.85,Falso positivo,,3
+AL-261093,2026-09-12,09:59,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3819.37,Falso positivo,,9
+AL-261094,2026-09-12,11:24,ATM,R05,Retiro en ATM fuera del país de residencia,111.22,Fraude confirmado,Clonación de tarjeta,5
+AL-261095,2026-09-12,13:36,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2389.27,Falso positivo,,6
+AL-261096,2026-09-12,14:06,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,478.63,Falso positivo,,10
+AL-261097,2026-09-12,15:19,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,787.86,Falso positivo,,6
+AL-261098,2026-09-12,17:47,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1981.09,Fraude confirmado,Toma de cuenta,10
+AL-261099,2026-09-12,18:56,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,3068.04,Falso positivo,,5
+AL-261100,2026-09-12,19:47,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,748.11,Falso positivo,,5
+AL-261101,2026-09-12,20:24,ATM,R05,Retiro en ATM fuera del país de residencia,746.51,Falso positivo,,8
+AL-261102,2026-09-12,21:16,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,963.38,Falso positivo,,5
+AL-261103,2026-09-12,21:51,ATM,R05,Retiro en ATM fuera del país de residencia,126.47,Falso positivo,,4
+AL-261104,2026-09-12,22:28,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1393.15,Falso positivo,,5
+AL-261105,2026-09-12,22:50,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,143.14,Falso positivo,,4
+AL-261106,2026-09-13,02:03,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2805.97,Falso positivo,,12
+AL-261107,2026-09-13,03:18,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2291.73,Falso positivo,,3
+AL-261108,2026-09-13,03:59,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,438.3,Falso positivo,,6
+AL-261109,2026-09-13,04:10,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,362.27,Falso positivo,,5
+AL-261110,2026-09-13,04:18,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1053.15,Falso positivo,,7
+AL-261111,2026-09-13,05:08,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,948.8,Falso positivo,,11
+AL-261112,2026-09-13,05:14,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1937.22,Falso positivo,,5
+AL-261113,2026-09-13,07:34,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,841.04,Falso positivo,,7
+AL-261114,2026-09-13,11:18,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2284.16,Falso positivo,,6
+AL-261115,2026-09-13,11:21,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3902.31,Falso positivo,,11
+AL-261116,2026-09-13,11:59,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,841.06,Falso positivo,,11
+AL-261117,2026-09-13,12:26,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,3389.52,Falso positivo,,12
+AL-261118,2026-09-13,13:08,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,872.31,Falso positivo,,10
+AL-261119,2026-09-13,13:31,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,709.67,Falso positivo,,4
+AL-261120,2026-09-13,14:19,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1013.4,Falso positivo,,5
+AL-261121,2026-09-13,14:26,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,266.28,Falso positivo,,11
+AL-261122,2026-09-13,14:52,ATM,R05,Retiro en ATM fuera del país de residencia,636.61,Falso positivo,,4
+AL-261123,2026-09-13,14:58,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2467.24,Falso positivo,,7
+AL-261124,2026-09-13,15:22,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,575.94,Falso positivo,,3
+AL-261125,2026-09-13,16:19,ATM,R05,Retiro en ATM fuera del país de residencia,443.34,Falso positivo,,8
+AL-261126,2026-09-13,17:03,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3439.09,Falso positivo,,12
+AL-261127,2026-09-13,17:58,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,953.77,Falso positivo,,6
+AL-261128,2026-09-13,18:05,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,629.19,Falso positivo,,10
+AL-261129,2026-09-13,19:04,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,475.99,Fraude confirmado,Toma de cuenta,4
+AL-261130,2026-09-13,19:58,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,154.54,Falso positivo,,4
+AL-261131,2026-09-14,00:09,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,240.63,Falso positivo,,5
+AL-261132,2026-09-14,00:38,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3759.04,Falso positivo,,12
+AL-261133,2026-09-14,01:23,ATM,R05,Retiro en ATM fuera del país de residencia,420.95,Falso positivo,,10
+AL-261134,2026-09-14,02:22,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3678.91,Falso positivo,,6
+AL-261135,2026-09-14,02:47,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,291.89,Fraude confirmado,Compra no presencial,4
+AL-261136,2026-09-14,02:59,ATM,R05,Retiro en ATM fuera del país de residencia,551.79,Fraude confirmado,Clonación de tarjeta,3
+AL-261137,2026-09-14,03:37,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2849.68,Falso positivo,,11
+AL-261138,2026-09-14,03:54,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,604.52,Falso positivo,,11
+AL-261139,2026-09-14,04:37,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,391.78,Fraude confirmado,Compra no presencial,6
+AL-261140,2026-09-14,04:42,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1677.85,Falso positivo,,7
+AL-261141,2026-09-14,05:42,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,701.37,Falso positivo,,4
+AL-261142,2026-09-14,09:12,ATM,R05,Retiro en ATM fuera del país de residencia,378.52,Falso positivo,,10
+AL-261143,2026-09-14,11:59,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,704.46,Falso positivo,,4
+AL-261144,2026-09-14,13:57,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1778.81,Falso positivo,,8
+AL-261145,2026-09-14,14:11,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3545.11,Fraude confirmado,Toma de cuenta,6
+AL-261146,2026-09-14,15:10,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2109.75,Falso positivo,,7
+AL-261147,2026-09-14,17:30,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1135.3,Falso positivo,,11
+AL-261148,2026-09-14,17:49,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1165.16,Falso positivo,,5
+AL-261149,2026-09-14,18:55,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1043.9,Falso positivo,,12
+AL-261150,2026-09-14,19:14,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,154.38,Falso positivo,,5
+AL-261151,2026-09-14,19:44,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,84.72,Fraude confirmado,Compra no presencial,8
+AL-261152,2026-09-14,22:09,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,771.75,Falso positivo,,8
+AL-261153,2026-09-14,22:41,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,350.41,Falso positivo,,12
+AL-261154,2026-09-14,23:16,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,209.01,Falso positivo,,10
+AL-261155,2026-09-15,00:11,ATM,R05,Retiro en ATM fuera del país de residencia,364.93,Falso positivo,,6
+AL-261156,2026-09-15,00:55,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,178.89,Falso positivo,,6
+AL-261157,2026-09-15,04:02,ATM,R05,Retiro en ATM fuera del país de residencia,616.51,Falso positivo,,6
+AL-261158,2026-09-15,06:34,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,941.96,Falso positivo,,6
+AL-261159,2026-09-15,09:15,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3967.46,Fraude confirmado,Toma de cuenta,4
+AL-261160,2026-09-15,09:19,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,643.55,Falso positivo,,10
+AL-261161,2026-09-15,12:03,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,555.94,Falso positivo,,9
+AL-261162,2026-09-15,12:20,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,256.16,Falso positivo,,11
+AL-261163,2026-09-15,14:21,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,569.05,Falso positivo,,4
+AL-261164,2026-09-15,14:22,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2769.49,Falso positivo,,10
+AL-261165,2026-09-15,14:34,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,482.71,Falso positivo,,3
+AL-261166,2026-09-15,14:40,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2274.5,Falso positivo,,4
+AL-261167,2026-09-15,15:55,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2016.52,Falso positivo,,8
+AL-261168,2026-09-15,16:57,ATM,R05,Retiro en ATM fuera del país de residencia,285.29,Falso positivo,,8
+AL-261169,2026-09-15,17:15,ATM,R05,Retiro en ATM fuera del país de residencia,534.56,Falso positivo,,7
+AL-261170,2026-09-15,22:13,ATM,R05,Retiro en ATM fuera del país de residencia,156.37,Fraude confirmado,Clonación de tarjeta,5
+AL-261171,2026-09-16,00:11,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1275.23,Falso positivo,,11
+AL-261172,2026-09-16,04:21,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,855.08,Falso positivo,,12
+AL-261173,2026-09-16,06:24,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2390.92,Falso positivo,,9
+AL-261174,2026-09-16,07:17,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,3151.13,Fraude confirmado,Suplantación telefónica,4
+AL-261175,2026-09-16,10:53,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1293.03,Falso positivo,,4
+AL-261176,2026-09-16,15:41,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,166.28,Falso positivo,,12
+AL-261177,2026-09-16,16:02,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1496.16,Falso positivo,,4
+AL-261178,2026-09-16,16:19,ATM,R05,Retiro en ATM fuera del país de residencia,450.74,Fraude confirmado,Clonación de tarjeta,9
+AL-261179,2026-09-16,16:40,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1380.59,Falso positivo,,10
+AL-261180,2026-09-16,17:00,ATM,R05,Retiro en ATM fuera del país de residencia,425.28,Falso positivo,,8
+AL-261181,2026-09-16,17:49,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,585.8,Falso positivo,,3
+AL-261182,2026-09-16,23:38,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1099.75,Falso positivo,,7
+AL-261183,2026-09-17,01:17,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,649.22,Falso positivo,,4
+AL-261184,2026-09-17,01:45,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,381.65,Falso positivo,,4
+AL-261185,2026-09-17,02:00,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,242.17,Falso positivo,,7
+AL-261186,2026-09-17,02:14,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,403.0,Falso positivo,,3
+AL-261187,2026-09-17,05:20,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,299.94,Falso positivo,,3
+AL-261188,2026-09-17,06:03,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1268.58,Falso positivo,,12
+AL-261189,2026-09-17,10:18,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,156.54,Falso positivo,,5
+AL-261190,2026-09-17,11:32,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1761.27,Falso positivo,,8
+AL-261191,2026-09-17,13:58,ATM,R05,Retiro en ATM fuera del país de residencia,431.17,Falso positivo,,3
+AL-261192,2026-09-17,14:41,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,259.12,Falso positivo,,11
+AL-261193,2026-09-17,16:47,ATM,R05,Retiro en ATM fuera del país de residencia,550.02,Falso positivo,,11
+AL-261194,2026-09-17,16:56,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,167.68,Falso positivo,,3
+AL-261195,2026-09-17,20:52,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,489.77,Falso positivo,,3
+AL-261196,2026-09-17,21:44,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1075.49,Fraude confirmado,Toma de cuenta,10
+AL-261197,2026-09-18,00:46,ATM,R05,Retiro en ATM fuera del país de residencia,683.39,Falso positivo,,9
+AL-261198,2026-09-18,02:05,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,540.3,Falso positivo,,10
+AL-261199,2026-09-18,02:39,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,827.06,Falso positivo,,8
+AL-261200,2026-09-18,07:28,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,619.32,Falso positivo,,3
+AL-261201,2026-09-18,08:14,ATM,R05,Retiro en ATM fuera del país de residencia,392.5,Falso positivo,,3
+AL-261202,2026-09-18,08:29,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1071.69,Falso positivo,,4
+AL-261203,2026-09-18,10:43,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,589.83,Falso positivo,,7
+AL-261204,2026-09-18,11:46,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,601.19,Falso positivo,,8
+AL-261205,2026-09-18,15:25,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,874.42,Falso positivo,,7
+AL-261206,2026-09-18,15:56,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,723.56,Falso positivo,,5
+AL-261207,2026-09-18,17:18,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1259.36,Falso positivo,,7
+AL-261208,2026-09-18,18:07,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1020.16,Falso positivo,,7
+AL-261209,2026-09-18,18:47,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1085.63,Falso positivo,,11
+AL-261210,2026-09-18,21:32,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,392.03,Falso positivo,,5
+AL-261211,2026-09-18,22:15,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2630.68,Falso positivo,,12
+AL-261212,2026-09-19,00:29,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2002.34,Fraude confirmado,Suplantación telefónica,5
+AL-261213,2026-09-19,00:58,ATM,R05,Retiro en ATM fuera del país de residencia,264.65,Falso positivo,,7
+AL-261214,2026-09-19,04:22,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,648.22,Falso positivo,,6
+AL-261215,2026-09-19,05:48,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,171.48,Falso positivo,,8
+AL-261216,2026-09-19,09:00,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,606.51,Falso positivo,,6
+AL-261217,2026-09-19,11:36,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,86.42,Falso positivo,,5
+AL-261218,2026-09-19,12:01,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1039.12,Falso positivo,,4
+AL-261219,2026-09-19,12:39,ATM,R05,Retiro en ATM fuera del país de residencia,289.99,Falso positivo,,4
+AL-261220,2026-09-19,12:44,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1050.4,Falso positivo,,11
+AL-261221,2026-09-19,13:35,ATM,R05,Retiro en ATM fuera del país de residencia,460.76,Falso positivo,,3
+AL-261222,2026-09-19,14:20,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,57.32,Falso positivo,,3
+AL-261223,2026-09-19,15:14,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,868.01,Falso positivo,,8
+AL-261224,2026-09-19,16:36,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,704.22,Falso positivo,,4
+AL-261225,2026-09-19,17:02,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1403.82,Falso positivo,,8
+AL-261226,2026-09-19,20:12,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,307.95,Falso positivo,,11
+AL-261227,2026-09-19,22:57,ATM,R05,Retiro en ATM fuera del país de residencia,389.95,Falso positivo,,7
+AL-261228,2026-09-19,23:21,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,972.52,Falso positivo,,5
+AL-261229,2026-09-20,00:06,ATM,R05,Retiro en ATM fuera del país de residencia,781.11,Falso positivo,,4
+AL-261230,2026-09-20,02:36,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1192.1,Fraude confirmado,Suplantación telefónica,9
+AL-261231,2026-09-20,03:29,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,835.33,Falso positivo,,9
+AL-261232,2026-09-20,03:40,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1407.23,Falso positivo,,7
+AL-261233,2026-09-20,03:51,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,801.59,Falso positivo,,6
+AL-261234,2026-09-20,04:28,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,3336.77,Falso positivo,,8
+AL-261235,2026-09-20,04:32,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,677.24,Falso positivo,,3
+AL-261236,2026-09-20,05:05,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,784.0,Falso positivo,,12
+AL-261237,2026-09-20,05:10,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,431.06,Falso positivo,,6
+AL-261238,2026-09-20,05:52,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2366.56,Falso positivo,,8
+AL-261239,2026-09-20,06:41,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1371.16,Falso positivo,,4
+AL-261240,2026-09-20,06:55,ATM,R05,Retiro en ATM fuera del país de residencia,484.31,Falso positivo,,7
+AL-261241,2026-09-20,07:11,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,225.56,Falso positivo,,9
+AL-261242,2026-09-20,08:09,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1553.07,Fraude confirmado,Suplantación telefónica,12
+AL-261243,2026-09-20,10:01,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1620.44,Falso positivo,,9
+AL-261244,2026-09-20,10:11,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,791.75,Fraude confirmado,Suplantación telefónica,4
+AL-261245,2026-09-20,10:24,ATM,R05,Retiro en ATM fuera del país de residencia,424.03,Falso positivo,,10
+AL-261246,2026-09-20,11:49,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,230.3,Falso positivo,,4
+AL-261247,2026-09-20,13:57,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,340.79,Falso positivo,,11
+AL-261248,2026-09-20,14:35,ATM,R05,Retiro en ATM fuera del país de residencia,586.38,Falso positivo,,6
+AL-261249,2026-09-20,15:47,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1010.89,Fraude confirmado,Suplantación telefónica,10
+AL-261250,2026-09-20,16:43,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1052.55,Falso positivo,,4
+AL-261251,2026-09-20,17:16,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,790.15,Falso positivo,,6
+AL-261252,2026-09-20,17:21,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,936.74,Falso positivo,,8
+AL-261253,2026-09-20,17:37,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,214.27,Falso positivo,,8
+AL-261254,2026-09-20,18:31,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,868.19,Falso positivo,,5
+AL-261255,2026-09-20,19:01,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2667.85,Falso positivo,,12
+AL-261256,2026-09-20,20:52,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,947.66,Falso positivo,,7
+AL-261257,2026-09-20,20:56,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1150.83,Falso positivo,,6
+AL-261258,2026-09-20,23:05,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,511.44,Falso positivo,,9
+AL-261259,2026-09-21,01:03,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1983.25,Falso positivo,,11
+AL-261260,2026-09-21,01:50,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,828.23,Fraude confirmado,Compra no presencial,9
+AL-261261,2026-09-21,01:53,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1484.42,Falso positivo,,6
+AL-261262,2026-09-21,02:21,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,671.78,Falso positivo,,9
+AL-261263,2026-09-21,04:24,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,189.0,Falso positivo,,11
+AL-261264,2026-09-21,05:18,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2216.59,Falso positivo,,6
+AL-261265,2026-09-21,06:32,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1212.14,Falso positivo,,5
+AL-261266,2026-09-21,09:30,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,650.58,Falso positivo,,4
+AL-261267,2026-09-21,10:10,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,78.16,Falso positivo,,7
+AL-261268,2026-09-21,10:21,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,859.54,Fraude confirmado,Suplantación telefónica,12
+AL-261269,2026-09-21,12:05,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,613.07,Falso positivo,,6
+AL-261270,2026-09-21,13:06,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,806.75,Falso positivo,,8
+AL-261271,2026-09-21,13:07,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,257.89,Falso positivo,,6
+AL-261272,2026-09-21,14:15,ATM,R05,Retiro en ATM fuera del país de residencia,146.06,Falso positivo,,9
+AL-261273,2026-09-21,16:16,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1988.46,Falso positivo,,9
+AL-261274,2026-09-21,17:31,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1753.63,Fraude confirmado,Suplantación telefónica,7
+AL-261275,2026-09-21,18:43,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,433.16,Falso positivo,,5
+AL-261276,2026-09-21,20:11,ATM,R05,Retiro en ATM fuera del país de residencia,373.56,Fraude confirmado,Clonación de tarjeta,6
+AL-261277,2026-09-21,22:25,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,997.45,Fraude confirmado,Toma de cuenta,12
+AL-261278,2026-09-21,22:52,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,621.42,Falso positivo,,6
+AL-261279,2026-09-22,00:05,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1578.99,Falso positivo,,8
+AL-261280,2026-09-22,00:18,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2107.16,Falso positivo,,7
+AL-261281,2026-09-22,03:20,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,235.67,Falso positivo,,11
+AL-261282,2026-09-22,04:39,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1175.88,Falso positivo,,11
+AL-261283,2026-09-22,04:50,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2176.63,Fraude confirmado,Suplantación telefónica,7
+AL-261284,2026-09-22,06:25,ATM,R05,Retiro en ATM fuera del país de residencia,221.08,Falso positivo,,9
+AL-261285,2026-09-22,08:59,ATM,R05,Retiro en ATM fuera del país de residencia,180.34,Falso positivo,,8
+AL-261286,2026-09-22,11:27,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,850.13,Falso positivo,,5
+AL-261287,2026-09-22,15:17,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,450.61,Falso positivo,,3
+AL-261288,2026-09-22,15:24,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,693.85,Falso positivo,,12
+AL-261289,2026-09-22,17:28,ATM,R05,Retiro en ATM fuera del país de residencia,104.98,Falso positivo,,9
+AL-261290,2026-09-22,18:08,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,797.85,Falso positivo,,3
+AL-261291,2026-09-22,18:43,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,249.7,Falso positivo,,7
+AL-261292,2026-09-22,20:22,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1215.85,Falso positivo,,7
+AL-261293,2026-09-22,23:44,ATM,R05,Retiro en ATM fuera del país de residencia,437.16,Falso positivo,,12
+AL-261294,2026-09-23,00:21,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,477.37,Falso positivo,,4
+AL-261295,2026-09-23,04:34,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1000.88,Falso positivo,,3
+AL-261296,2026-09-23,08:41,ATM,R05,Retiro en ATM fuera del país de residencia,713.22,Falso positivo,,11
+AL-261297,2026-09-23,10:53,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,576.09,Falso positivo,,6
+AL-261298,2026-09-23,13:42,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,746.56,Falso positivo,,8
+AL-261299,2026-09-23,13:47,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,701.21,Falso positivo,,10
+AL-261300,2026-09-23,14:36,ATM,R05,Retiro en ATM fuera del país de residencia,486.12,Falso positivo,,11
+AL-261301,2026-09-23,15:22,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,540.54,Falso positivo,,4
+AL-261302,2026-09-23,16:26,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,816.01,Falso positivo,,12
+AL-261303,2026-09-23,16:38,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1368.85,Falso positivo,,9
+AL-261304,2026-09-23,19:53,ATM,R05,Retiro en ATM fuera del país de residencia,731.34,Falso positivo,,9
+AL-261305,2026-09-23,20:13,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,332.02,Falso positivo,,9
+AL-261306,2026-09-23,21:12,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,659.84,Falso positivo,,4
+AL-261307,2026-09-23,21:56,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,216.23,Falso positivo,,7
+AL-261308,2026-09-23,22:03,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1009.87,Falso positivo,,6
+AL-261309,2026-09-23,23:54,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,399.7,Falso positivo,,11
+AL-261310,2026-09-24,01:38,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,405.62,Falso positivo,,12
+AL-261311,2026-09-24,02:52,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,451.86,Falso positivo,,11
+AL-261312,2026-09-24,02:53,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,876.69,Falso positivo,,4
+AL-261313,2026-09-24,03:04,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,962.73,Falso positivo,,7
+AL-261314,2026-09-24,04:49,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1880.61,Fraude confirmado,Suplantación telefónica,4
+AL-261315,2026-09-24,05:41,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2911.57,Fraude confirmado,Suplantación telefónica,7
+AL-261316,2026-09-24,06:09,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1195.95,Fraude confirmado,Suplantación telefónica,6
+AL-261317,2026-09-24,08:01,ATM,R05,Retiro en ATM fuera del país de residencia,199.47,Falso positivo,,6
+AL-261318,2026-09-24,09:08,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1218.4,Falso positivo,,3
+AL-261319,2026-09-24,09:19,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,407.39,Falso positivo,,6
+AL-261320,2026-09-24,09:21,ATM,R05,Retiro en ATM fuera del país de residencia,706.27,Falso positivo,,10
+AL-261321,2026-09-24,10:30,ATM,R05,Retiro en ATM fuera del país de residencia,385.13,Fraude confirmado,Clonación de tarjeta,12
+AL-261322,2026-09-24,12:12,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,665.9,Falso positivo,,11
+AL-261323,2026-09-24,13:07,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,911.25,Falso positivo,,12
+AL-261324,2026-09-24,14:32,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,3269.48,Falso positivo,,8
+AL-261325,2026-09-24,14:36,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,287.5,Falso positivo,,4
+AL-261326,2026-09-24,15:47,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1021.75,Falso positivo,,12
+AL-261327,2026-09-24,16:04,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,423.14,Falso positivo,,3
+AL-261328,2026-09-24,17:28,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,647.05,Falso positivo,,3
+AL-261329,2026-09-24,17:32,ATM,R05,Retiro en ATM fuera del país de residencia,581.48,Falso positivo,,4
+AL-261330,2026-09-24,17:49,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1240.6,Falso positivo,,12
+AL-261331,2026-09-24,20:44,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,432.14,Falso positivo,,11
+AL-261332,2026-09-24,23:32,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2608.47,Falso positivo,,6
+AL-261333,2026-09-25,00:20,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,919.16,Falso positivo,,3
+AL-261334,2026-09-25,02:52,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,722.01,Falso positivo,,11
+AL-261335,2026-09-25,06:57,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,479.77,Falso positivo,,11
+AL-261336,2026-09-25,13:10,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,475.39,Falso positivo,,12
+AL-261337,2026-09-25,14:22,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,117.38,Falso positivo,,10
+AL-261338,2026-09-25,14:38,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,731.71,Falso positivo,,8
+AL-261339,2026-09-25,15:30,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1097.4,Fraude confirmado,Toma de cuenta,10
+AL-261340,2026-09-25,16:40,ATM,R05,Retiro en ATM fuera del país de residencia,223.47,Falso positivo,,12
+AL-261341,2026-09-25,17:45,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2679.48,Fraude confirmado,Toma de cuenta,9
+AL-261342,2026-09-25,21:48,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,167.77,Falso positivo,,6
+AL-261343,2026-09-26,01:35,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,759.52,Falso positivo,,7
+AL-261344,2026-09-26,01:38,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,597.15,Falso positivo,,5
+AL-261345,2026-09-26,01:56,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,271.23,Falso positivo,,7
+AL-261346,2026-09-26,05:30,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,864.4,Falso positivo,,12
+AL-261347,2026-09-26,06:29,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,740.94,Falso positivo,,4
+AL-261348,2026-09-26,06:56,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,826.14,Falso positivo,,6
+AL-261349,2026-09-26,07:05,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,833.14,Falso positivo,,4
+AL-261350,2026-09-26,07:37,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,508.65,Falso positivo,,4
+AL-261351,2026-09-26,07:44,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2345.23,Fraude confirmado,Suplantación telefónica,12
+AL-261352,2026-09-26,09:16,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,833.01,Falso positivo,,3
+AL-261353,2026-09-26,10:31,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,323.45,Falso positivo,,7
+AL-261354,2026-09-26,12:55,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,347.92,Falso positivo,,3
+AL-261355,2026-09-26,13:38,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,744.69,Falso positivo,,11
+AL-261356,2026-09-26,15:52,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1156.04,Falso positivo,,12
+AL-261357,2026-09-26,16:26,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,535.23,Falso positivo,,3
+AL-261358,2026-09-26,16:50,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,711.95,Falso positivo,,7
+AL-261359,2026-09-26,18:37,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,189.3,Falso positivo,,3
+AL-261360,2026-09-26,22:45,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,452.24,Fraude confirmado,Compra no presencial,7
+AL-261361,2026-09-27,00:22,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,904.0,Falso positivo,,11
+AL-261362,2026-09-27,00:55,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1074.46,Falso positivo,,9
+AL-261363,2026-09-27,04:49,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,845.65,Falso positivo,,10
+AL-261364,2026-09-27,12:32,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,793.1,Falso positivo,,11
+AL-261365,2026-09-27,14:24,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,822.81,Falso positivo,,8
+AL-261366,2026-09-27,15:18,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,88.83,Falso positivo,,9
+AL-261367,2026-09-27,15:59,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1476.85,Falso positivo,,10
+AL-261368,2026-09-27,16:12,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,758.43,Falso positivo,,10
+AL-261369,2026-09-27,16:15,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,624.06,Falso positivo,,11
+AL-261370,2026-09-27,18:54,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1009.84,Falso positivo,,11
+AL-261371,2026-09-27,19:04,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,379.0,Falso positivo,,8
+AL-261372,2026-09-27,20:00,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,816.71,Falso positivo,,9
+AL-261373,2026-09-27,20:38,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,864.91,Falso positivo,,8
+AL-261374,2026-09-27,22:52,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,625.48,Falso positivo,,5
+AL-261375,2026-09-27,22:57,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,429.38,Falso positivo,,3
+AL-261376,2026-09-28,02:47,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,242.1,Fraude confirmado,Compra no presencial,6
+AL-261377,2026-09-28,04:29,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2128.49,Fraude confirmado,Toma de cuenta,6
+AL-261378,2026-09-28,05:04,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,212.84,Falso positivo,,6
+AL-261379,2026-09-28,07:39,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,525.39,Falso positivo,,9
+AL-261380,2026-09-28,07:55,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,117.79,Falso positivo,,8
+AL-261381,2026-09-28,11:14,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,586.67,Falso positivo,,11
+AL-261382,2026-09-28,11:28,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1377.76,Falso positivo,,11
+AL-261383,2026-09-28,11:35,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1152.89,Falso positivo,,12
+AL-261384,2026-09-28,14:14,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,1164.9,Falso positivo,,9
+AL-261385,2026-09-28,14:51,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,820.34,Falso positivo,,3
+AL-261386,2026-09-28,15:59,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1736.12,Falso positivo,,4
+AL-261387,2026-09-28,17:39,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,748.52,Falso positivo,,3
+AL-261388,2026-09-28,18:28,ATM,R05,Retiro en ATM fuera del país de residencia,263.56,Falso positivo,,5
+AL-261389,2026-09-28,19:12,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1054.13,Falso positivo,,9
+AL-261390,2026-09-28,19:16,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1373.21,Falso positivo,,5
+AL-261391,2026-09-28,19:32,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,470.53,Falso positivo,,7
+AL-261392,2026-09-28,22:23,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1471.72,Falso positivo,,6
+AL-261393,2026-09-28,22:31,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,550.05,Falso positivo,,12
+AL-261394,2026-09-28,23:08,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1703.3,Fraude confirmado,Suplantación telefónica,4
+AL-261395,2026-09-29,09:10,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,2150.64,Fraude confirmado,Toma de cuenta,11
+AL-261396,2026-09-29,10:17,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2899.95,Falso positivo,,6
+AL-261397,2026-09-29,10:23,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,64.46,Falso positivo,,3
+AL-261398,2026-09-29,10:52,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,462.23,Falso positivo,,11
+AL-261399,2026-09-29,13:06,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1003.56,Falso positivo,,8
+AL-261400,2026-09-29,15:58,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,396.04,Falso positivo,,5
+AL-261401,2026-09-29,17:13,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,479.77,Falso positivo,,11
+AL-261402,2026-09-29,17:54,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,1152.89,Falso positivo,,3
+AL-261403,2026-09-29,20:52,Banca móvil,R03,Cambio de número de teléfono y transferencia en menos de 24 horas,1534.32,Falso positivo,,6
+AL-261404,2026-09-29,21:46,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,536.04,Falso positivo,,8
+AL-261405,2026-09-29,22:14,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,1142.49,Falso positivo,,5
+AL-261406,2026-09-29,22:33,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,336.42,Falso positivo,,7
+AL-261407,2026-09-30,00:37,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2146.28,Fraude confirmado,Suplantación telefónica,8
+AL-261408,2026-09-30,01:21,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,236.0,Falso positivo,,7
+AL-261409,2026-09-30,01:40,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,274.26,Falso positivo,,5
+AL-261410,2026-09-30,03:45,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,613.75,Falso positivo,,6
+AL-261411,2026-09-30,04:36,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,930.32,Falso positivo,,3
+AL-261412,2026-09-30,06:33,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,542.56,Falso positivo,,8
+AL-261413,2026-09-30,09:39,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,178.75,Falso positivo,,11
+AL-261414,2026-09-30,10:44,Banca en línea,R02,Transferencia mayor a $500 a cuenta agregada hace menos de 24 horas,2247.82,Falso positivo,,4
+AL-261415,2026-09-30,12:09,Banca en línea,R06,Más de 3 intentos fallidos de clave en banca en línea,270.04,Falso positivo,,4
+AL-261416,2026-09-30,13:18,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,688.24,Falso positivo,,9
+AL-261417,2026-09-30,16:16,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,482.14,Falso positivo,,5
+AL-261418,2026-09-30,17:54,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,492.15,Falso positivo,,10
+AL-261419,2026-09-30,17:55,Tarjeta no presencial,R04,Compra internacional en comercio de alto riesgo,183.22,Falso positivo,,12
+AL-261420,2026-09-30,19:11,Tarjeta no presencial,R01,Compra no presencial mayor a $150 en la primera semana de la tarjeta,296.14,Falso positivo,,4

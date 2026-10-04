@@ -1,0 +1,421 @@
+﻿ID_Operacion,Producto,Segmento,Region,Fecha_Originacion,Monto_Original,Saldo_Actual,Dias_Atraso,Categoria_Riesgo,Reserva_Constituida
+OP-100001,Tarjeta de crédito,Independiente,Central,2026-06-20,1700.0,492.82,0,A1,2.53
+OP-100002,PYME,Empresa,Oriental,2024-12-26,106207.02,85354.64,0,A1,362.36
+OP-100003,Vivienda,Independiente,Paracentral,2025-07-17,104727.2,75851.65,0,A1,400.5
+OP-100004,PYME,Empresa,Central,2026-05-28,119931.78,94638.41,0,A1,396.07
+OP-100005,Préstamo de consumo,Asalariado,Oriental,2024-06-04,19059.94,13922.03,0,A1,75.61
+OP-100006,Tarjeta de crédito,Independiente,Central,2025-12-14,6200.0,1365.33,0,A1,7.17
+OP-100007,PYME,Empresa,Oriental,2024-05-18,170384.84,145299.56,0,A1,617.48
+OP-100008,Préstamo de consumo,Independiente,Paracentral,2026-05-03,14035.61,11499.42,0,A1,62.93
+OP-100009,Préstamo de consumo,Asalariado,Central,2025-10-01,15258.55,13633.33,0,A1,73.9
+OP-100010,Vivienda,Asalariado,Oriental,2026-02-14,72999.42,65796.02,0,A1,340.42
+OP-100011,Vivienda,Independiente,Occidental,2024-11-23,60341.71,50358.51,0,A1,261.8
+OP-100012,Tarjeta de crédito,Independiente,Central,2024-03-08,6200.0,2420.14,0,A1,12.94
+OP-100013,Préstamo de consumo,Asalariado,Central,2025-03-18,14502.77,12985.48,90,C1,2476.01
+OP-100014,Préstamo de consumo,Asalariado,Occidental,2025-09-12,20583.88,13136.19,0,A1,68.87
+OP-100015,Tarjeta de crédito,Asalariado,Occidental,2026-03-12,6600.0,4563.58,0,A1,23.89
+OP-100016,Tarjeta de crédito,Asalariado,Occidental,2026-01-11,3200.0,2668.98,0,A1,14.04
+OP-100017,Tarjeta de crédito,Asalariado,Central,2026-06-18,7600.0,5809.88,0,A1,30.08
+OP-100018,Vivienda,Independiente,Central,2025-01-08,99555.96,74910.19,0,A1,388.82
+OP-100019,Vivienda,Independiente,Occidental,2026-04-16,129054.15,113176.72,0,A1,571.02
+OP-100020,PYME,Empresa,Central,2026-02-26,220384.86,138935.49,0,A1,602.24
+OP-100021,Préstamo de consumo,Independiente,Occidental,2024-11-19,18856.7,13630.16,0,A1,75.25
+OP-100022,Préstamo de consumo,Asalariado,Central,2024-02-07,8412.55,5402.21,0,A1,28.82
+OP-100023,Tarjeta de crédito,Asalariado,Central,2026-02-05,5400.0,1928.07,0,A1,9.76
+OP-100024,Vivienda,Asalariado,Paracentral,2024-07-23,154010.4,98278.15,11,A2,1525.93
+OP-100025,Préstamo de consumo,Independiente,Paracentral,2024-09-15,13739.64,12258.78,0,A1,67.54
+OP-100026,Préstamo de consumo,Asalariado,Central,2025-03-23,30657.92,20978.14,0,A1,111.47
+OP-100027,PYME,Empresa,Oriental,2024-12-06,20385.77,16273.46,0,A1,71.03
+OP-100028,Tarjeta de crédito,Independiente,Occidental,2024-04-15,2200.0,1822.1,0,A1,9.41
+OP-100029,Vivienda,Independiente,Central,2024-09-09,122750.5,103630.86,0,A1,520.76
+OP-100030,Préstamo de consumo,Independiente,Central,2026-04-05,11654.3,10616.34,0,A1,56.0
+OP-100031,PYME,Empresa,Central,2025-12-21,148524.13,110842.13,0,A1,484.41
+OP-100032,Préstamo de consumo,Asalariado,Central,2025-03-11,23101.72,19518.06,0,A1,106.05
+OP-100033,Préstamo de consumo,Asalariado,Central,2025-04-28,6468.4,6260.92,0,B,34.33
+OP-100034,PYME,Empresa,Paracentral,2024-04-23,22287.56,20406.26,0,A1,86.4
+OP-100035,PYME,Empresa,Occidental,2025-04-07,48071.25,34047.74,0,A1,147.76
+OP-100036,Tarjeta de crédito,Independiente,Occidental,2024-03-02,1300.0,865.31,0,A1,4.43
+OP-100037,Vivienda,Independiente,Oriental,2026-01-07,53394.44,35751.3,0,A1,180.12
+OP-100038,PYME,Empresa,Oriental,2024-12-07,130234.59,129919.1,0,A1,545.97
+OP-100039,Tarjeta de crédito,Independiente,Oriental,2024-02-17,5000.0,4139.46,0,A1,21.94
+OP-100040,PYME,Empresa,Central,2026-06-24,101126.57,70985.35,36,B,3647.25
+OP-100041,Préstamo de consumo,Independiente,Oriental,2024-09-07,7949.08,6148.77,0,A1,32.74
+OP-100042,Tarjeta de crédito,Independiente,Central,2026-06-05,7300.0,3066.53,0,A1,15.58
+OP-100043,Préstamo de consumo,Asalariado,Oriental,2025-11-20,16726.56,15428.01,63,C1,2988.61
+OP-100044,Préstamo de consumo,Asalariado,Oriental,2025-04-07,11542.29,10582.54,0,A1,56.97
+OP-100045,PYME,Empresa,Occidental,2024-07-16,125783.69,113395.15,0,A1,480.59
+OP-100046,PYME,Empresa,Central,2026-05-15,30406.78,25193.03,155,D,12046.49
+OP-100047,Préstamo de consumo,Independiente,Central,2024-11-12,26735.69,20892.59,25,A2,330.01
+OP-100048,Vivienda,Asalariado,Paracentral,2024-03-15,121250.97,86277.59,0,A1,446.51
+OP-100049,PYME,Empresa,Central,2025-06-28,58560.55,48545.5,0,A1,213.57
+OP-100050,Préstamo de consumo,Asalariado,Oriental,2024-10-09,16761.22,10928.49,0,A1,59.06
+OP-100051,Vivienda,Asalariado,Central,2026-02-05,211176.97,136694.23,0,A1,688.0
+OP-100052,Préstamo de consumo,Asalariado,Central,2026-03-12,3150.97,2385.04,0,A1,12.59
+OP-100053,PYME,Empresa,Paracentral,2026-01-16,147426.41,139299.48,0,A1,604.48
+OP-100054,PYME,Empresa,Central,2025-12-01,45256.13,39192.01,0,A1,171.76
+OP-100055,Préstamo de consumo,Independiente,Paracentral,2024-01-11,4302.36,3949.74,0,A1,21.67
+OP-100056,Préstamo de consumo,Independiente,Central,2025-11-11,15090.14,9915.94,10,A2,163.44
+OP-100057,Vivienda,Asalariado,Occidental,2025-10-04,166845.11,116934.77,0,A1,599.65
+OP-100058,Tarjeta de crédito,Asalariado,Central,2024-07-25,5400.0,2309.18,0,A1,12.1
+OP-100059,PYME,Empresa,Paracentral,2026-02-19,61471.77,48852.83,59,B,2455.97
+OP-100060,Tarjeta de crédito,Asalariado,Occidental,2026-02-27,6700.0,5573.15,0,A1,28.11
+OP-100061,PYME,Empresa,Central,2024-01-14,149754.06,99307.76,0,A1,422.73
+OP-100062,Préstamo de consumo,Independiente,Occidental,2025-03-05,16956.77,16545.58,25,A2,274.83
+OP-100063,Tarjeta de crédito,Asalariado,Paracentral,2024-08-23,1200.0,988.35,0,A1,5.01
+OP-100064,Préstamo de consumo,Asalariado,Central,2024-10-25,6980.3,4480.04,0,A1,23.94
+OP-100065,Vivienda,Independiente,Central,2025-01-03,59032.5,41023.16,0,A1,208.29
+OP-100066,Vivienda,Asalariado,Central,2024-02-14,53264.65,40899.59,0,A1,213.89
+OP-100067,Tarjeta de crédito,Independiente,Central,2026-02-16,3100.0,2553.17,0,A1,13.49
+OP-100068,PYME,Empresa,Oriental,2024-05-23,191864.02,138513.28,0,A1,610.75
+OP-100069,Préstamo de consumo,Asalariado,Central,2024-08-20,7424.37,5200.46,0,A1,27.82
+OP-100070,PYME,Empresa,Central,2025-07-12,155479.05,129759.02,0,A1,571.47
+OP-100071,PYME,Empresa,Occidental,2025-05-03,219165.8,143746.99,0,A1,604.46
+OP-100072,Préstamo de consumo,Independiente,Oriental,2025-08-13,15720.83,9974.28,0,A1,54.06
+OP-100073,Vivienda,Asalariado,Central,2026-01-11,158355.24,120850.54,0,A1,636.25
+OP-100074,PYME,Empresa,Central,2024-10-17,102586.08,93442.97,0,A1,402.1
+OP-100075,PYME,Empresa,Central,2025-12-09,151631.97,141497.78,0,A1,619.94
+OP-100076,Tarjeta de crédito,Independiente,Oriental,2026-02-04,7300.0,4985.57,0,A1,25.68
+OP-100077,PYME,Empresa,Central,2025-11-02,40758.03,40432.67,132,D,18961.46
+OP-100078,Tarjeta de crédito,Independiente,Oriental,2025-03-03,2600.0,2182.63,0,A1,11.41
+OP-100079,Tarjeta de crédito,Independiente,Central,2024-09-28,6500.0,1013.46,0,A1,5.12
+OP-100080,Tarjeta de crédito,Independiente,Oriental,2024-02-10,7200.0,1175.45,0,A1,5.99
+OP-100081,PYME,Empresa,Central,2024-11-01,39218.74,27825.57,0,A1,121.17
+OP-100082,Tarjeta de crédito,Asalariado,Central,2025-08-25,7400.0,6134.04,0,A1,30.97
+OP-100083,Préstamo de consumo,Asalariado,Central,2024-07-24,13501.17,10264.78,0,A1,56.0
+OP-100084,Préstamo de consumo,Independiente,Central,2024-08-21,7155.1,7112.04,0,A1,38.59
+OP-100085,Préstamo de consumo,Independiente,Occidental,2025-06-28,8129.76,7745.49,0,A1,41.88
+OP-100086,Vivienda,Asalariado,Oriental,2026-06-19,83905.13,74515.23,0,A1,394.77
+OP-100087,Préstamo de consumo,Independiente,Paracentral,2026-05-21,10216.12,10197.23,0,A1,56.68
+OP-100088,Vivienda,Independiente,Occidental,2025-02-07,104954.1,93833.56,0,A1,478.18
+OP-100089,Tarjeta de crédito,Asalariado,Occidental,2024-07-06,7200.0,5981.34,0,A1,31.66
+OP-100090,Vivienda,Asalariado,Central,2025-04-25,209083.77,132530.15,0,A1,691.63
+OP-100091,Préstamo de consumo,Independiente,Central,2024-11-17,11366.8,9549.56,0,A1,52.67
+OP-100092,Vivienda,Asalariado,Oriental,2025-07-16,133812.89,118661.57,0,A1,602.1
+OP-100093,Vivienda,Independiente,Oriental,2024-01-17,133038.54,100665.34,0,A1,524.86
+OP-100094,Tarjeta de crédito,Independiente,Central,2025-08-16,6600.0,5507.44,0,A1,27.97
+OP-100095,Tarjeta de crédito,Independiente,Occidental,2024-09-22,7200.0,5982.75,0,A1,30.2
+OP-100096,Vivienda,Asalariado,Central,2025-04-03,84757.93,66257.05,0,A1,340.59
+OP-100097,Tarjeta de crédito,Independiente,Occidental,2026-03-26,7500.0,6219.54,0,A1,31.89
+OP-100098,PYME,Empresa,Oriental,2025-07-11,112416.72,93849.57,0,A1,403.04
+OP-100099,Vivienda,Independiente,Central,2024-10-05,131351.32,83154.05,0,A1,422.21
+OP-100100,Vivienda,Independiente,Oriental,2024-07-03,196410.82,128396.35,0,A1,651.95
+OP-100101,Préstamo de consumo,Independiente,Oriental,2024-11-28,15268.04,14312.36,0,A1,76.69
+OP-100102,Vivienda,Independiente,Oriental,2025-10-16,64785.89,63107.54,0,A1,327.67
+OP-100103,Préstamo de consumo,Asalariado,Central,2024-09-19,15360.59,11622.12,0,A1,62.97
+OP-100104,Vivienda,Independiente,Oriental,2024-11-28,29612.24,23091.53,46,B,1443.63
+OP-100105,Tarjeta de crédito,Independiente,Oriental,2026-03-13,6200.0,1330.49,0,A1,6.96
+OP-100106,Tarjeta de crédito,Asalariado,Central,2026-05-03,5500.0,3223.98,0,A1,17.24
+OP-100107,Vivienda,Independiente,Central,2024-05-20,135604.16,101390.24,0,A1,533.72
+OP-100108,Tarjeta de crédito,Asalariado,Oriental,2026-05-18,4800.0,4041.38,51,B,255.65
+OP-100109,Vivienda,Asalariado,Occidental,2025-07-23,34501.82,31990.8,0,A1,163.27
+OP-100110,Tarjeta de crédito,Independiente,Occidental,2025-07-07,5900.0,4888.99,2,A2,76.22
+OP-100111,Préstamo de consumo,Asalariado,Paracentral,2024-08-11,19996.34,17654.99,0,A1,92.66
+OP-100112,PYME,Empresa,Central,2024-11-23,67390.94,50211.5,0,A1,218.48
+OP-100113,Tarjeta de crédito,Independiente,Central,2025-06-01,4800.0,1028.8,0,A1,5.41
+OP-100114,Vivienda,Independiente,Central,2025-02-25,146647.11,134400.06,0,A1,698.09
+OP-100115,Préstamo de consumo,Independiente,Occidental,2024-07-12,6404.66,5999.02,66,C1,1154.49
+OP-100116,Préstamo de consumo,Independiente,Oriental,2024-03-16,15234.13,9596.38,0,A1,53.04
+OP-100117,Tarjeta de crédito,Asalariado,Central,2025-08-17,5200.0,4298.24,0,A1,21.84
+OP-100118,Tarjeta de crédito,Asalariado,Central,2024-11-25,7000.0,3747.72,0,A1,19.79
+OP-100119,Vivienda,Independiente,Central,2026-02-09,197342.35,132960.91,0,A1,690.47
+OP-100120,Vivienda,Asalariado,Occidental,2026-03-21,131005.64,123769.18,0,A1,624.59
+OP-100121,Préstamo de consumo,Asalariado,Oriental,2024-11-12,27964.86,19059.33,0,A1,104.02
+OP-100122,PYME,Empresa,Paracentral,2025-12-24,218593.69,148373.37,0,A1,633.95
+OP-100123,Vivienda,Independiente,Occidental,2024-04-19,91578.12,81347.03,0,A1,423.13
+OP-100124,Vivienda,Asalariado,Central,2025-12-14,144309.31,131945.61,0,A1,694.75
+OP-100125,Préstamo de consumo,Independiente,Paracentral,2024-08-22,24176.05,21776.16,0,A1,118.61
+OP-100126,Vivienda,Independiente,Paracentral,2025-08-24,48016.88,46577.49,67,C1,8737.25
+OP-100127,PYME,Empresa,Central,2024-11-10,172644.72,147158.24,64,C1,23228.18
+OP-100128,Préstamo de consumo,Asalariado,Central,2024-10-04,18529.19,14394.7,21,A2,235.53
+OP-100129,PYME,Empresa,Oriental,2025-09-17,71785.43,52656.4,0,A1,220.07
+OP-100130,Préstamo de consumo,Independiente,Paracentral,2026-01-01,12191.11,8339.26,0,A1,45.48
+OP-100131,Tarjeta de crédito,Independiente,Occidental,2026-05-19,6400.0,4149.85,122,A2,2375.65
+OP-100132,Préstamo de consumo,Independiente,Occidental,2024-08-14,15229.9,11588.22,0,A1,63.57
+OP-100133,PYME,Empresa,Occidental,2025-08-01,165713.16,152750.35,0,A1,664.72
+OP-100134,Préstamo de consumo,Asalariado,Occidental,2026-06-08,9220.59,8055.13,0,A1,42.21
+OP-100135,Vivienda,Asalariado,Occidental,2025-04-04,93074.01,67625.15,0,A1,345.61
+OP-100136,Tarjeta de crédito,Independiente,Occidental,2026-05-23,3200.0,2461.76,70,C1,473.6
+OP-100137,Tarjeta de crédito,Independiente,Oriental,2026-01-01,6400.0,5371.47,0,A1,27.13
+OP-100138,Vivienda,Asalariado,Central,2024-02-13,48126.5,34362.05,0,A1,180.94
+OP-100139,Préstamo de consumo,Asalariado,Occidental,2024-04-23,16940.42,13914.84,0,A1,74.18
+OP-100140,Préstamo de consumo,Asalariado,Central,2024-09-10,20262.94,12794.15,0,A1,67.88
+OP-100141,Préstamo de consumo,Independiente,Paracentral,2026-04-08,29961.52,20301.54,0,A1,110.68
+OP-100142,Préstamo de consumo,Independiente,Central,2025-05-08,29318.74,19560.54,0,A1,102.92
+OP-100143,PYME,Empresa,Paracentral,2024-04-02,189734.01,152354.86,0,A1,664.92
+OP-100144,Préstamo de consumo,Independiente,Central,2025-04-08,4466.77,3206.65,0,A1,16.88
+OP-100145,PYME,Empresa,Central,2024-05-13,158681.24,141132.27,0,A1,619.15
+OP-100146,Préstamo de consumo,Asalariado,Central,2024-02-10,5287.24,4222.91,0,A1,23.46
+OP-100147,Vivienda,Independiente,Central,2025-07-12,130285.48,114301.25,0,A1,584.31
+OP-100148,Préstamo de consumo,Independiente,Oriental,2025-03-15,25538.83,19926.48,0,A1,104.86
+OP-100149,Vivienda,Asalariado,Occidental,2025-12-05,93074.78,75025.35,0,A1,383.24
+OP-100150,Tarjeta de crédito,Asalariado,Central,2024-01-12,6600.0,5538.26,0,A1,28.57
+OP-100151,Tarjeta de crédito,Independiente,Central,2026-05-20,5100.0,4242.27,167,D,2487.05
+OP-100152,PYME,Empresa,Paracentral,2026-05-04,152814.59,110298.51,0,A1,488.46
+OP-100153,PYME,Empresa,Paracentral,2024-02-03,131657.6,92917.91,73,C1,14630.04
+OP-100154,Tarjeta de crédito,Independiente,Central,2024-12-20,1900.0,746.26,0,A1,3.85
+OP-100155,Tarjeta de crédito,Asalariado,Occidental,2024-03-26,4400.0,969.48,0,A1,5.07
+OP-100156,Tarjeta de crédito,Asalariado,Central,2024-08-06,3800.0,1001.88,0,A1,5.22
+OP-100157,Tarjeta de crédito,Asalariado,Occidental,2024-09-20,7700.0,6187.86,0,A1,31.53
+OP-100158,Vivienda,Asalariado,Central,2025-07-13,61256.08,44846.81,0,A1,232.22
+OP-100159,Tarjeta de crédito,Independiente,Paracentral,2026-05-01,4400.0,3661.03,0,A1,19.55
+OP-100160,Tarjeta de crédito,Asalariado,Paracentral,2026-02-19,5900.0,622.11,0,A1,3.14
+OP-100161,Préstamo de consumo,Asalariado,Paracentral,2025-02-02,19554.99,15266.93,2,A2,243.01
+OP-100162,Vivienda,Independiente,Occidental,2026-01-27,134095.49,92426.64,0,A1,467.97
+OP-100163,Tarjeta de crédito,Independiente,Paracentral,2024-11-17,7700.0,6377.27,0,A1,33.87
+OP-100164,Vivienda,Independiente,Paracentral,2024-12-11,85835.96,70278.78,0,A1,355.34
+OP-100165,Préstamo de consumo,Asalariado,Central,2025-11-28,18140.43,15935.69,0,A1,86.67
+OP-100166,Préstamo de consumo,Independiente,Occidental,2026-05-03,26148.35,17173.57,0,A1,90.43
+OP-100167,PYME,Empresa,Central,2026-05-01,232021.4,148011.94,0,A1,618.36
+OP-100168,Préstamo de consumo,Independiente,Oriental,2024-04-13,17664.3,15629.13,0,A1,84.15
+OP-100169,Vivienda,Independiente,Central,2025-04-10,33979.98,31353.78,0,A1,160.19
+OP-100170,Tarjeta de crédito,Independiente,Central,2025-04-06,2400.0,852.65,0,A1,4.53
+OP-100171,Vivienda,Independiente,Oriental,2024-11-05,55510.01,35017.22,0,A1,183.32
+OP-100172,Vivienda,Independiente,Central,2026-01-08,50366.44,42015.83,0,A1,215.91
+OP-100173,Tarjeta de crédito,Independiente,Central,2026-06-26,6600.0,3360.1,81,C1,614.16
+OP-100174,PYME,Empresa,Oriental,2025-07-17,110025.58,99614.28,0,A1,423.2
+OP-100175,Préstamo de consumo,Independiente,Paracentral,2025-08-08,2191.46,1926.95,0,A1,10.65
+OP-100176,Vivienda,Asalariado,Central,2024-04-11,124531.25,88307.33,0,A1,448.06
+OP-100177,PYME,Empresa,Central,2026-02-23,153386.87,134454.24,0,A1,577.01
+OP-100178,Tarjeta de crédito,Asalariado,Central,2026-02-14,5700.0,1741.02,0,A1,8.95
+OP-100179,Préstamo de consumo,Asalariado,Central,2024-03-19,18120.63,11672.9,0,A1,62.71
+OP-100180,Tarjeta de crédito,Independiente,Oriental,2026-05-23,4500.0,3756.99,72,C1,705.32
+OP-100181,PYME,Empresa,Central,2025-01-19,164123.92,121831.17,0,A1,522.09
+OP-100182,Tarjeta de crédito,Asalariado,Occidental,2026-02-26,3100.0,1753.41,0,A1,8.94
+OP-100183,Vivienda,Asalariado,Occidental,2025-07-03,128275.71,95853.66,0,A1,481.69
+OP-100184,PYME,Empresa,Oriental,2026-01-02,139442.68,90505.19,0,A1,379.1
+OP-100185,Vivienda,Asalariado,Paracentral,2025-11-15,58493.32,41489.32,0,A1,213.15
+OP-100186,Tarjeta de crédito,Independiente,Oriental,2026-02-23,4700.0,3942.4,0,A1,20.57
+OP-100187,Préstamo de consumo,Independiente,Central,2024-04-23,9064.62,7891.72,59,B,520.06
+OP-100188,Préstamo de consumo,Independiente,Central,2024-09-22,23087.02,14941.39,0,A1,78.45
+OP-100189,PYME,Empresa,Central,2026-06-28,202713.08,140493.74,0,A1,598.04
+OP-100190,PYME,Empresa,Paracentral,2026-06-21,31515.47,25015.43,0,A1,105.48
+OP-100191,Préstamo de consumo,Asalariado,Paracentral,2025-07-04,7449.26,7289.79,0,A1,39.26
+OP-100192,Tarjeta de crédito,Asalariado,Oriental,2026-04-02,7600.0,6323.39,0,A1,31.92
+OP-100193,PYME,Empresa,Occidental,2025-07-18,189666.92,158077.08,0,A1,663.98
+OP-100194,Vivienda,Independiente,Central,2026-03-03,140459.06,101840.17,0,A1,535.89
+OP-100195,Tarjeta de crédito,Asalariado,Central,2025-06-20,4300.0,2140.3,0,A1,11.04
+OP-100196,Tarjeta de crédito,Independiente,Paracentral,2024-08-16,7600.0,6329.22,0,A1,33.73
+OP-100197,Tarjeta de crédito,Asalariado,Occidental,2026-04-15,2600.0,2196.88,359,E,2304.02
+OP-100198,Préstamo de consumo,Independiente,Occidental,2024-06-28,16654.29,11899.7,0,A1,62.72
+OP-100199,PYME,Empresa,Central,2024-05-01,105487.19,88824.15,0,A1,391.29
+OP-100200,Vivienda,Independiente,Central,2025-01-12,46519.66,31888.45,0,A1,163.93
+OP-100201,Vivienda,Independiente,Paracentral,2026-02-09,113666.65,107381.3,0,A1,562.41
+OP-100202,Vivienda,Asalariado,Occidental,2025-09-20,37717.37,31021.71,0,A1,163.38
+OP-100203,PYME,Empresa,Paracentral,2025-07-16,27263.88,22293.89,0,A1,96.24
+OP-100204,Vivienda,Independiente,Central,2024-12-20,60435.73,56440.85,0,A1,297.05
+OP-100205,Préstamo de consumo,Independiente,Paracentral,2025-10-06,12383.49,9039.98,0,A1,49.31
+OP-100206,Tarjeta de crédito,Asalariado,Occidental,2024-02-27,6800.0,2514.32,0,A1,13.16
+OP-100207,Préstamo de consumo,Asalariado,Paracentral,2026-01-09,9604.42,7778.25,0,A1,43.17
+OP-100208,Préstamo de consumo,Asalariado,Paracentral,2026-04-22,20307.3,12970.82,0,A1,71.68
+OP-100209,PYME,Empresa,Central,2026-01-17,120278.6,80001.2,25,A2,1002.06
+OP-100210,Préstamo de consumo,Asalariado,Occidental,2025-12-21,8659.23,6752.82,0,A1,36.69
+OP-100211,Tarjeta de crédito,Asalariado,Oriental,2025-11-10,3000.0,1443.75,15,A2,22.08
+OP-100212,PYME,Empresa,Occidental,2026-01-15,71137.91,46522.6,0,A1,200.7
+OP-100213,Préstamo de consumo,Independiente,Paracentral,2025-02-27,26243.21,18672.25,0,A1,102.23
+OP-100214,Préstamo de consumo,Asalariado,Paracentral,2025-02-03,6235.95,6136.97,0,A1,32.72
+OP-100215,Préstamo de consumo,Asalariado,Oriental,2026-01-06,17134.41,12029.53,0,A1,65.74
+OP-100216,Préstamo de consumo,Independiente,Central,2025-04-09,22833.28,17968.25,0,A1,97.66
+OP-100217,Tarjeta de crédito,Asalariado,Central,2026-02-12,7600.0,6298.67,0,A1,33.31
+OP-100218,Tarjeta de crédito,Asalariado,Paracentral,2024-05-03,4600.0,3364.56,0,A1,17.45
+OP-100219,Tarjeta de crédito,Independiente,Occidental,2024-10-28,3600.0,692.12,0,A1,3.7
+OP-100220,PYME,Empresa,Central,2024-09-05,182592.78,135079.71,0,A1,571.79
+OP-100221,Préstamo de consumo,Independiente,Occidental,2024-07-25,21420.17,21006.4,0,A1,111.12
+OP-100222,Tarjeta de crédito,Independiente,Paracentral,2024-10-27,7800.0,6498.03,0,A1,33.76
+OP-100223,Préstamo de consumo,Asalariado,Central,2026-02-04,1931.29,1630.97,0,A1,9.02
+OP-100224,Préstamo de consumo,Asalariado,Oriental,2025-04-15,16508.73,14441.12,0,A1,78.97
+OP-100225,Tarjeta de crédito,Asalariado,Central,2024-04-24,900.0,746.42,0,A1,3.94
+OP-100226,Tarjeta de crédito,Asalariado,Occidental,2025-06-19,3000.0,2117.79,49,B,131.89
+OP-100227,Vivienda,Independiente,Occidental,2026-04-27,79655.33,51329.99,0,A1,265.73
+OP-100228,PYME,Empresa,Central,2024-07-14,66651.48,45324.74,0,A1,193.53
+OP-100229,Vivienda,Asalariado,Central,2026-02-19,151903.71,135938.55,0,A1,684.9
+OP-100230,PYME,Empresa,Central,2024-09-01,218345.72,139554.46,0,A2,591.43
+OP-100231,Tarjeta de crédito,Asalariado,Central,2025-09-10,7100.0,5944.62,0,A1,30.47
+OP-100232,Vivienda,Asalariado,Central,2026-03-03,115259.8,96256.11,0,A1,499.59
+OP-100233,Tarjeta de crédito,Independiente,Paracentral,2026-05-15,2400.0,1636.84,0,A1,8.54
+OP-100234,Vivienda,Asalariado,Occidental,2026-01-21,68919.77,46854.7,0,A1,235.27
+OP-100235,Vivienda,Asalariado,Central,2025-12-03,118208.14,105690.11,0,A1,536.68
+OP-100236,Tarjeta de crédito,Independiente,Central,2026-05-16,7300.0,3335.39,0,A1,16.88
+OP-100237,Vivienda,Independiente,Oriental,2025-12-14,101626.46,73238.68,0,A1,374.02
+OP-100238,Vivienda,Asalariado,Oriental,2025-05-23,37755.33,33254.2,0,A1,172.18
+OP-100239,Vivienda,Asalariado,Central,2026-05-18,54945.83,54037.38,0,A1,278.46
+OP-100240,PYME,Empresa,Central,2026-04-26,49679.91,47515.94,0,A1,204.5
+OP-100241,Vivienda,Asalariado,Central,2024-10-15,28345.45,27939.82,0,A1,140.28
+OP-100242,Tarjeta de crédito,Asalariado,Central,2025-11-05,1700.0,1435.13,0,A1,7.27
+OP-100243,Vivienda,Asalariado,Central,2024-05-21,169950.03,123301.0,0,A1,617.21
+OP-100244,Tarjeta de crédito,Asalariado,Central,2025-06-21,7800.0,1978.38,0,A1,10.34
+OP-100245,PYME,Empresa,Central,2026-03-06,103942.89,91346.38,0,A1,399.12
+OP-100246,PYME,Empresa,Paracentral,2024-06-07,120928.85,102298.58,23,A2,1317.17
+OP-100247,Vivienda,Asalariado,Paracentral,2026-02-19,130661.8,82737.18,0,A1,419.68
+OP-100248,Préstamo de consumo,Asalariado,Oriental,2025-04-11,3516.12,2226.21,0,A1,12.33
+OP-100249,Vivienda,Asalariado,Oriental,2026-05-16,107090.37,71320.12,0,A1,369.48
+OP-100250,PYME,Empresa,Central,2025-09-03,63525.34,40570.54,0,A1,178.76
+OP-100251,Tarjeta de crédito,Asalariado,Central,2024-10-18,5700.0,4769.36,0,A1,25.31
+OP-100252,Préstamo de consumo,Independiente,Paracentral,2025-11-06,10745.04,7182.15,0,A1,39.11
+OP-100253,Préstamo de consumo,Asalariado,Occidental,2025-09-10,16404.74,15661.77,0,A1,84.4
+OP-100254,Vivienda,Independiente,Paracentral,2024-12-08,126152.99,87781.71,0,A1,445.08
+OP-100255,Préstamo de consumo,Asalariado,Central,2025-03-26,9791.56,7062.88,0,A1,37.05
+OP-100256,Vivienda,Asalariado,Central,2024-04-13,83971.94,52719.19,0,A1,267.35
+OP-100257,Préstamo de consumo,Independiente,Occidental,2026-01-17,11674.11,10296.99,0,A1,57.17
+OP-100258,PYME,Empresa,Oriental,2024-01-19,182523.91,125737.91,0,A1,555.04
+OP-100259,Vivienda,Independiente,Oriental,2025-03-23,122687.87,78459.88,0,A1,406.45
+OP-100260,Vivienda,Asalariado,Central,2024-11-09,70438.24,65534.59,0,A1,328.8
+OP-100261,PYME,Empresa,Oriental,2025-08-14,19894.51,17618.87,0,A1,74.76
+OP-100262,Préstamo de consumo,Independiente,Occidental,2025-12-16,4626.39,3525.38,4,A2,57.6
+OP-100263,PYME,Empresa,Central,2026-02-04,96205.06,81541.1,0,A1,341.55
+OP-100264,Tarjeta de crédito,Independiente,Occidental,2025-08-28,5200.0,4327.47,0,A1,22.38
+OP-100265,PYME,Empresa,Occidental,2026-05-02,65725.55,52660.92,0,A1,225.97
+OP-100266,Préstamo de consumo,Asalariado,Oriental,2024-05-20,11682.07,8235.14,0,A1,43.58
+OP-100267,Vivienda,Asalariado,Paracentral,2025-09-23,181576.53,121029.94,0,A1,623.53
+OP-100268,Préstamo de consumo,Independiente,Oriental,2025-08-20,24438.58,16178.23,0,A1,84.85
+OP-100269,Tarjeta de crédito,Independiente,Central,2024-11-20,4400.0,3644.43,0,A1,19.02
+OP-100270,Préstamo de consumo,Independiente,Central,2026-02-06,23249.29,18923.08,0,A1,102.82
+OP-100271,PYME,Empresa,Occidental,2024-07-01,103322.61,68664.77,0,A1,302.39
+OP-100272,Préstamo de consumo,Asalariado,Occidental,2024-06-06,21792.73,21669.24,0,A1,115.72
+OP-100273,PYME,Empresa,Oriental,2024-09-20,80413.55,60839.53,0,A1,256.89
+OP-100274,PYME,Empresa,Central,2024-02-14,214388.18,139677.15,11,A2,1827.58
+OP-100275,PYME,Empresa,Oriental,2024-09-20,196016.67,156265.07,0,A1,673.59
+OP-100276,PYME,Empresa,Central,2024-05-19,143404.85,122194.56,0,A1,535.04
+OP-100277,Tarjeta de crédito,Asalariado,Central,2025-04-02,6300.0,4662.33,0,A1,24.8
+OP-100278,Tarjeta de crédito,Independiente,Oriental,2024-09-04,6200.0,3956.53,0,A1,20.32
+OP-100279,Tarjeta de crédito,Asalariado,Occidental,2024-10-14,7400.0,421.96,0,A1,2.25
+OP-100280,Tarjeta de crédito,Independiente,Central,2024-12-05,2800.0,1935.63,0,A1,10.12
+OP-100281,Vivienda,Asalariado,Occidental,2026-03-13,107572.71,92186.2,0,A1,474.98
+OP-100282,Préstamo de consumo,Independiente,Central,2024-06-16,18105.88,12001.55,0,A1,64.12
+OP-100283,PYME,Empresa,Occidental,2025-03-06,216335.02,135249.54,0,A1,592.89
+OP-100284,Vivienda,Asalariado,Paracentral,2025-09-06,126798.25,104540.3,0,A1,527.5
+OP-100285,PYME,Empresa,Occidental,2025-02-13,35285.62,25650.6,0,A1,110.19
+OP-100286,Préstamo de consumo,Asalariado,Paracentral,2024-01-02,12139.61,10287.77,0,A1,55.18
+OP-100287,Tarjeta de crédito,Independiente,Central,2026-03-11,6200.0,1218.95,0,A1,6.52
+OP-100288,Tarjeta de crédito,Independiente,Oriental,2025-08-22,3900.0,3216.2,0,A1,17.0
+OP-100289,Préstamo de consumo,Independiente,Central,2024-02-25,26958.16,21762.47,0,A1,115.41
+OP-100290,PYME,Empresa,Oriental,2024-12-04,200193.55,135468.25,0,A1,566.82
+OP-100291,Tarjeta de crédito,Asalariado,Central,2026-02-11,3800.0,2621.51,0,A1,13.83
+OP-100292,Tarjeta de crédito,Independiente,Oriental,2024-12-16,5500.0,4617.8,0,A1,23.55
+OP-100293,PYME,Empresa,Occidental,2024-06-09,103552.16,97581.08,155,D,45185.19
+OP-100294,PYME,Empresa,Central,2024-05-03,42068.08,28605.58,0,A1,122.6
+OP-100295,Préstamo de consumo,Independiente,Paracentral,2025-08-26,19521.54,17818.36,0,A1,93.34
+OP-100296,PYME,Empresa,Central,2025-06-04,204865.42,133383.69,0,A1,569.77
+OP-100297,Tarjeta de crédito,Independiente,Oriental,2026-02-16,3200.0,2665.75,0,A1,14.07
+OP-100298,Tarjeta de crédito,Independiente,Occidental,2025-01-25,2600.0,432.67,0,A1,2.27
+OP-100299,Tarjeta de crédito,Asalariado,Central,2026-05-20,3100.0,2548.28,0,A1,13.41
+OP-100300,PYME,Empresa,Oriental,2025-10-19,193164.38,155213.68,32,B,7807.89
+OP-100301,Tarjeta de crédito,Independiente,Central,2026-04-26,4000.0,527.93,0,A1,2.78
+OP-100302,Vivienda,Independiente,Central,2025-11-02,71146.21,61604.42,0,A1,307.79
+OP-100303,Tarjeta de crédito,Independiente,Paracentral,2026-04-03,7300.0,6101.56,0,A1,30.87
+OP-100304,Tarjeta de crédito,Asalariado,Oriental,2025-03-16,6100.0,2923.72,0,A1,14.87
+OP-100305,Vivienda,Independiente,Oriental,2026-02-24,129631.37,83036.84,0,A1,431.86
+OP-100306,PYME,Empresa,Occidental,2025-07-12,102563.73,90443.88,0,A1,390.54
+OP-100307,Tarjeta de crédito,Independiente,Central,2025-08-13,5900.0,497.32,0,A1,2.55
+OP-100308,Préstamo de consumo,Asalariado,Oriental,2026-02-09,21919.6,18636.56,42,B,1206.68
+OP-100309,Vivienda,Asalariado,Oriental,2025-12-10,38692.9,25590.66,0,A1,130.13
+OP-100310,PYME,Empresa,Central,2024-11-24,159163.71,101831.93,202,E,87876.28
+OP-100311,PYME,Empresa,Oriental,2026-05-25,10459.4,8283.77,0,A1,36.13
+OP-100312,Vivienda,Asalariado,Paracentral,2025-11-09,108245.62,82983.64,0,A1,422.12
+OP-100313,Préstamo de consumo,Asalariado,Central,2025-07-15,11139.95,9965.97,0,A1,55.22
+OP-100314,Tarjeta de crédito,Independiente,Oriental,2025-09-24,7600.0,6347.68,25,A2,96.25
+OP-100315,Vivienda,Independiente,Occidental,2025-10-16,98893.97,95997.15,0,A1,503.01
+OP-100316,Tarjeta de crédito,Asalariado,Central,2025-04-08,2600.0,2174.41,0,A1,11.62
+OP-100317,Tarjeta de crédito,Independiente,Oriental,2024-11-03,7300.0,3342.26,0,A1,16.87
+OP-100318,Vivienda,Independiente,Paracentral,2025-12-19,189756.39,134274.18,0,A1,695.78
+OP-100319,PYME,Empresa,Oriental,2026-04-20,80396.05,50387.85,0,A1,222.59
+OP-100320,Vivienda,Independiente,Central,2024-09-23,37800.68,25646.8,74,C1,4676.65
+OP-100321,Tarjeta de crédito,Asalariado,Paracentral,2024-12-01,5400.0,4512.66,0,A1,22.87
+OP-100322,Vivienda,Asalariado,Paracentral,2025-02-09,133152.41,102022.35,0,A1,525.64
+OP-100323,PYME,Empresa,Oriental,2025-12-20,23908.09,15377.69,0,A1,67.09
+OP-100324,Vivienda,Independiente,Oriental,2025-02-24,44132.56,38383.75,0,A1,193.71
+OP-100325,Vivienda,Independiente,Occidental,2024-07-16,86356.02,82640.51,0,A1,429.17
+OP-100326,Préstamo de consumo,Asalariado,Central,2025-05-19,28588.06,18994.99,0,A1,104.71
+OP-100327,Préstamo de consumo,Asalariado,Oriental,2024-04-06,13458.53,8588.57,11,A2,138.81
+OP-100328,PYME,Empresa,Oriental,2026-03-16,46604.46,41985.49,0,A1,184.61
+OP-100329,Tarjeta de crédito,Asalariado,Central,2024-05-11,3000.0,2521.11,0,A1,12.84
+OP-100330,Tarjeta de crédito,Independiente,Central,2026-06-09,6400.0,3170.22,0,A1,16.78
+OP-100331,Vivienda,Independiente,Central,2025-12-03,42762.71,32203.06,0,A1,165.56
+OP-100332,Tarjeta de crédito,Independiente,Central,2024-08-19,6500.0,3808.53,0,A1,20.08
+OP-100333,Préstamo de consumo,Asalariado,Central,2024-07-03,17679.43,15776.99,0,A1,87.18
+OP-100334,Préstamo de consumo,Independiente,Occidental,2024-10-14,15265.88,14958.67,0,A1,79.14
+OP-100335,Vivienda,Asalariado,Occidental,2026-01-12,76530.16,50560.17,0,A1,267.1
+OP-100336,PYME,Empresa,Central,2025-05-13,196446.74,126962.45,0,A1,555.83
+OP-100337,Préstamo de consumo,Asalariado,Central,2025-09-06,24307.47,20333.98,0,A1,109.99
+OP-100338,Vivienda,Asalariado,Central,2024-12-26,123942.73,116201.68,0,A1,586.43
+OP-100339,Préstamo de consumo,Independiente,Central,2024-08-23,15827.26,11736.49,0,A1,64.9
+OP-100340,PYME,Empresa,Oriental,2025-04-23,59472.77,38616.63,0,A1,162.72
+OP-100341,Préstamo de consumo,Independiente,Central,2024-06-08,30560.57,19625.22,63,C1,3782.8
+OP-100342,PYME,Empresa,Central,2025-11-09,35243.0,22745.35,0,A1,94.99
+OP-100343,Tarjeta de crédito,Independiente,Central,2024-07-22,5000.0,4179.53,0,A1,21.34
+OP-100344,Tarjeta de crédito,Independiente,Central,2025-10-14,6900.0,5789.03,262,E,6005.46
+OP-100345,Tarjeta de crédito,Asalariado,Central,2026-01-18,7700.0,3260.85,0,A1,16.84
+OP-100346,Préstamo de consumo,Independiente,Central,2024-04-23,20771.01,17282.58,10,A2,272.42
+OP-100347,Vivienda,Independiente,Occidental,2025-03-21,63044.32,41877.72,0,A1,219.35
+OP-100348,Préstamo de consumo,Asalariado,Central,2024-05-16,6481.6,4980.86,0,A1,26.64
+OP-100349,Préstamo de consumo,Asalariado,Occidental,2025-02-20,12934.03,12076.22,0,A1,64.01
+OP-100350,Vivienda,Asalariado,Oriental,2025-01-20,132231.2,84534.6,0,A1,434.28
+OP-100351,Préstamo de consumo,Asalariado,Paracentral,2025-07-09,20383.45,14368.35,0,A1,77.85
+OP-100352,Vivienda,Asalariado,Paracentral,2025-03-09,113603.11,104055.4,30,A2,1565.55
+OP-100353,Tarjeta de crédito,Asalariado,Oriental,2025-11-21,6700.0,4322.96,0,A1,22.45
+OP-100354,Tarjeta de crédito,Independiente,Central,2026-03-11,7400.0,6170.0,126,D,3516.06
+OP-100355,Vivienda,Independiente,Paracentral,2024-12-19,141822.94,101760.67,0,A1,534.02
+OP-100356,Vivienda,Asalariado,Central,2025-10-09,54775.41,47707.61,0,A1,240.47
+OP-100357,Vivienda,Independiente,Occidental,2025-02-17,62309.78,40740.88,0,A1,211.0
+OP-100358,Préstamo de consumo,Independiente,Paracentral,2024-10-08,20281.11,16573.91,0,A1,90.88
+OP-100359,Préstamo de consumo,Asalariado,Paracentral,2025-02-18,15723.57,10526.75,0,A1,56.14
+OP-100360,Tarjeta de crédito,Asalariado,Central,2026-06-02,7700.0,6416.1,5,A2,99.99
+OP-100361,Préstamo de consumo,Independiente,Central,2024-03-24,14610.83,10651.03,0,A1,56.35
+OP-100362,Tarjeta de crédito,Independiente,Oriental,2026-04-22,7800.0,1787.68,113,C2,562.99
+OP-100363,Tarjeta de crédito,Independiente,Oriental,2024-12-27,7200.0,2832.51,0,A1,15.05
+OP-100364,Vivienda,Asalariado,Central,2024-04-24,123963.54,90144.9,80,C1,16416.15
+OP-100365,Préstamo de consumo,Asalariado,Paracentral,2024-07-13,20421.11,15119.93,0,A1,82.78
+OP-100366,Vivienda,Asalariado,Occidental,2024-12-11,148952.94,110735.61,0,A1,585.87
+OP-100367,Tarjeta de crédito,Asalariado,Central,2026-03-11,7300.0,6115.24,0,A1,31.75
+OP-100368,Préstamo de consumo,Independiente,Central,2024-04-13,12366.31,9740.18,0,A1,51.48
+OP-100369,Tarjeta de crédito,Asalariado,Oriental,2025-11-04,6600.0,5520.79,0,A1,29.49
+OP-100370,Vivienda,Asalariado,Oriental,2025-04-21,83546.87,73066.31,0,A1,386.62
+OP-100371,PYME,Empresa,Oriental,2025-01-04,114228.46,95369.77,0,A1,403.26
+OP-100372,Vivienda,Independiente,Central,2024-04-23,89847.9,56562.63,0,A1,297.17
+OP-100373,Vivienda,Asalariado,Oriental,2025-06-21,22282.59,18896.64,0,A1,99.33
+OP-100374,PYME,Empresa,Central,2025-11-07,119830.27,91270.75,6,A2,1169.73
+OP-100375,Préstamo de consumo,Asalariado,Central,2024-03-04,24250.4,17432.34,0,A1,95.77
+OP-100376,Tarjeta de crédito,Asalariado,Central,2026-03-28,6900.0,2691.08,4,A2,42.61
+OP-100377,Tarjeta de crédito,Asalariado,Paracentral,2025-11-26,7200.0,5356.27,0,A1,28.14
+OP-100378,PYME,Empresa,Central,2024-09-23,131598.4,88112.99,0,A1,386.05
+OP-100379,Tarjeta de crédito,Independiente,Occidental,2024-08-05,4400.0,1930.98,0,A1,9.82
+OP-100380,Tarjeta de crédito,Independiente,Oriental,2024-08-14,1600.0,1363.47,0,A1,6.95
+OP-100381,Vivienda,Asalariado,Paracentral,2024-09-27,133177.37,110682.76,0,A1,567.41
+OP-100382,Tarjeta de crédito,Independiente,Central,2026-03-10,6000.0,309.29,0,A1,1.65
+OP-100383,Tarjeta de crédito,Asalariado,Central,2025-08-19,6000.0,5000.02,0,A1,26.47
+OP-100384,PYME,Empresa,Central,2025-09-11,62121.57,56057.76,0,A1,244.1
+OP-100385,Tarjeta de crédito,Independiente,Central,2026-03-26,7700.0,1839.08,0,A1,9.76
+OP-100386,Vivienda,Asalariado,Central,2024-06-24,154600.87,114154.86,234,E,120871.83
+OP-100387,PYME,Empresa,Oriental,2024-12-27,122297.65,116078.87,171,D,55222.48
+OP-100388,PYME,Empresa,Occidental,2024-03-10,173613.65,108984.28,72,C1,17218.18
+OP-100389,Préstamo de consumo,Independiente,Central,2024-11-24,18230.27,17199.84,0,A1,95.01
+OP-100390,Préstamo de consumo,Asalariado,Central,2025-10-22,20058.98,15279.76,0,A1,80.77
+OP-100391,PYME,Empresa,Central,2026-03-27,87367.77,75413.76,0,A1,314.76
+OP-100392,Préstamo de consumo,Asalariado,Central,2024-07-11,19202.74,13431.92,0,A1,70.56
+OP-100393,PYME,Empresa,Paracentral,2024-05-20,35548.7,25114.93,0,A1,110.3
+OP-100394,Préstamo de consumo,Independiente,Central,2025-08-06,17733.25,14935.5,0,A1,80.51
+OP-100395,PYME,Empresa,Oriental,2025-11-17,81608.16,59620.52,0,A1,256.71
+OP-100396,Vivienda,Independiente,Occidental,2024-09-05,142994.51,136590.16,33,B,8555.71
+OP-100397,Tarjeta de crédito,Independiente,Paracentral,2026-03-26,5000.0,1959.51,0,A1,9.99
+OP-100398,Vivienda,Independiente,Paracentral,2024-07-20,72597.34,66202.39,0,A1,340.61
+OP-100399,Préstamo de consumo,Asalariado,Central,2024-11-20,13010.56,8626.51,152,D,5116.59
+OP-100400,Tarjeta de crédito,Asalariado,Occidental,2025-11-16,3900.0,1999.02,0,A1,10.15
+OP-100401,Préstamo de consumo,Independiente,Central,2026-04-21,13991.92,11052.88,0,A1,59.95
+OP-100402,PYME,Empresa,Paracentral,2024-05-04,89132.21,61202.12,0,A1,263.1
+OP-100403,Tarjeta de crédito,Asalariado,Oriental,2024-05-03,6700.0,2274.37,0,A1,12.13
+OP-100404,Tarjeta de crédito,Asalariado,Occidental,2024-09-23,7500.0,4739.11,0,A1,24.17
+OP-100405,Tarjeta de crédito,Independiente,Paracentral,2026-03-26,6600.0,4580.77,0,A1,23.86
+OP-100406,Tarjeta de crédito,Asalariado,Central,2026-04-10,7000.0,5816.62,0,A1,30.18
+OP-100407,Tarjeta de crédito,Asalariado,Central,2026-01-21,5500.0,1222.98,0,A1,6.23
+OP-100408,Préstamo de consumo,Independiente,Paracentral,2025-11-14,30268.44,20936.9,0,A1,112.83
+OP-100409,Préstamo de consumo,Asalariado,Central,2025-03-11,18480.79,15197.55,0,A1,84.43
+OP-100410,PYME,Empresa,Central,2024-03-14,192475.81,125519.09,0,A1,547.26
+OP-100411,PYME,Empresa,Central,2026-06-04,126068.48,80026.46,0,A1,348.02
+OP-100412,Tarjeta de crédito,Asalariado,Central,2025-07-07,7600.0,6301.58,0,A1,33.54
+OP-100413,Tarjeta de crédito,Asalariado,Central,2026-01-28,6100.0,332.94,0,A1,1.7
+OP-100414,Préstamo de consumo,Asalariado,Central,2025-12-02,26080.52,19782.25,104,C2,6290.05
+OP-100415,Tarjeta de crédito,Independiente,Central,2026-01-07,7100.0,5943.08,0,A1,30.18
+OP-100416,Vivienda,Asalariado,Occidental,2026-04-08,56566.82,47803.5,0,A1,240.75
+OP-100417,Tarjeta de crédito,Independiente,Central,2024-08-03,7600.0,6330.72,0,A1,32.21
+OP-100418,Vivienda,Asalariado,Paracentral,2026-05-27,160671.84,121510.44,0,A1,624.33
+OP-100419,Tarjeta de crédito,Asalariado,Oriental,2026-01-26,7400.0,690.09,0,A1,3.57
+OP-100420,Vivienda,Asalariado,Paracentral,2025-03-02,129973.76,94945.56,0,A1,500.81

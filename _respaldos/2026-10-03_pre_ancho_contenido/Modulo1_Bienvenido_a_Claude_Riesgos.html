@@ -1479,6 +1479,7 @@ h1.ptitle em { font-style:italic; color:var(--brand-blue); }
   .sidebar { transition: transform .3s ease, visibility .3s; }
   body.sb-collapsed .sidebar { transform:translateX(-100%); visibility:hidden; }
   body.sb-collapsed .main { margin-left:0; }
+  body.sb-collapsed .section { margin-left:auto; margin-right:auto; }
 }
 /* Con el menú abierto no caben todas las etiquetas de la barra: se oculta la de VP (ya aparece en el menú) */
 @media (min-width:901px) and (max-width:1360px) {
@@ -1767,7 +1768,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   .tb-bc strong{display:inline}
   .tb-chips{gap:9px}
   .chip{padding:5px 13px;font-size:12px}
-  .section{padding:2rem clamp(2rem,4vw,3.5rem) 5rem !important;max-width:1080px !important;margin-left:auto;margin-right:auto}
+  .section{padding:2rem 3rem 5rem !important;max-width:920px !important}
   h1.ptitle{font-size:clamp(2.1rem,3.6vw,3.2rem)}
 }
 

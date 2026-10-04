@@ -106,34 +106,9 @@ body {
   display: flex; flex-direction: column;
   z-index: 100;
   overflow-y: auto;
-  transition: transform .3s ease;
+  scrollbar-width: none;
 }
-
-/* Los bloques del menú no se encogen: si no caben, el menú hace scroll */
-.sidebar > * { flex-shrink:0; }
-
-/* ══ SCROLLBARS ══ (Chrome/Edge usan ::-webkit-scrollbar; Firefox, scrollbar-color) */
-.sidebar::-webkit-scrollbar { width:8px; }
-.sidebar::-webkit-scrollbar-track { background:rgba(255,255,255,.04); }
-.sidebar::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--brand-gold-l), var(--brand-gold));
-  border-radius:100px;
-  border:2px solid transparent; background-clip:padding-box;
-}
-.sidebar::-webkit-scrollbar-thumb:hover { background:var(--brand-gold-l); background-clip:padding-box; }
-
-html::-webkit-scrollbar { width:12px; }
-html::-webkit-scrollbar-track { background:var(--bg2); border-left:1px solid var(--border2); }
-html::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--brand-blue-l), var(--brand-blue));
-  border-radius:100px;
-  border:3px solid var(--bg2);
-}
-html::-webkit-scrollbar-thumb:hover { background:var(--brand-gold-deep); }
-@supports not selector(::-webkit-scrollbar) {
-  html { scrollbar-color: var(--brand-blue) var(--bg2); }
-  .sidebar { scrollbar-width: thin; scrollbar-color: var(--brand-gold) rgba(255,255,255,.06); }
-}
+.sidebar::-webkit-scrollbar{display:none}
 
 .sb-head {
   padding: 1.6rem 1.75rem 1.5rem;
@@ -156,19 +131,22 @@ html::-webkit-scrollbar-thumb:hover { background:var(--brand-gold-deep); }
 }
 
 .sb-pill {
-  display:flex; align-items:center; gap:12px;
+  display:inline-flex; align-items:center; gap:7px;
+  background: rgba(255,173,183,.18);
+  border: 1px solid rgba(255,173,183,.4);
+  border-radius:100px;
+  padding: 4px 13px;
   font-size:11px; font-weight:700;
   letter-spacing:.09em; text-transform:uppercase;
   color: var(--brand-gold-l);
-  white-space:nowrap;
   margin-bottom:1rem;
   position:relative; z-index:1;
 }
-/* Avance en el curso: módulos anteriores en rosa, el actual en rojo */
-.sb-steps { display:flex; gap:5px; }
-.sb-steps b { width:16px; height:5px; border-radius:100px; background:rgba(255,255,255,.14); }
-.sb-steps b.done { background:rgba(255,173,183,.55); }
-.sb-steps b.cur { width:26px; background:var(--brand-blue-l); box-shadow:0 0 10px rgba(238,52,71,.6); }
+.sb-pill::before {
+  content:''; width:6px; height:6px; border-radius:50%;
+  background:var(--brand-gold);
+  animation: pulse 2s ease-in-out infinite;
+}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
 .sb-logo {
@@ -267,7 +245,7 @@ html::-webkit-scrollbar-thumb:hover { background:var(--brand-gold-deep); }
 /* ══════════════════════════════════════════════
    MAIN
 ══════════════════════════════════════════════ */
-.main { margin-left:var(--sidebar-w); flex:1; min-height:100vh; max-width:100%; transition:margin-left .3s ease; }
+.main { margin-left:var(--sidebar-w); flex:1; min-height:100vh; max-width:100%; }
 
 .topbar {
   position:sticky; top:0; z-index:50;
@@ -1460,30 +1438,20 @@ h1.ptitle em { font-style:italic; color:var(--brand-blue); }
 .pager-title { font-family:var(--ff-display); font-size:1.1rem; line-height:1.3; }
 
 /* ══════════════════════════════════════════════
-   BOTÓN MENÚ (hamburguesa) · repliega/despliega el menú lateral
+   MOBILE TOGGLE
 ══════════════════════════════════════════════ */
-.sb-toggle {
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
-  width:40px; height:40px; flex-shrink:0;
-  border-radius:10px; cursor:pointer;
-  background:rgba(255,173,183,.12);
-  border:1px solid rgba(255,173,183,.35);
-  transition:var(--t);
+.mob-toggle {
+  display:none;
+  position:fixed; top:.75rem; left:.75rem;
+  z-index:200;
+  width:40px; height:40px; border-radius:10px;
+  background:var(--brand-blue-dark); border:none; cursor:pointer;
+  align-items:center; justify-content:center;
+  flex-direction:column; gap:4px;
   -webkit-tap-highlight-color:transparent;
+  box-shadow:var(--sh-md);
 }
-.sb-toggle:hover { background:var(--brand-blue); border-color:var(--brand-blue); }
-.sb-toggle:focus-visible { outline:2px solid var(--brand-gold-l); outline-offset:2px; }
-.sb-toggle span { display:block; width:18px; height:2px; background:var(--brand-gold-l); border-radius:2px; transition:var(--t); }
-.sb-toggle:hover span { background:#fff; }
-@media (min-width:901px) {
-  .sidebar { transition: transform .3s ease, visibility .3s; }
-  body.sb-collapsed .sidebar { transform:translateX(-100%); visibility:hidden; }
-  body.sb-collapsed .main { margin-left:0; }
-}
-/* Con el menú abierto no caben todas las etiquetas de la barra: se oculta la de VP (ya aparece en el menú) */
-@media (min-width:901px) and (max-width:1360px) {
-  body:not(.sb-collapsed) .tb-chips .chip-blue { display:none; }
-}
+.mob-toggle span { display:block; width:18px; height:2px; background:#fff; border-radius:2px; }
 .sb-scrim{ display:none; position:fixed; inset:0; background:rgba(35,30,31,.5); z-index:90; }
 .sb-scrim.show{ display:block; }
 
@@ -1767,8 +1735,9 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   .tb-bc strong{display:inline}
   .tb-chips{gap:9px}
   .chip{padding:5px 13px;font-size:12px}
-  .section{padding:2rem clamp(2rem,4vw,3.5rem) 5rem !important;max-width:1080px !important;margin-left:auto;margin-right:auto}
+  .section{padding:2rem 3rem 5rem !important;max-width:920px !important}
   h1.ptitle{font-size:clamp(2.1rem,3.6vw,3.2rem)}
+  .mob-toggle{display:none !important}
 }
 
 @media (max-width:1080px){
@@ -1780,8 +1749,9 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
   .sidebar { transform:translateX(-100%); transition:transform .3s ease; }
   .sidebar.open { transform:translateX(0); box-shadow: 4px 0 32px rgba(0,0,0,.35); }
   .main { margin-left:0; }
+  .mob-toggle { display:flex; }
 
-  .topbar { padding:.4rem 1rem; gap:6px; flex-wrap:nowrap; }
+  .topbar { padding:.4rem 1rem .4rem 3.5rem; gap:6px; flex-wrap:nowrap; }
   .tb-logo-wrap img { height:40px; }
   .tb-logo-wrap { gap:8px; }
   .tb-divider-v { display:none; }
@@ -1858,11 +1828,11 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
 }
 
 @media (max-width:480px) {
-  .topbar { padding:.35rem .75rem; }
+  .topbar { padding:.35rem .75rem .35rem 3.25rem; }
   .tb-logo-wrap img { height:34px; }
   .tb-chips { display:none; }
   .section { padding:3.75rem .95rem 2.5rem; }
-  .sb-toggle{width:36px;height:36px}
+  .mob-toggle{width:36px;height:36px;top:.75rem;left:.75rem}
   h1.ptitle { font-size:1.55rem; }
   .hero-wrap{ padding:1.75rem 1.25rem; }
 }
@@ -2193,17 +2163,16 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
 </defs>
 </svg>
 
-<script>
-  // Recordar si el menú quedó replegado (antes de pintar la página, para evitar parpadeo)
-  try { if (localStorage.getItem('curso-riesgos-sb') === 'replegado') document.body.classList.add('sb-collapsed'); } catch (e) {}
-</script>
-
 <div class="sb-scrim" id="sbScrim" onclick="toggleSb()"></div>
+
+<button class="mob-toggle" onclick="toggleSb()" aria-label="Abrir menú">
+  <span></span><span></span><span></span>
+</button>
 
 <!-- ══════════ SIDEBAR ══════════ -->
 <aside class="sidebar" id="sidebar">
   <div class="sb-head">
-    <div class="sb-pill">Módulo 2 de 5<span class="sb-steps" aria-hidden="true"><b class="done"></b><b class="cur"></b><b></b><b></b><b></b></span></div>
+    <div class="sb-pill">Módulo 2 de 5</div>
     <div class="sb-logo">El arte del <em>prompt</em></div>
     <div class="sb-sub">Banco Atlántida · Vicepresidencia Adjunta de Riesgos</div>
   </div>
@@ -2263,7 +2232,7 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
       <div class="nav-section-lbl">Módulos del curso</div>
       <a class="mod-link" href="Modulo1_Bienvenido_a_Claude_Riesgos.html"><span class="mod-n">01</span>Bienvenido a Claude</a>
       <a class="mod-link current" href="#intro" aria-current="page"><span class="mod-n">02</span>Prompt regulatorio</a>
-      <a class="mod-link" href="Modulo3_Claude_con_Documentos_Regulatorios.html"><span class="mod-n">03</span>Documentos regulatorios</a>
+      <span class="mod-link soon"><span class="mod-n">03</span>Documentos regulatorios</span>
       <span class="mod-link soon"><span class="mod-n">04</span>Tu área de Riesgos</span>
       <span class="mod-link soon"><span class="mod-n">05</span>Uso responsable</span>
     </div>
@@ -2284,9 +2253,6 @@ button.cl-tbtn.rec { background:#c0392b; border-color:#c0392b; color:#fff; anima
 <main class="main">
   <div class="topbar">
     <div class="tb-logo-wrap">
-      <button class="sb-toggle" id="sbToggle" onclick="toggleSb()" aria-controls="sidebar" aria-expanded="true" aria-label="Replegar menú" title="Replegar menú">
-        <span></span><span></span><span></span>
-      </button>
       <img src="data:image/png;base64,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" alt="Banco Atlántida" width="152" height="38" style="height:38px;width:auto;display:block;">
       <div class="tb-divider-v"></div>
       <div class="tb-bc">
@@ -3468,7 +3434,7 @@ function updateSidebarProgress() {
 var COURSE_HOME = 'Bienvenida_Curso_Riesgos_Banco_Atlantida.html';
 // Módulos vecinos: enlazan el inicio y el cierre de este módulo con el resto del curso (null = volver al programa)
 var PREV_MODULE = { href: 'Modulo1_Bienvenido_a_Claude_Riesgos.html', title: 'Módulo 1: Bienvenido a Claude' };
-var NEXT_MODULE = { href: 'Modulo3_Claude_con_Documentos_Regulatorios.html', title: 'Módulo 3: Claude con documentos regulatorios' };
+var NEXT_MODULE = null;
 
 function showSec(id) {
   if (SECTIONS.indexOf(id) === -1) id = 'intro';
@@ -3479,7 +3445,6 @@ function showSec(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById('sidebar').classList.remove('open');
   document.getElementById('sbScrim').classList.remove('show');
-  syncSbToggle();
 
   visitedSections.add(id);
   updateSidebarProgress();
@@ -3535,35 +3500,11 @@ SECTIONS.forEach(function(id, i) {
   sec.insertBefore(nav, sec.querySelector('.sec-foot'));
 });
 
-/* ══ MENÚ LATERAL: replegar / desplegar ══ */
-// Escritorio: repliega el menú y el contenido ocupa todo el ancho (se recuerda entre páginas).
-// Móvil (≤900px): el menú se abre encima del contenido.
-var mqMovil = window.matchMedia('(max-width:900px)');
-
-function syncSbToggle() {
-  var visible = mqMovil.matches
-    ? document.getElementById('sidebar').classList.contains('open')
-    : !document.body.classList.contains('sb-collapsed');
-  var btn = document.getElementById('sbToggle');
-  var lbl = visible ? 'Replegar menú' : 'Desplegar menú';
-  btn.setAttribute('aria-expanded', visible);
-  btn.setAttribute('aria-label', lbl);
-  btn.title = lbl;
-}
-
+/* ══ MOBILE SIDEBAR ══ */
 function toggleSb() {
-  if (mqMovil.matches) {
-    document.getElementById('sidebar').classList.toggle('open');
-    document.getElementById('sbScrim').classList.toggle('show');
-  } else {
-    var replegado = document.body.classList.toggle('sb-collapsed');
-    try { localStorage.setItem('curso-riesgos-sb', replegado ? 'replegado' : 'desplegado'); } catch (e) {}
-  }
-  syncSbToggle();
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sbScrim').classList.toggle('show');
 }
-
-mqMovil.addEventListener('change', syncSbToggle);
-syncSbToggle();
 
 /* ══ REVEAL ANIMATIONS ══ */
 function revealSteps() {
