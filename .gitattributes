@@ -1,2 +1,11 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Archivos del kit de práctica: git nunca debe tocar sus bytes.
+# Sin estas líneas, git trata los PDF como texto y les cambia los saltos de línea, lo que los daña.
+*.pdf  binary
+*.docx binary
+*.xlsx binary
+*.png  binary
+*.jpg  binary
+*.csv  -text
